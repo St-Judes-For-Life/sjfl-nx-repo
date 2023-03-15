@@ -1,0 +1,11 @@
+{
+  "name": "sjfl-judians",
+  "devDependencies": {
+    "@capacitor/cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@capacitor/device": "^4.1.0",
+    "@capacitor/ios": "^4.7.0",
+    "@capacitor/splash-screen": "^4.2.0"
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">St. Judes For Life - Judians</string>
+    <string name="title_activity_main">St. Judes For Life - Judians</string>
+    <string name="package_name">org.sjfl.judians</string>
+    <string name="custom_url_scheme">org.sjfl.judians</string>
+</resources>

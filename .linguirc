@@ -1,0 +1,32 @@
+{
+  "catalogs": [
+    {
+      "path": "<rootDir>/apps/sjfl-judians/src/locales/{locale}/messages",
+      "include": [
+        "<rootDir>"
+      ],
+      "exclude": [
+        "**/node_modules/**",
+        "<rootDir>/apps/sjfl-judians-e2e/**"
+      ]
+    }
+  ],
+  "compileNamespace": "cjs",
+  "extractBabelOptions": {
+    "rootMode": "upward"
+  },
+  "fallbackLocales": {},
+  "format": "po",
+  "locales": [
+    "en",
+    "hi"
+  ],
+  "orderBy": "messageId",
+  "pseudoLocale": "",
+  "rootDir": ".",
+  "runtimeConfigModule": [
+    "@lingui/core",
+    "i18n"
+  ],
+  "sourceLocale": "en"
+}
