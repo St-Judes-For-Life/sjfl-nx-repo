@@ -1,11 +1,10 @@
-export const getRootData = async () => {
-  console.log('fetch');
+export const getRootData = async (): Promise<{ id: number }> => {
   await new Promise((resolve) =>
     setTimeout(() => {
       resolve(null);
     }, 2000)
   );
-  return await fetch('https://jsonplaceholder.typicode.com/todos/1').then(
+  return await fetch('https://jsonplaceholder.typicode.com/todos/2').then(
     (response) => response.json()
   );
 };

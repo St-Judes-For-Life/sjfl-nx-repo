@@ -4,9 +4,9 @@ import { AuthLayout } from './app/layout/AuthLayout';
 import { ProtectedRouteLayout } from './app/layout/ProtectedRouteLayout';
 import { RootLayout } from './app/layout/RootLayout';
 import { rootLoader } from './app/loaders/rootLoader';
-import { AuthLandingPage } from './app/pages/Auth/AuthLandingPage';
-import { LoginPage } from './app/pages/Auth/LoginPage';
-import { RegisterPage } from './app/pages/Auth/RegisterPage';
+import { AuthLandingPage } from './app/features/Auth/AuthLandingPage';
+import { LoginPage } from './app/features/Auth/LoginPage';
+import { RegisterPage } from './app/features/Auth/RegisterPage';
 
 export const router = createBrowserRouter([
   {

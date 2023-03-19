@@ -10,6 +10,10 @@
 body {
   padding: 0;
   margin: 0;
+  &::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .page {
@@ -19,4 +23,9 @@ body {
 .shadow {
   box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 10%),
     0 4px 6px -2px rgb(0 0 0 / 5%);
+}
+
+.h-screen:has(footer.MuiAppBar-positionFixed) {
+  height: unset;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
 }

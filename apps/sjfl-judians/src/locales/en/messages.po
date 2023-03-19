@@ -11,6 +11,26 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/pages/Auth/AuthLandingPage.tsx:23
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:23
 msgid "AuthLanding.Register"
 msgstr "REGISTER"
+
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:34
+msgid "AuthLanding.SignIn"
+msgstr "Sign In"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:91
+msgid "LanguageSelection.Continue"
+msgstr "Continue"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:54
+msgid "LanguageSelection.Header"
+msgstr "Select your preferred language"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:17
+msgid "LoginPage.UID"
+msgstr "UID"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:23
+msgid "LoginPage.UID_Placeholder"
+msgstr "Enter your UID"

@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: '../../dist/apps/sjfl-judians',
   bundledWebRuntime: false,
   server: {
-    url: 'http://192.168.0.136:4200',
+    url: 'http://localhost:4200',
     cleartext: true,
   },
   plugins: {

@@ -15,11 +15,19 @@
   "extractBabelOptions": {
     "rootMode": "upward"
   },
-  "fallbackLocales": {},
+  "fallbackLocales": {
+    "default": "en"
+  },
   "format": "po",
   "locales": [
     "en",
-    "hi"
+    "hi",
+    "mr",
+    "bn",
+    "kn",
+    "ta",
+    "te",
+    "ml"
   ],
   "orderBy": "messageId",
   "pseudoLocale": "",
