@@ -20,7 +20,7 @@ export const AuthLandingPage = () => {
             navigate('register');
           }}
         >
-          <Trans id="AuthLanding.Register">REGISTER</Trans>
+          <Trans id="Auth.Register">REGISTER</Trans>
         </Button>
         <Button
           size="large"
@@ -31,7 +31,7 @@ export const AuthLandingPage = () => {
             navigate('sign-in');
           }}
         >
-          <Trans id="AuthLanding.SignIn"> SIGN IN</Trans>
+          <Trans id="Auth.SignIn">SIGN IN</Trans>
         </Button>
       </section>
     </Page>
