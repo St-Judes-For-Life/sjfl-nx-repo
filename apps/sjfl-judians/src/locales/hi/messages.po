@@ -12,25 +12,30 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:23
-msgid "AuthLanding.Register"
+msgid "Auth.Register"
 msgstr "साइन अप करें"
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:34
-msgid "AuthLanding.SignIn"
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:77
+msgid "Auth.SignIn"
 msgstr "लॉग इन करें"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:91
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:90
 msgid "LanguageSelection.Continue"
 msgstr "आगे बढ़ें"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:54
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:53
 msgid "LanguageSelection.Header"
 msgstr "कृपया अपनी पसंदीदा भाषा चुनें"
 
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:17
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:52
+msgid "LoginPage.Password_Placeholder"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:32
 msgid "LoginPage.UID"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:23
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:40
 msgid "LoginPage.UID_Placeholder"
 msgstr ""
