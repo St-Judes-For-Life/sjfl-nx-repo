@@ -1,8 +1,12 @@
-import { FC, PropsWithChildren, useContext, useEffect } from 'react';
+import { FC, useContext, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../store/AuthProvider';
 
-export const ProtectedRouteLayout: FC<PropsWithChildren> = ({ children }) => {
+/**
+ * A route layour that requires the user to be logged in.
+ * @returns None
+ */
+export const ProtectedRouteLayout: FC = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useContext(AuthContext);
 

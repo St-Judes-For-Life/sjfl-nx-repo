@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/react';
+import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ export const AuthLandingPage = () => {
             navigate('sign-in');
           }}
         >
-          SIGN IN
+          <Trans id="AuthLanding.SignIn"> SIGN IN</Trans>
         </Button>
       </section>
     </Page>

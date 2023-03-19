@@ -4,7 +4,12 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          { "allow": ["@capacitor/**"] }
+        ]
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],

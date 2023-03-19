@@ -1,28 +1,20 @@
-import { useIsRestoring, useQuery } from '@tanstack/react-query';
-import { Suspense } from 'react';
-import { Await, Outlet, useLoaderData } from 'react-router-dom';
-import SplashPage from '../pages/Splash/SplashPage';
+import { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
+import { LanguageSelectionPage } from '../features/Common/LanguageSelectionPage';
+import SplashPage from '../features/Splash/SplashPage';
+import { useLoadedQuery } from '../helpers/hooks/useLoadedQuery';
 import { rootDataQuery } from '../queries/rootQuery';
+import { LocaleContext } from '../store/InternationalizationProvider';
 
+/**
+ * The root layout component.
+ * @returns None
+ */
 export const RootLayout = () => {
-  const isRestoring = useIsRestoring();
-  const query = useQuery(rootDataQuery);
-  // const { value } = useLoaderData() as {
-  //   value: Promise<string>;
-  // };
-  console.log(query);
-
+  const { locale } = useContext(LocaleContext);
+  const query = useLoadedQuery(rootDataQuery.queryKey, rootDataQuery.queryFn);
   if (query.isLoading) {
     return <SplashPage />;
   }
-  return <Outlet></Outlet>;
-
-  //   <Suspense fallback={<SplashPage />}>
-  //     <Await
-  //       resolve={value}
-  //       errorElement={<div>Could not load </div>}
-  //       children={(data) => <Outlet></Outlet>}
-  //     />
-  //   </Suspense>
-  // );
+  return locale ? <Outlet /> : <LanguageSelectionPage />;
 };

@@ -5,16 +5,16 @@ import {
   PersistQueryClientProvider,
 } from '@tanstack/react-query-persist-client';
 import { FC, PropsWithChildren } from 'react';
-import { createIDBPersister, queryClient } from '../utils/react-query';
+import { createCustomPersister, queryClient } from '../utils/react-query';
 
-const persister = createIDBPersister();
+const persister = createCustomPersister();
 
 export const ReactQueryProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <PersistQueryClientProvider
       client={queryClient}
       onSuccess={() => {
-        console.log('success loading');
+        queryClient.resumePausedMutations();
       }}
       persistOptions={
         {

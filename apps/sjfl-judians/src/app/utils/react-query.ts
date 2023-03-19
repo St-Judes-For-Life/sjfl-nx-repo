@@ -3,32 +3,31 @@ import {
   PersistedClient,
   Persister,
 } from '@tanstack/react-query-persist-client';
-import { del, get, set } from 'idb-keyval';
+import { asyncStore } from './async-storage/async-storage';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       cacheTime: 1000 * 60 * 60 * 24, // 24 hours
-      // networkMode: 'offlineFirst',
-      staleTime: 2 * 1000,
+      // staleTime: Infinity,
+      refetchOnWindowFocus: false,
     },
   },
 });
 
 /**
- * Creates an Indexed DB persister
- * @see https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+ * Creates a persister using
  */
-export function createIDBPersister(idbValidKey: IDBValidKey = 'reactQuery') {
+export function createCustomPersister(idbValidKey: IDBValidKey = 'reactQuery') {
   return {
     persistClient: async (client: PersistedClient) => {
-      set(idbValidKey, client);
+      asyncStore.set(idbValidKey as string, client);
     },
     restoreClient: async () => {
-      return await get<PersistedClient>(idbValidKey);
+      return await asyncStore.get<PersistedClient>(idbValidKey as string);
     },
     removeClient: async () => {
-      await del(idbValidKey);
+      await asyncStore.delete(idbValidKey as string);
     },
   } as Persister;
 }

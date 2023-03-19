@@ -1,31 +1,33 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 2023-03-17 11:53+0530\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: bn\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language: \n"
 "Language-Team: \n"
-"Content-Type: \n"
-"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:23
 msgid "AuthLanding.Register"
-msgstr "साइन अप करें"
+msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:34
 msgid "AuthLanding.SignIn"
-msgstr "लॉग इन करें"
+msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:91
 msgid "LanguageSelection.Continue"
-msgstr "आगे बढ़ें"
+msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:54
 msgid "LanguageSelection.Header"
-msgstr "कृपया अपनी पसंदीदा भाषा चुनें"
+msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:17
 msgid "LoginPage.UID"
