@@ -9,6 +9,7 @@ import { InternationalizationProvider } from './app/store/InternationalizationPr
 import { ReactQueryProvider } from './app/store/ReactQueryProvider';
 import { router } from './router';
 import { materialTheme } from './theme/material-theme';
+import { capacitorInit } from './app/utils/capacitor';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -26,3 +27,5 @@ root.render(
     </InternationalizationProvider>
   </StrictMode>
 );
+
+capacitorInit();

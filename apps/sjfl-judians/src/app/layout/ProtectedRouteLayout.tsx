@@ -1,20 +1,17 @@
-import { FC, useContext, useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../store/AuthProvider';
+import { FC } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../helpers/hooks/useAuth';
 
 /**
- * A route layour that requires the user to be logged in.
+ * A route layout that requires the user to be logged in.
  * @returns None
  */
 export const ProtectedRouteLayout: FC = () => {
-  const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useAuth();
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate('/auth', { replace: true });
-    }
-  }, [isLoggedIn, navigate]);
+  if (!isLoggedIn) {
+    return <Navigate to="/auth" replace={true} />;
+  }
 
   return <Outlet></Outlet>;
 };

@@ -11,31 +11,120 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:23
+#: apps/sjfl-judians/src/app/features/Aid/AidLandingPage.tsx:18
+msgid "AidLanding.Header"
+msgstr "Request Aid"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
+msgid "Auth.Email"
+msgstr "Email"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
+msgid "Auth.Email_Placeholder"
+msgstr "Enter your email id"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:94
+msgid "Auth.Login.DontHaveAccount"
+msgstr "Don't have an account?"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:79
+msgid "Auth.Login.TroubleWithSignIn"
+msgstr "Having trouble signing in?"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
+msgid "Auth.Mobile"
+msgstr "Mobile"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
+msgid "Auth.Mobile_Placeholder"
+msgstr "Enter your mobile number"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
+msgid "Auth.Name"
+msgstr "Name"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
+msgid "Auth.Name_Placeholder"
+msgstr "Enter your full name"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:51
+msgid "Auth.Password"
+msgstr "Password"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:59
+msgid "Auth.Password_Placeholder"
+msgstr "Enter your Password"
+
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:96
 msgid "Auth.Register"
 msgstr "REGISTER"
 
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:34
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:77
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:99
+msgid "Auth.Register.AlreadyHaveAccount"
+msgstr "Already have an account?"
+
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:108
 msgid "Auth.SignIn"
-msgstr "Sign In"
+msgstr "SIGN IN"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:90
-msgid "LanguageSelection.Continue"
-msgstr "Continue"
-
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:53
-msgid "LanguageSelection.Header"
-msgstr "Select your preferred language"
-
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:52
-msgid "LoginPage.Password_Placeholder"
-msgstr "Enter your Password"
-
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:32
-msgid "LoginPage.UID"
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:24
+msgid "Auth.UID"
 msgstr "UID"
 
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:40
-msgid "LoginPage.UID_Placeholder"
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:45
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:32
+msgid "Auth.UID_Placeholder"
 msgstr "Enter your UID"
+
+#: apps/sjfl-judians/src/app/features/Counselling/CounsellingLandingPage.tsx:18
+msgid "Counselling.Header"
+msgstr "Counselling"
+
+#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:33
+msgid "Dashboard.Aid"
+msgstr "REQUEST FOR AID"
+
+#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:18
+msgid "Dashboard.Hi"
+msgstr "Hi {firstName},"
+
+#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:42
+msgid "Dashboard.Schedule"
+msgstr "SCHEDULE A SESSION"
+
+#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:21
+msgid "Dashboard.Welcome"
+msgstr "Welcome to"
+
+#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:27
+msgid "Drawer.ChangePassword"
+msgstr "Change Password"
+
+#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:31
+msgid "Drawer.Help"
+msgstr "Help"
+
+#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:42
+msgid "Drawer.Logout"
+msgstr "Log out"
+
+#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:23
+msgid "Drawer.Profile"
+msgstr "Profile"
+
+#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:35
+msgid "Drawer.Settings"
+msgstr "Settings"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:97
+msgid "LanguageSelection.Continue"
+msgstr "CONTINUE"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:60
+msgid "LanguageSelection.Header"
+msgstr "Select your preferred language"

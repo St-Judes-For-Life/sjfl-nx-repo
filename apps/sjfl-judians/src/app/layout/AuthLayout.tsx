@@ -1,19 +1,16 @@
-import { useContext, useEffect } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../store/AuthProvider';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../helpers/hooks/useAuth';
 
 /**
  * A layout component that redirects the user to the home page if they are logged in.
  * @returns None
  */
 export const AuthLayout = () => {
-  const navigate = useNavigate();
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn } = useAuth();
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate('/', { replace: true });
-    }
-  }, [isLoggedIn, navigate]);
+  if (isLoggedIn) {
+    return <Navigate to="/" replace={true} />;
+  }
+
   return <Outlet></Outlet>;
 };

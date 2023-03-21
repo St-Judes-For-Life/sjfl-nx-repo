@@ -6,9 +6,9 @@ import logo from '../../../assets/sjfl_logo.png';
 const logoVariations = cva('', {
   variants: {
     size: {
-      small: ['h-[10vh]'],
-      medium: ['h-[20vh]'],
-      large: ['h-[30vh]'],
+      small: ['h-[5rem]'],
+      medium: ['h-[10rem]'],
+      large: ['h-[16rem]'],
     },
   },
   defaultVariants: {
