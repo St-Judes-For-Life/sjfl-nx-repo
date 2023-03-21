@@ -7,6 +7,9 @@ import { rootLoader } from './app/loaders/rootLoader';
 import { AuthLandingPage } from './app/features/Auth/AuthLandingPage';
 import { LoginPage } from './app/features/Auth/LoginPage';
 import { RegisterPage } from './app/features/Auth/RegisterPage';
+import { DashboardPage } from './app/features/Dashboard/DashboardPage';
+import { AidLandingPage } from './app/features/Aid/AidLandingPage';
+import { CounsellingLandingPage } from './app/features/Counselling/CounsellingLandingPage';
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +22,23 @@ export const router = createBrowserRouter([
         element: <ProtectedRouteLayout />,
         children: [
           {
-            path: '/',
+            path: '',
             element: <AppLayout />,
+            children: [
+              {
+                path: '',
+                element: <DashboardPage />,
+              },
+              {
+                path: 'aid',
+                element: <AidLandingPage />,
+              },
+
+              {
+                path: 'counselling',
+                element: <CounsellingLandingPage />,
+              },
+            ],
           },
         ],
       },

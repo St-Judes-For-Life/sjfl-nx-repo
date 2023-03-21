@@ -17,7 +17,7 @@ export const LocaleContext = createContext<{
   locale: Maybe<Locale>;
   setLocale: (code: Locale) => void;
 }>({
-  locale: null,
+  locale: undefined,
   setLocale: (code: Locale) => {
     return;
   },
@@ -26,7 +26,7 @@ export const LocaleContext = createContext<{
 export const InternationalizationProvider: FC<PropsWithChildren> = ({
   children,
 }: PropsWithChildren) => {
-  const [locale, setLocale] = useState<Maybe<Locale>>(null);
+  const [locale, setLocale] = useState<Maybe<Locale>>(undefined);
   const setLocaleCode = useCallback((code: Locale) => {
     setLocale(code);
     persistLocale(code);

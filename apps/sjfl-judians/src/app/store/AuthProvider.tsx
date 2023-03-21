@@ -1,13 +1,9 @@
 import React, { createContext, PropsWithChildren, useState } from 'react';
+import { IAuthContext } from '../models/auth.model';
 
-type AuthContext = {
-  isLoggedIn: boolean;
-  logIn: () => void;
-  logOut: () => void;
-};
-
-export const AuthContext = createContext<AuthContext>({
+export const AuthContext = createContext<IAuthContext>({
   isLoggedIn: false,
+  user: undefined,
   logIn: () => {
     return;
   },
@@ -22,7 +18,19 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const logOut = () => setLoggedIn(false);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, logIn, logOut }}>
+    <AuthContext.Provider
+      value={{
+        isLoggedIn,
+        logIn,
+        logOut,
+        user: {
+          uid: '',
+          name: 'Rahul Sharma',
+          email: 'rahul.sharma@gmail.com',
+          mobile: '+91 9988776655',
+        },
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

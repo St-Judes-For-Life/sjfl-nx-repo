@@ -1,4 +1,5 @@
 import { Trans } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 import CloseIcon from '@mui/icons-material/Close';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -23,10 +24,16 @@ type Props =
     };
 
 export const LanguageSelectionPage: FC<Props> = (props) => {
+  const lingui = useLingui();
   const { locale, setLocale } = useContext(LocaleContext);
-  const [selection, setSelection] = useState<Maybe<Locale>>(null);
+  const [selection, setSelection] = useState<Maybe<Locale>>(
+    locales.find((locale) => locale.code === lingui.i18n.locale)
+  );
+
   const localeSelectHandler = (locale: Locale) => {
-    setSelection(locale);
+    if (locale) {
+      setSelection(locale);
+    }
   };
   const continueHandler = () => {
     if (selection) {
@@ -60,7 +67,7 @@ export const LanguageSelectionPage: FC<Props> = (props) => {
       <div className="p-4">
         <ToggleButtonGroup
           orientation="vertical"
-          value={locale || selection}
+          value={selection || locale}
           color="primary"
           exclusive
           fullWidth={true}
