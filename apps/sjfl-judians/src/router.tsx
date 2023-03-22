@@ -1,42 +1,53 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { AppLayout } from './app/layout/AppLayout';
+import { AuthLandingPage } from './app/features/Auth/AuthLandingPage';
+import { LoginPage } from './app/features/Auth/LoginPage';
+import { RegisterPage } from './app/features/Auth/RegisterPage';
 import { AuthLayout } from './app/layout/AuthLayout';
 import { ProtectedRouteLayout } from './app/layout/ProtectedRouteLayout';
 import { RootLayout } from './app/layout/RootLayout';
 import { rootLoader } from './app/loaders/rootLoader';
-import { AuthLandingPage } from './app/features/Auth/AuthLandingPage';
-import { LoginPage } from './app/features/Auth/LoginPage';
-import { RegisterPage } from './app/features/Auth/RegisterPage';
-import { DashboardPage } from './app/features/Dashboard/DashboardPage';
-import { AidLandingPage } from './app/features/Aid/AidLandingPage';
-import { CounsellingLandingPage } from './app/features/Counselling/CounsellingLandingPage';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: '',
     element: <RootLayout />,
     loader: rootLoader,
     children: [
       {
-        path: '/',
+        path: '',
         element: <ProtectedRouteLayout />,
         children: [
           {
             path: '',
-            element: <AppLayout />,
+            lazy: () => import('./app/layout/AppLayout'),
             children: [
               {
                 path: '',
-                element: <DashboardPage />,
+                lazy: async () => {
+                  const { DashboardPage } = await import(
+                    './app/features/App/AppRouter'
+                  );
+                  return { Component: DashboardPage };
+                },
               },
               {
                 path: 'aid',
-                element: <AidLandingPage />,
+                lazy: async () => {
+                  const { AidLandingPage } = await import(
+                    './app/features/App/AppRouter'
+                  );
+                  return { Component: AidLandingPage };
+                },
               },
 
               {
                 path: 'counselling',
-                element: <CounsellingLandingPage />,
+                lazy: async () => {
+                  const { CounsellingLandingPage } = await import(
+                    './app/features/App/AppRouter'
+                  );
+                  return { Component: CounsellingLandingPage };
+                },
               },
             ],
           },

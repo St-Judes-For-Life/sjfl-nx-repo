@@ -10,7 +10,7 @@ import { SyntheticEvent, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { DrawerMenu } from '../components/DrawerMenu/DrawerMenu';
 
-export const AppLayout = () => {
+export const Component = () => {
   const [route, setRoute] = useState<string>('');
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const navigate = useNavigate();
@@ -70,3 +70,5 @@ export const AppLayout = () => {
     </>
   );
 };
+
+Component.displayName = 'AppLayout';
