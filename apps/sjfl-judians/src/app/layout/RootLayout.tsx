@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
+import { FullScreenSpinner } from '../components/Spinner/FullScreenSpinner';
 import { LanguageSelectionPage } from '../features/Common/LanguageSelectionPage';
-import SplashPage from '../features/Splash/SplashPage';
+import { SplashPage } from '../features/Splash/SplashPage';
 import { useLoadedQuery } from '../helpers/hooks/useLoadedQuery';
 import { rootDataQuery } from '../queries/rootQuery';
 import { LocaleContext } from '../store/InternationalizationProvider';
@@ -13,8 +14,20 @@ import { LocaleContext } from '../store/InternationalizationProvider';
 export const RootLayout = () => {
   const { locale } = useContext(LocaleContext);
   const query = useLoadedQuery(rootDataQuery.queryKey, rootDataQuery.queryFn);
+  const navigation = useNavigation();
+  const showSpinner = navigation.state === 'loading';
+
   if (query.isLoading) {
     return <SplashPage />;
   }
-  return locale ? <Outlet /> : <LanguageSelectionPage />;
+
+  if (!locale) {
+    return <LanguageSelectionPage />;
+  }
+
+  if (showSpinner) {
+    return <FullScreenSpinner />;
+  }
+
+  return <Outlet />;
 };

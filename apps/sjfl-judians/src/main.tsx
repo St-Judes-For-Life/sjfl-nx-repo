@@ -7,9 +7,9 @@ import { RouterProvider } from 'react-router-dom';
 import { AuthProvider } from './app/store/AuthProvider';
 import { InternationalizationProvider } from './app/store/InternationalizationProvider';
 import { ReactQueryProvider } from './app/store/ReactQueryProvider';
+import { capacitorInit } from './app/utils/capacitor';
 import { router } from './router';
 import { materialTheme } from './theme/material-theme';
-import { capacitorInit } from './app/utils/capacitor';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Logo } from '../../components/Logo/Logo';
 import { Page } from '../../components/Page/Page';
 
-export default function SplashPage() {
+export const SplashPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ export default function SplashPage() {
       )}
     </Page>
   );
-}
+};

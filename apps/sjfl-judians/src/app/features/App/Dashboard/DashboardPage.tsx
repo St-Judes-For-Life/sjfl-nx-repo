@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Page/Page';
-import { useLoggedInUser } from '../../helpers/hooks/useAuth';
+import { Logo } from '../../../components/Logo/Logo';
+import { Page } from '../../../components/Page/Page';
+import { useLoggedInUser } from '../../../helpers/hooks/useAuth';
 
 export const DashboardPage = () => {
   const user = useLoggedInUser();
@@ -45,3 +45,5 @@ export const DashboardPage = () => {
     </Page>
   );
 };
+
+DashboardPage.displayName = 'DashboardPage';
