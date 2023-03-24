@@ -1,10 +1,10 @@
-import Toolbar from '@mui/material/Toolbar';
-import AppBar from '@mui/material/AppBar';
-import { Page } from '../../../components/Page/Page';
-import IconButton from '@mui/material/IconButton';
-import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { Trans } from '@lingui/macro';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import { Page } from '../../../components/Containers/Page';
 
 export const AidLandingPage = () => {
   return (

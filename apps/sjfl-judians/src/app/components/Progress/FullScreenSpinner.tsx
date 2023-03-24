@@ -1,5 +1,5 @@
 import CircularProgress from '@mui/material/CircularProgress';
-import { Page } from '../Page/Page';
+import { Page } from '../Containers/Page';
 
 export const FullScreenSpinner = () => {
   return (

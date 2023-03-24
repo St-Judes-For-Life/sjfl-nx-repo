@@ -9,8 +9,8 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
 import { FC, useContext, useState } from 'react';
 
-import { BottomAppBar } from '../../components/BottomAppBar/BottomAppBar';
-import { Page } from '../../components/Page/Page';
+import { BottomAppBar } from '../../components/Containers/BottomAppBar';
+import { Page } from '../../components/Containers/Page';
 import { Locale } from '../../models/i18n.model';
 import { Maybe } from '../../models/maybe.model';
 import { LocaleContext } from '../../store/InternationalizationProvider';

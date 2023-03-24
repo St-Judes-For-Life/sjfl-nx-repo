@@ -11,7 +11,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Page/Page';
+import { Page } from '../../components/Containers/Page';
 import { useAuth } from '../../helpers/hooks/useAuth';
 
 export const LoginPage = () => {

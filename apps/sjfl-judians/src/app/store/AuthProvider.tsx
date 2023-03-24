@@ -1,5 +1,13 @@
-import React, { createContext, PropsWithChildren, useState } from 'react';
-import { IAuthContext } from '../models/auth.model';
+import React, {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
+import { IAuthContext, User } from '../models/auth.model';
+import { Maybe } from '../models/maybe.model';
+import { asyncStore } from '../utils/async-storage/async-storage';
 
 export const AuthContext = createContext<IAuthContext>({
   isLoggedIn: false,
@@ -14,8 +22,33 @@ export const AuthContext = createContext<IAuthContext>({
 
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
-  const logIn = () => setLoggedIn(true);
-  const logOut = () => setLoggedIn(false);
+  const [user, setUser] = useState<Maybe<User>>(undefined);
+
+  const logIn = useCallback(() => {
+    setLoggedIn(true);
+    const loggedInUser = {
+      uid: '',
+      name: 'Rahul Sharma',
+      email: 'rahul.sharma@gmail.com',
+      mobile: '+91 9988776655',
+    };
+    setUser(loggedInUser);
+    asyncStore.set('user', loggedInUser);
+  }, []);
+  const logOut = () => {
+    setLoggedIn(false);
+    setUser(undefined);
+    asyncStore.delete('user');
+  };
+
+  useEffect(() => {
+    (async () => {
+      const user = await asyncStore.get<Maybe<User>>('user');
+      if (user) {
+        logIn();
+      }
+    })();
+  }, [logIn]);
 
   return (
     <AuthContext.Provider
@@ -23,12 +56,7 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
         isLoggedIn,
         logIn,
         logOut,
-        user: {
-          uid: '',
-          name: 'Rahul Sharma',
-          email: 'rahul.sharma@gmail.com',
-          mobile: '+91 9988776655',
-        },
+        user,
       }}
     >
       {children}
