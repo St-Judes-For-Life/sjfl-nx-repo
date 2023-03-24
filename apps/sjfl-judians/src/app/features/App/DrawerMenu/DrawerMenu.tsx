@@ -6,11 +6,11 @@ import { Page } from '../../../components/Containers/Page';
 import { MenuLinks } from './MenuLinks';
 import { UserProfileLink } from './UserProfileLink';
 
-type Props = {
+type DrawerMenuProps = {
   onDismiss: () => void;
 };
 
-export const DrawerMenu: FC<Props> = ({ onDismiss }) => {
+export const DrawerMenu: FC<DrawerMenuProps> = ({ onDismiss }) => {
   const user = useLoggedInUser();
   return (
     <Page className="flex flex-col safe-area">

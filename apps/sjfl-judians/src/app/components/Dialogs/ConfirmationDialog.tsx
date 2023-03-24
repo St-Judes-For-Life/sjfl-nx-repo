@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Drawer, { DrawerProps } from '@mui/material/Drawer';
 import { FC, ReactElement } from 'react';
 
-type Props = {
+type ConfirmationDialogProps = {
   icon?: ReactElement;
   text: string;
   onCancel: () => void;
@@ -13,7 +13,7 @@ type Props = {
   confirmText?: string;
 };
 
-export const ConfirmationDialog: FC<DrawerProps & Props> = ({
+export const ConfirmationDialog: FC<DrawerProps & ConfirmationDialogProps> = ({
   icon,
   text,
   isDangerous = false,
@@ -30,7 +30,7 @@ export const ConfirmationDialog: FC<DrawerProps & Props> = ({
     <Drawer anchor="bottom" {...props}>
       <div className="p-4 flex flex-col gap-4 items-center">
         {icon}
-        {text}
+        <h4 className="text-lg font-semibold">{text}</h4>
         <div className="flex gap-4 w-full">
           <Button
             variant="outlined"
@@ -46,7 +46,7 @@ export const ConfirmationDialog: FC<DrawerProps & Props> = ({
             onClick={onConfirm}
             fullWidth
           >
-            <Trans id="ConfirmDialog.Confirm">{confirmText}</Trans>
+            {confirmText}
           </Button>
         </div>
       </div>

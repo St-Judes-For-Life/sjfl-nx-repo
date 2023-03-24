@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/features/Aid/AidLandingPage.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:18
 msgid "AidLanding.Header"
 msgstr ""
 
@@ -81,43 +81,51 @@ msgstr ""
 msgid "Auth.UID_Placeholder"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Counselling/CounsellingLandingPage.tsx:18
+#: apps/sjfl-judians/src/app/components/Dialogs/ConfirmationDialog.tsx:41
+msgid "ConfirmDialog.Cancel"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/components/Dialogs/ConfirmationDialog.tsx:27
+msgid "ConfirmDialog.Confirm"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/CounsellingLandingPage.tsx:18
 msgid "Counselling.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:33
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:33
 msgid "Dashboard.Aid"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:18
 msgid "Dashboard.Hi"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:42
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:42
 msgid "Dashboard.Schedule"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Dashboard/DashboardPage.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:21
 msgid "Dashboard.Welcome"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:27
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:39
 msgid "Drawer.ChangePassword"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:31
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:43
 msgid "Drawer.Help"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:42
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:54
 msgid "Drawer.Logout"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:23
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:35
 msgid "Drawer.Profile"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/components/DrawerMenu/MenuLinks.tsx:35
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:47
 msgid "Drawer.Settings"
 msgstr ""
 
@@ -128,3 +136,11 @@ msgstr "आगे बढ़ें"
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:60
 msgid "LanguageSelection.Header"
 msgstr "कृपया अपनी पसंदीदा भाषा चुनें"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:67
+msgid "LogOut.ConfirmBtn.Label"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:61
+msgid "LogOut.ConfirmText"
+msgstr ""

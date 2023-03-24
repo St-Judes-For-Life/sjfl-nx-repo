@@ -16,14 +16,16 @@ import { Maybe } from '../../models/maybe.model';
 import { LocaleContext } from '../../store/InternationalizationProvider';
 import { locales } from '../../utils/i18n';
 
-type Props =
+type LanguageSelectionPageProps =
   | { canDismiss?: undefined; onDismiss?: undefined }
   | {
       canDismiss: boolean;
       onDismiss: () => void;
     };
 
-export const LanguageSelectionPage: FC<Props> = (props) => {
+export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
+  props
+) => {
   const lingui = useLingui();
   const { locale, setLocale } = useContext(LocaleContext);
   const [selection, setSelection] = useState<Maybe<Locale>>(
