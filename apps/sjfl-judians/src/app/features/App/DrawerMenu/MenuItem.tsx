@@ -11,7 +11,7 @@ export const MenuItem: FC<PropsWithChildren<ButtonProps>> = ({
       color="secondary"
       className="!justify-start"
       fullWidth
-      sx={{ fontSize: '1.3rem' }}
+      sx={{ fontSize: '1.2rem' }}
       {...props}
     >
       {children}

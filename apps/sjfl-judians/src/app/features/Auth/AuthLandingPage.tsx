@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { LanguageButton } from '../../components/Language/LanguageButton';
 import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Page/Page';
+import { Page } from '../../components/Containers/Page';
 
 export const AuthLandingPage = () => {
   const navigate = useNavigate();

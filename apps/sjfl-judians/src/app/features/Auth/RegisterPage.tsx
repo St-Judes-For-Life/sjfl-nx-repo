@@ -6,7 +6,7 @@ import FormLabel from '@mui/material/FormLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Page/Page';
+import { Page } from '../../components/Containers/Page';
 
 export const RegisterPage = () => {
   const navigate = useNavigate();

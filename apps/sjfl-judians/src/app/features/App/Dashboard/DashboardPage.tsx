@@ -2,7 +2,7 @@ import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../../components/Logo/Logo';
-import { Page } from '../../../components/Page/Page';
+import { Page } from '../../../components/Containers/Page';
 import { useLoggedInUser } from '../../../helpers/hooks/useAuth';
 
 export const DashboardPage = () => {
@@ -45,5 +45,3 @@ export const DashboardPage = () => {
     </Page>
   );
 };
-
-DashboardPage.displayName = 'DashboardPage';

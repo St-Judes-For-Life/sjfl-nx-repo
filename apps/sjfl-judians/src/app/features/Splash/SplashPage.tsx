@@ -2,7 +2,7 @@ import { CircularProgress } from '@mui/material';
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Page/Page';
+import { Page } from '../../components/Containers/Page';
 
 export const SplashPage = () => {
   const [isLoading, setIsLoading] = useState(false);

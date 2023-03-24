@@ -9,9 +9,9 @@ import { queryClient } from '../../utils/react-query';
 
 /**
  * Wrapper around react-query useQuery which fetches query which have already been fetched from loaders
- * @param {TQueryKey} queryKey  key for the query
+ * @param {TQueryKey} queryKey key for the query
  * @param {QueryFunction<TQueryFnData, TQueryKey>} queryFn async function to fetch the data
- * @param {UseQueryOptions} options async function to fetch the data
+ * @param {UseQueryOptions} options query options
  */
 export function useLoadedQuery<
   TQueryFnData = unknown,

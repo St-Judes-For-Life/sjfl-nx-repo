@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '../helpers/hooks/useAuth';
 
 /**
@@ -8,9 +8,10 @@ import { useAuth } from '../helpers/hooks/useAuth';
  */
 export const ProtectedRouteLayout: FC = () => {
   const { isLoggedIn } = useAuth();
+  const location = useLocation();
 
   if (!isLoggedIn) {
-    return <Navigate to="/auth" replace={true} />;
+    return <Navigate to="/auth" state={{ from: location }} replace />;
   }
 
   return <Outlet></Outlet>;

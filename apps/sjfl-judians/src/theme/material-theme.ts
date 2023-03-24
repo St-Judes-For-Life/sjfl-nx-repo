@@ -123,6 +123,15 @@ export const materialTheme = createTheme({
         },
       },
     },
+    MuiDrawer: {
+      styleOverrides: {
+        paperAnchorBottom: {
+          paddingBottom: `env(safe-area-inset-bottom)`,
+          paddingLeft: `env(safe-area-inset-left)`,
+          paddingRight: `env(safe-area-inset-right)`,
+        },
+      },
+    },
   },
 });
 
@@ -141,6 +150,12 @@ declare module '@mui/material/styles' {
 // Update the Button's color prop options
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
+    tertiary: true;
+    accent: true;
+  }
+}
+declare module '@mui/material/IconButton' {
+  interface IconButtonPropsColorOverrides {
     tertiary: true;
     accent: true;
   }

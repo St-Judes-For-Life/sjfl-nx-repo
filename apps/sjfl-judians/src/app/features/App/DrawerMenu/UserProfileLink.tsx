@@ -1,8 +1,8 @@
-import { Divider } from '@mui/material';
+import { Button, Divider } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import classNames from 'classnames';
 import { FC } from 'react';
-import { User } from '../../models/auth.model';
+import { User } from '../../../models/auth.model';
 
 type Props = {
   user: User;
@@ -12,9 +12,9 @@ type Props = {
 export const UserProfileLink: FC<Props> = ({ user, className }) => {
   return (
     <section
-      className={classNames(className, 'flex flex-col justify-end pt-4')}
+      className={classNames(className, 'flex flex-col justify-end pt-2')}
     >
-      <button className="flex gap-4 p-5">
+      <Button className="flex gap-4 !p-3">
         <Avatar
           src={user.imageUrl}
           sx={{ width: '6rem', height: '6rem', fontSize: '3rem' }}
@@ -28,7 +28,7 @@ export const UserProfileLink: FC<Props> = ({ user, className }) => {
           )}
           <h4 className="text-tertiary">{user.mobile}</h4>
         </span>
-      </button>
+      </Button>
       <Divider variant="middle"></Divider>
     </section>
   );

@@ -8,7 +8,7 @@ import Paper from '@mui/material/Paper';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import { SyntheticEvent, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { DrawerMenu } from '../components/DrawerMenu/DrawerMenu';
+import { DrawerMenu } from '../features/App/DrawerMenu/DrawerMenu';
 
 export const Component = () => {
   const [route, setRoute] = useState<string>('');

@@ -1,6 +1,6 @@
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
-import { Page } from '../../../components/Page/Page';
+import { Page } from '../../../components/Containers/Page';
 import IconButton from '@mui/material/IconButton';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';

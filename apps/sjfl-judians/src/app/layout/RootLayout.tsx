@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Outlet, useNavigation } from 'react-router-dom';
-import { FullScreenSpinner } from '../components/Spinner/FullScreenSpinner';
+import { FullScreenSpinner } from '../components/Progress/FullScreenSpinner';
 import { LanguageSelectionPage } from '../features/Common/LanguageSelectionPage';
 import { SplashPage } from '../features/Splash/SplashPage';
 import { useLoadedQuery } from '../helpers/hooks/useLoadedQuery';
