@@ -1,15 +1,19 @@
-import { Button, Divider } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import classNames from 'classnames';
 import { FC } from 'react';
-import { User } from '../../../models/auth.model';
+import { User } from '../../../shared/models/auth.model';
 
-type Props = {
+type UserProfileLinkProps = {
   user: User;
   className?: string;
 };
 
-export const UserProfileLink: FC<Props> = ({ user, className }) => {
+export const UserProfileLink: FC<UserProfileLinkProps> = ({
+  user,
+  className,
+}) => {
   return (
     <section
       className={classNames(className, 'flex flex-col justify-end pt-2')}

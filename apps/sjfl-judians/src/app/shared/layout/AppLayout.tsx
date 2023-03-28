@@ -7,17 +7,24 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import { SyntheticEvent, useEffect, useState } from 'react';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { DrawerMenu } from '../features/App/DrawerMenu/DrawerMenu';
+import {
+  Outlet,
+  useLocation,
+  useNavigate,
+  useNavigation,
+} from 'react-router-dom';
+import { DrawerMenu } from '../../features/App/DrawerMenu/DrawerMenu';
+import { FullScreenSpinner } from '../components/progress/FullScreenSpinner';
 
 export const Component = () => {
+  const location = useLocation();
+
   const [route, setRoute] = useState<string>('');
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
-    setRoute(location.pathname.replace('/', ''));
+    setRoute(location.pathname.split('/')[1]);
   }, [location]);
 
   const onRouteChange = (_event: SyntheticEvent, route: string) => {
@@ -32,9 +39,12 @@ export const Component = () => {
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
 
+  const navigation = useNavigation();
+  const showSpinner = navigation.state === 'loading';
+
   return (
     <>
-      <Outlet></Outlet>
+      {showSpinner ? <FullScreenSpinner /> : <Outlet />}
       <Paper
         component="footer"
         className="fixed bottom-0 left-0 right-0"

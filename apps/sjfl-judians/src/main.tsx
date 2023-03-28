@@ -3,12 +3,11 @@ import * as ReactDOM from 'react-dom/client';
 import './styles.scss';
 
 import { ThemeProvider } from '@mui/material';
-import { RouterProvider } from 'react-router-dom';
-import { AuthProvider } from './app/store/AuthProvider';
-import { InternationalizationProvider } from './app/store/InternationalizationProvider';
-import { ReactQueryProvider } from './app/store/ReactQueryProvider';
-import { capacitorInit } from './app/utils/capacitor';
-import { router } from './router';
+import { AuthProvider } from './app/shared/store/AuthProvider';
+import { InternationalizationProvider } from './app/shared/store/InternationalizationProvider';
+import { ReactQueryProvider } from './app/shared/store/ReactQueryProvider';
+import { capacitorInit } from './app/shared/utils/capacitor';
+import { Router } from './router/Router';
 import { materialTheme } from './theme/material-theme';
 
 const root = ReactDOM.createRoot(
@@ -20,7 +19,7 @@ root.render(
       <ReactQueryProvider>
         <ThemeProvider theme={materialTheme}>
           <AuthProvider>
-            <RouterProvider router={router} />
+            <Router />
           </AuthProvider>
         </ThemeProvider>
       </ReactQueryProvider>

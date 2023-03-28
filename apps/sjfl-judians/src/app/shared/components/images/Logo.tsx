@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import { LayoutGroup, motion } from 'framer-motion';
 import { FC } from 'react';
-import logo from '../../../assets/sjfl_logo.png';
+import logo from '../../../../assets/sjfl_logo.png';
 
 const logoVariations = cva('', {
   variants: {

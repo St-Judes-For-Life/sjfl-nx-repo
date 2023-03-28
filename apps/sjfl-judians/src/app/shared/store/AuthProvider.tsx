@@ -1,5 +1,6 @@
-import React, {
+import {
   createContext,
+  FC,
   PropsWithChildren,
   useCallback,
   useEffect,
@@ -20,7 +21,7 @@ export const AuthContext = createContext<IAuthContext>({
   },
 });
 
-export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
+export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState<Maybe<User>>(undefined);
 

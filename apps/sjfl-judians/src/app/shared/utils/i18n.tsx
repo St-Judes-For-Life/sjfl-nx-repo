@@ -63,7 +63,7 @@ i18n.loadLocaleData({
  */
 export async function activateLocale(locale: string) {
   const { messages } = await import(
-    `@lingui/loader!../../locales/${locale}/messages.po`
+    `@lingui/loader!../../../locales/${locale}/messages.po`
   );
   i18n.load(locale, messages);
   i18n.activate(locale);

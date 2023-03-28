@@ -77,8 +77,8 @@ export const materialTheme = createTheme({
       defaultProps: {},
       styleOverrides: {
         root: {
-          paddingTop: `env(safe-area-inset-bottom)`,
-          paddingBottom: `env(safe-area-inset-top)`,
+          paddingTop: `max(1.5rem, env(safe-area-inset-bottom))`,
+          paddingBottom: `max(1.5rem, env(safe-area-inset-top))`,
           paddingLeft: `env(safe-area-inset-left)`,
           paddingRight: `env(safe-area-inset-right)`,
         },

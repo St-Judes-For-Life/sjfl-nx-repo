@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { LanguageButton } from '../../components/Language/LanguageButton';
-import { Logo } from '../../components/Logo/Logo';
-import { Page } from '../../components/Containers/Page';
+import { LanguageButton } from '../../shared/components/language/LanguageButton';
+import { Logo } from '../../shared/components/images/Logo';
+import { Page } from '../../shared/components/containers/Page';
 
 export const AuthLandingPage = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const AuthLandingPage = () => {
       <section className="grid gap-5 w-full px-8 mb-10">
         <Button
           size="large"
-          fullWidth={true}
+          fullWidth
           variant="contained"
           color="primary"
           onClick={() => {
