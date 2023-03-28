@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '../../../components/Logo/Logo';
-import { Page } from '../../../components/Containers/Page';
-import { useLoggedInUser } from '../../../helpers/hooks/useAuth';
+import { Logo } from '../../../shared/components/images/Logo';
+import { Page } from '../../../shared/components/containers/Page';
+import { useLoggedInUser } from '../../../shared/helpers/hooks/useAuth';
 
 export const DashboardPage = () => {
   const user = useLoggedInUser();

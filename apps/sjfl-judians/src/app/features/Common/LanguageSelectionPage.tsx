@@ -9,12 +9,13 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
 import { FC, useContext, useState } from 'react';
 
-import { BottomAppBar } from '../../components/Containers/BottomAppBar';
-import { Page } from '../../components/Containers/Page';
-import { Locale } from '../../models/i18n.model';
-import { Maybe } from '../../models/maybe.model';
-import { LocaleContext } from '../../store/InternationalizationProvider';
-import { locales } from '../../utils/i18n';
+import { BottomAppBar } from '../../shared/components/containers/BottomAppBar';
+import { Page } from '../../shared/components/containers/Page';
+import { Locale } from '../../shared/models/i18n.model';
+import { Maybe } from '../../shared/models/maybe.model';
+
+import { LocaleContext } from '../../shared/store/InternationalizationProvider';
+import { locales } from '../../shared/utils/i18n';
 
 type LanguageSelectionPageProps =
   | { canDismiss?: undefined; onDismiss?: undefined }

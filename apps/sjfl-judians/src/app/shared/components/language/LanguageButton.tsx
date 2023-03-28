@@ -2,7 +2,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useContext, useState } from 'react';
-import { LanguageSelectionPage } from '../../features/Common/LanguageSelectionPage';
+import { LanguageSelectionPage } from '../../../features/Common/LanguageSelectionPage';
 import { SlideUp } from '../../helpers/transitions/SlideUp';
 import { LocaleContext } from '../../store/InternationalizationProvider';
 

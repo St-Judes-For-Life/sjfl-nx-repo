@@ -13,8 +13,16 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:46
+msgid "AidLanding.Completed"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:29
 msgid "AidLanding.Header"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:39
+msgid "AidLanding.InProgress"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
@@ -131,11 +139,11 @@ msgstr ""
 msgid "Drawer.Settings"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:97
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:99
 msgid "LanguageSelection.Continue"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:60
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:62
 msgid "LanguageSelection.Header"
 msgstr ""
 

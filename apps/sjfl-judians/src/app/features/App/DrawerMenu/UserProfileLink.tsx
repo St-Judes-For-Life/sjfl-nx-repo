@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import classNames from 'classnames';
 import { FC } from 'react';
-import { User } from '../../../models/auth.model';
+import { User } from '../../../shared/models/auth.model';
 
 type UserProfileLinkProps = {
   user: User;

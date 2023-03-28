@@ -6,11 +6,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 import { MenuItem } from './MenuItem';
 import Divider from '@mui/material/Divider';
-import { useAuth } from '../../../helpers/hooks/useAuth';
 import { t, Trans } from '@lingui/macro';
-import { ConfirmationDialog } from '../../../components/Dialogs/ConfirmationDialog';
+import { ConfirmationDialog } from '../../../shared/components/dialogs/ConfirmationDialog';
 import { useState } from 'react';
 import { useLingui } from '@lingui/react';
+import { useAuth } from '../../../shared/helpers/hooks/useAuth';
 
 export const MenuLinks = () => {
   const { logOut } = useAuth();
