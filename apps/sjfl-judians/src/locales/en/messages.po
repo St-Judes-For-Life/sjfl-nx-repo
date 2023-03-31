@@ -11,15 +11,28 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:46
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:10
+msgid "Aid.Completed.NoResults"
+msgstr "You don't have any completed requests"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:10
+msgid "Aid.InProgress.NoResults"
+msgstr "You don't have any in progress requests"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
+msgid "Aid.RaiseRequest"
+msgstr "RAISE A REQUEST"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:44
 msgid "AidLanding.Completed"
 msgstr "Completed"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:29
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:22
 msgid "AidLanding.Header"
 msgstr "Request Aid"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/AidLandingPage.tsx:39
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:34
 msgid "AidLanding.InProgress"
 msgstr "In Progress"
 
@@ -89,17 +102,37 @@ msgstr "UID"
 msgid "Auth.UID_Placeholder"
 msgstr "Enter your UID"
 
-#: apps/sjfl-judians/src/app/components/Dialogs/ConfirmationDialog.tsx:41
+#: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
 msgid "ConfirmDialog.Cancel"
 msgstr "CANCEL"
 
-#: apps/sjfl-judians/src/app/components/Dialogs/ConfirmationDialog.tsx:27
+#: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:27
 msgid "ConfirmDialog.Confirm"
 msgstr "CONFIRM"
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/CounsellingLandingPage.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:23
 msgid "Counselling.Header"
 msgstr "Counselling"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:13
+msgid "Counselling.Upcoming.NoResults"
+msgstr "You don't have any session scheduled"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:20
+msgid "Counselling.Upcoming.RaiseRequest"
+msgstr "SCHEDULE A SESSION"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/PastCounselling.tsx:11
+msgid "Counselling.past.NoResults"
+msgstr "You don't have any past sessions"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:45
+msgid "CounsellingLanding.Past"
+msgstr "Past"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:35
+msgid "CounsellingLanding.Upcoming"
+msgstr "Upcoming"
 
 #: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:33
 msgid "Dashboard.Aid"
@@ -137,11 +170,11 @@ msgstr "Profile"
 msgid "Drawer.Settings"
 msgstr "Settings"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:99
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:100
 msgid "LanguageSelection.Continue"
 msgstr "CONTINUE"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:62
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:63
 msgid "LanguageSelection.Header"
 msgstr "Select your preferred language"
 
@@ -152,3 +185,7 @@ msgstr "SIGN OUT"
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:61
 msgid "LogOut.ConfirmText"
 msgstr "Are you sure you want to log out?"
+
+#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:21
+msgid "NoResults.DefaultMessage"
+msgstr "No results found"
