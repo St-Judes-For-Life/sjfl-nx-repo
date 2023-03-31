@@ -84,6 +84,30 @@ export const router = createBrowserRouter([
                       );
                       return { Component: CounsellingLandingPage };
                     },
+                    children: [
+                      {
+                        path: '',
+                        element: <Navigate to="upcoming" replace />,
+                      },
+                      {
+                        path: 'upcoming',
+                        lazy: async () => {
+                          const { UpcomingCounselling } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: UpcomingCounselling };
+                        },
+                      },
+                      {
+                        path: 'past',
+                        lazy: async () => {
+                          const { PastCounselling } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: PastCounselling };
+                        },
+                      }
+                    ],
                   },
                 ],
               },
