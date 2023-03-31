@@ -2,7 +2,6 @@ import {
   createContext,
   FC,
   PropsWithChildren,
-  useCallback,
   useEffect,
   useState,
 } from 'react';
@@ -25,7 +24,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState<Maybe<User>>(undefined);
 
-  const logIn = useCallback(() => {
+  const logIn = () => {
     setLoggedIn(true);
     const loggedInUser = {
       uid: '',
@@ -35,7 +34,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     };
     setUser(loggedInUser);
     asyncStore.set('user', loggedInUser);
-  }, []);
+  };
   const logOut = () => {
     setLoggedIn(false);
     setUser(undefined);
@@ -49,7 +48,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
         logIn();
       }
     })();
-  }, [logIn]);
+  }, []);
 
   return (
     <AuthContext.Provider

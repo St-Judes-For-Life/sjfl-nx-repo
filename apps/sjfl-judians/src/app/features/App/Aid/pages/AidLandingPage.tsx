@@ -5,12 +5,18 @@ import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { FilterChip } from '../../../../shared/components/containers/FilterChip';
 import { Page } from '../../../../shared/components/containers/Page';
 
 export const AidLandingPage = () => {
   const { i18n } = useLingui();
+  const navigate = useNavigate();
+
+  const createRequestHandler = () => {
+    navigate('../editor/create');
+  };
+
   return (
     <Page className="flex flex-col">
       <AppBar position="sticky">
@@ -21,7 +27,7 @@ export const AidLandingPage = () => {
           <h1 className="flex-grow">
             <Trans id="AidLanding.Header">Request Aid</Trans>
           </h1>
-          <IconButton size="large" edge="end">
+          <IconButton size="large" edge="end" onClick={createRequestHandler}>
             <AddCircleOutlineIcon />
           </IconButton>
         </Toolbar>

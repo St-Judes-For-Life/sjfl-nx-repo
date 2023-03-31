@@ -13,10 +13,10 @@ import {
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
-import { DrawerMenu } from '../../features/App/DrawerMenu/DrawerMenu';
-import { FullScreenSpinner } from '../components/progress/FullScreenSpinner';
+import { DrawerMenu } from './DrawerMenu/DrawerMenu';
+import { FullScreenSpinner } from '../../shared/components/progress/FullScreenSpinner';
 
-export const Component = () => {
+export const AppLayout = () => {
   const location = useLocation();
 
   const [route, setRoute] = useState<string>('');
@@ -80,5 +80,3 @@ export const Component = () => {
     </>
   );
 };
-
-Component.displayName = 'AppLayout';

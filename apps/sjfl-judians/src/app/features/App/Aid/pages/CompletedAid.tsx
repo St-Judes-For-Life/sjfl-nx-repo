@@ -1,9 +1,16 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
+import { useNavigate } from 'react-router-dom';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
 
 export const CompletedAid = () => {
   const { i18n } = useLingui();
+  const navigate = useNavigate();
+
+  const createRequestHandler = () => {
+    navigate('../../editor/create');
+  };
+
   return (
     <NoResults
       message={i18n._(
@@ -19,7 +26,7 @@ export const CompletedAid = () => {
           message: 'RAISE A REQUEST',
         })
       )}
-      onPrimaryAction={() => true}
+      onPrimaryAction={createRequestHandler}
     />
   );
 };

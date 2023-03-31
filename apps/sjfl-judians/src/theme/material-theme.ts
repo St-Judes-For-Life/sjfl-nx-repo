@@ -132,6 +132,29 @@ export const materialTheme = createTheme({
         },
       },
     },
+    MuiStep: {
+      styleOverrides: {
+        root: {
+          fontSize: 8,
+        },
+      },
+    },
+    MuiStepper: {
+      styleOverrides: {
+        root: {
+          fontSize: 8,
+        },
+      },
+    },
+    MuiStepLabel: {
+      styleOverrides: {
+        root: {
+          '& > .MuiStepLabel-labelContainer > .MuiStepLabel-label': {
+            fontSize: 12,
+          },
+        },
+      },
+    },
   },
 });
 

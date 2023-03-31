@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../helpers/hooks/useAuth';
+import { useAuth } from '../../shared/hooks/useAuth';
 
 /**
  * A layout component that redirects the user to the home page if they are logged in.

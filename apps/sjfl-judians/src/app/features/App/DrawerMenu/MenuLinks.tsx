@@ -10,7 +10,7 @@ import { t, Trans } from '@lingui/macro';
 import { ConfirmationDialog } from '../../../shared/components/dialogs/ConfirmationDialog';
 import { useState } from 'react';
 import { useLingui } from '@lingui/react';
-import { useAuth } from '../../../shared/helpers/hooks/useAuth';
+import { useAuth } from '../../../shared/hooks/useAuth';
 
 export const MenuLinks = () => {
   const { logOut } = useAuth();

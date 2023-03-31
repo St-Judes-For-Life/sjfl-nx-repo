@@ -1,4 +1,4 @@
 export * from './Dashboard/DashboardPage';
 export * from './Aid/pages/AidLandingPage';
 export * from './Counselling/CounsellingLandingPage';
-export * from '../../shared/layout/AppLayout';
+export * from './AppLayout';

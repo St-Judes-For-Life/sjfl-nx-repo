@@ -1,9 +1,8 @@
-import { AnimatePresence } from 'framer-motion';
 import { useContext } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { LanguageSelectionPage } from '../../features/Common/LanguageSelectionPage';
 import { SplashPage } from '../../features/Splash/SplashPage';
-import { useLoadedQuery } from '../helpers/hooks/useLoadedQuery';
+import { useLoadedQuery } from '../hooks/useLoadedQuery';
 import { rootDataQuery } from '../queries/rootQuery';
 import { LocaleContext } from '../store/InternationalizationProvider';
 
@@ -15,7 +14,6 @@ export const RootLayout = () => {
   const { locale } = useContext(LocaleContext);
   const query = useLoadedQuery(rootDataQuery.queryKey, rootDataQuery.queryFn);
 
-  const location = useLocation();
   if (query.isLoading) {
     return <SplashPage />;
   }
@@ -24,9 +22,5 @@ export const RootLayout = () => {
     return <LanguageSelectionPage />;
   }
 
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Outlet key={location.pathname} />̵
-    </AnimatePresence>
-  );
+  return <Outlet />;
 };
