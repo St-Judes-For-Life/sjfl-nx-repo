@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from 'react-router-dom';
+import { createBrowserRouter, Navigate, redirect } from 'react-router-dom';
 import { ProtectedRouteLayout } from '../app/shared/layout/ProtectedRouteLayout';
 import { RootLayout } from '../app/shared/layout/RootLayout';
 import { rootLoader } from '../app/shared/loaders/rootLoader';
@@ -110,6 +110,30 @@ export const router = createBrowserRouter([
                       );
                       return { Component: CounsellingLandingPage };
                     },
+                    children: [
+                      {
+                        path: '',
+                        element: <Navigate to="upcoming" replace />,
+                      },
+                      {
+                        path: 'upcoming',
+                        lazy: async () => {
+                          const { UpcomingCounselling } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: UpcomingCounselling };
+                        },
+                      },
+                      {
+                        path: 'past',
+                        lazy: async () => {
+                          const { PastCounselling } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: PastCounselling };
+                        },
+                      },
+                    ],
                   },
                 ],
               },
