@@ -13,7 +13,7 @@ import { FilterChip } from '../../../../shared/components/containers/FilterChip'
 export const CounsellingLandingPage = () => {
   const { i18n } = useLingui();
   return (
-    <Page>
+    <Page className="flex flex-col">
       <AppBar position="sticky">
         <Toolbar>
           <IconButton size="large" edge="start">

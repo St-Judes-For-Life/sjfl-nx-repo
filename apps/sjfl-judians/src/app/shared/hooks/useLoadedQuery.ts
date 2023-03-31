@@ -5,7 +5,7 @@ import {
   UseQueryOptions,
   UseQueryResult,
 } from '@tanstack/react-query';
-import { queryClient } from '../../utils/react-query';
+import { queryClient } from '../utils/react-query';
 
 /**
  * Wrapper around react-query useQuery which fetches query which have already been fetched from loaders

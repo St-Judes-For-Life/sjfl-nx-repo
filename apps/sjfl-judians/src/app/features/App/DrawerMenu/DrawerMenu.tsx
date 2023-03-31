@@ -1,7 +1,7 @@
 import ClearIcon from '@mui/icons-material/Clear';
 import IconButton from '@mui/material/IconButton';
 import { FC } from 'react';
-import { useLoggedInUser } from '../../../shared/helpers/hooks/useAuth';
+import { useLoggedInUser } from '../../../shared/hooks/useAuth';
 import { MenuLinks } from './MenuLinks';
 import { UserProfileLink } from './UserProfileLink';
 

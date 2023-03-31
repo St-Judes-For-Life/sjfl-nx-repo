@@ -5,7 +5,6 @@ import {
   createContext,
   FC,
   PropsWithChildren,
-  useCallback,
   useEffect,
   useState,
 } from 'react';
@@ -27,10 +26,10 @@ export const InternationalizationProvider: FC<PropsWithChildren> = ({
   children,
 }: PropsWithChildren) => {
   const [locale, setLocale] = useState<Maybe<Locale>>(undefined);
-  const setLocaleCode = useCallback((code: Locale) => {
+  const setLocaleCode = (code: Locale) => {
     setLocale(code);
     persistLocale(code);
-  }, []);
+  };
 
   useEffect(() => {
     fetchSavedLocale().then(async (savedLocale) => {

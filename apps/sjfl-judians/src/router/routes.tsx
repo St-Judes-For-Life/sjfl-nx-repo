@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter, Navigate, redirect } from 'react-router-dom';
 import { ProtectedRouteLayout } from '../app/shared/layout/ProtectedRouteLayout';
 import { RootLayout } from '../app/shared/layout/RootLayout';
 import { rootLoader } from '../app/shared/loaders/rootLoader';
@@ -15,7 +15,10 @@ export const router = createBrowserRouter([
         children: [
           {
             path: '',
-            lazy: () => import('../app/features/App'),
+            lazy: async () => {
+              const { AppLayout } = await import('../app/features/App');
+              return { Component: AppLayout };
+            },
             children: [
               {
                 path: '',
@@ -29,7 +32,36 @@ export const router = createBrowserRouter([
                 children: [
                   {
                     path: '',
-                    element: <Navigate to="requests" replace />,
+                    loader: () => redirect('requests'),
+                  },
+                  {
+                    path: 'editor',
+                    lazy: async () => {
+                      const { AidRequestEditorLayout } = await import(
+                        '../app/features/App/Aid'
+                      );
+                      return { Component: AidRequestEditorLayout };
+                    },
+                    children: [
+                      {
+                        path: 'create',
+                        lazy: async () => {
+                          const { AidRequestFlow } = await import(
+                            '../app/features/App/Aid'
+                          );
+                          return { Component: AidRequestFlow };
+                        },
+                      },
+                      {
+                        path: ':id',
+                        lazy: async () => {
+                          const { AidRequestFlow } = await import(
+                            '../app/features/App/Aid'
+                          );
+                          return { Component: AidRequestFlow };
+                        },
+                      },
+                    ],
                   },
                   {
                     path: 'requests',
@@ -42,7 +74,7 @@ export const router = createBrowserRouter([
                     children: [
                       {
                         path: '',
-                        element: <Navigate to="in-progress" replace />,
+                        loader: () => redirect('in-progress'),
                       },
                       {
                         path: 'in-progress',
@@ -61,12 +93,6 @@ export const router = createBrowserRouter([
                           );
                           return { Component: CompletedAid };
                         },
-                      },
-                      {
-                        path: 'create',
-                      },
-                      {
-                        path: 'edit/:id',
                       },
                     ],
                   },
@@ -106,7 +132,7 @@ export const router = createBrowserRouter([
                           );
                           return { Component: PastCounselling };
                         },
-                      }
+                      },
                     ],
                   },
                 ],

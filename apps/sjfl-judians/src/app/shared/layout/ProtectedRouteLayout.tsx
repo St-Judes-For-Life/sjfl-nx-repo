@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAuth } from '../helpers/hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
 
 /**
  * A route layout that requires the user to be logged in.
@@ -14,5 +14,5 @@ export const ProtectedRouteLayout: FC = () => {
     return <Navigate to="/auth" state={{ from: location }} replace />;
   }
 
-  return <Outlet></Outlet>;
+  return <Outlet />;
 };

@@ -3,13 +3,17 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../../shared/components/images/Logo';
 import { Page } from '../../../shared/components/containers/Page';
-import { useLoggedInUser } from '../../../shared/helpers/hooks/useAuth';
+import { useLoggedInUser } from '../../../shared/hooks/useAuth';
 
 export const DashboardPage = () => {
   const user = useLoggedInUser();
   const firstName = user?.name.split(' ')[0];
 
   const navigate = useNavigate();
+
+  const createRequestHandler = () => {
+    navigate('./aid/editor/create');
+  };
 
   return (
     <Page className="flex flex-col">
@@ -28,7 +32,7 @@ export const DashboardPage = () => {
           fullWidth={true}
           variant="contained"
           color="primary"
-          onClick={() => navigate('aid')}
+          onClick={createRequestHandler}
         >
           <Trans id="Dashboard.Aid">REQUEST FOR AID</Trans>
         </Button>

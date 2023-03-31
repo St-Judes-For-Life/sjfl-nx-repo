@@ -1,7 +1,6 @@
-import { t } from "@lingui/macro";
-import { useLingui } from "@lingui/react";
-
-import { NoResults } from "apps/sjfl-judians/src/app/shared/components/error-states/NoResults";
+import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
+import { NoResults } from '../../../../shared/components/error-states/NoResults';
 
 export const PastCounselling = () => {
   const { i18n } = useLingui();

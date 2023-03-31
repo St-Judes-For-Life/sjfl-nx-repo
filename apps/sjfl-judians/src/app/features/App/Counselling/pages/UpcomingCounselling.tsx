@@ -1,12 +1,10 @@
-import { t } from "@lingui/macro";
-import { useLingui } from "@lingui/react";
+import { t } from '@lingui/macro';
+import { useLingui } from '@lingui/react';
 
-import { NoResults } from "apps/sjfl-judians/src/app/shared/components/error-states/NoResults";
-import { useNavigate } from "react-router-dom";
+import { NoResults } from '../../../../shared/components/error-states/NoResults';
 
 export const UpcomingCounselling = () => {
   const { i18n } = useLingui();
-  const navigate = useNavigate();
   return (
     <NoResults
       message={i18n._(

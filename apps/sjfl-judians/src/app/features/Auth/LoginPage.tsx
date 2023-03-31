@@ -12,7 +12,7 @@ import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../shared/components/images/Logo';
 import { Page } from '../../shared/components/containers/Page';
-import { useAuth } from '../../shared/helpers/hooks/useAuth';
+import { useAuth } from '../../shared/hooks/useAuth';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
