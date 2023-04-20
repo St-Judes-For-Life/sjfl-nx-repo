@@ -40,11 +40,11 @@ export const AidRequestProvider: FC<PropsWithChildren> = ({ children }) => {
     setStep((step) => step - 1);
   };
 
-  const nextStep = (request: Partial<AidRequest>) => {
+  const nextStep = (updatedRequest: Partial<AidRequest>) => {
     if (step === RequestAidSteps.complete) {
       return;
     }
-    setRequest(request);
+    setRequest((request) => ({ ...request, ...updatedRequest }));
     setStep((step) => step + 1);
   };
 

@@ -15,6 +15,7 @@ import {
 } from 'react-router-dom';
 import { DrawerMenu } from './DrawerMenu/DrawerMenu';
 import { FullScreenSpinner } from '../../shared/components/progress/FullScreenSpinner';
+import { AnimatePresence } from 'framer-motion';
 
 export const AppLayout = () => {
   const location = useLocation();
@@ -44,7 +45,13 @@ export const AppLayout = () => {
 
   return (
     <>
-      {showSpinner ? <FullScreenSpinner /> : <Outlet />}
+      {showSpinner ? (
+        <FullScreenSpinner />
+      ) : (
+        <AnimatePresence mode="wait">
+          <Outlet key={location.pathname} />
+        </AnimatePresence>
+      )}
       <Paper
         component="footer"
         className="fixed bottom-0 left-0 right-0"

@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate, redirect } from 'react-router-dom';
 import { ProtectedRouteLayout } from '../app/shared/layout/ProtectedRouteLayout';
 import { RootLayout } from '../app/shared/layout/RootLayout';
 import { rootLoader } from '../app/shared/loaders/rootLoader';
+import { workflowConfigLoader } from '../app/features/App/Aid/loaders/workflow-config.loader';
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
               },
               {
                 path: 'aid',
+                loader: workflowConfigLoader,
                 children: [
                   {
                     path: '',

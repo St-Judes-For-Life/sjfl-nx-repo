@@ -26,7 +26,7 @@ export const DashboardPage = () => {
         </h2>
         <Logo></Logo>
       </div>
-      <div className="flex-1 flex flex-col justify-end px-8 gap-4">
+      <div className="flex-1 flex flex-col justify-end px-6 gap-4">
         <Button
           size="large"
           fullWidth={true}

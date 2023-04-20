@@ -44,7 +44,7 @@ export const AidRequestHeader = () => {
         return (
           <h1 className="flex-grow">
             <Trans id="SelectAidNature.Header">
-              {aidRequest.request?.stream} Aid
+              {aidRequest.request?.stream?.name} Aid
             </Trans>
           </h1>
         );
@@ -56,10 +56,10 @@ export const AidRequestHeader = () => {
           <span className="flex-grow">
             <h1 className="text-sm">
               <Trans id="SelectAidNature.Header">
-                {aidRequest.request?.stream} Aid
+                {aidRequest.request?.stream?.name} Aid
               </Trans>
             </h1>
-            <h3 className="text-xs">{aidRequest.request?.nature}</h3>
+            <h3 className="text-xs">{aidRequest.request?.nature?.name}</h3>
           </span>
         );
     }

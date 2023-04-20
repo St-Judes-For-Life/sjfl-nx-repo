@@ -1,0 +1,181 @@
+{
+  "streams": [
+    {
+      "id": 1,
+      "name": "Education",
+      "categories": [
+        {
+          "id": 1,
+          "name": "School / College Fee"
+        },
+        {
+          "id": 2,
+          "name": "Uniform / Stationery / Bags"
+        },
+        {
+          "id": 3,
+          "name": "Books"
+        },
+        {
+          "id": 4,
+          "name": "Accommodation Charges"
+        },
+        {
+          "id": 5,
+          "name": "Transportation"
+        },
+        {
+          "id": 6,
+          "name": "Electronic Devices"
+        },
+        {
+          "id": 7,
+          "name": "Academic Courses"
+        }
+      ],
+      "additionalInformation": [
+        {
+          "id": 1,
+          "label": "Class",
+          "type": "string",
+          "placeholder": ""
+        },
+        {
+          "id": 2,
+          "label": "School",
+          "type": "string",
+          "placeholder": ""
+        },
+        {
+          "id": 3,
+          "label": "School Type",
+          "type": "select",
+          "options": ["Private School", "Govt School"],
+          "placeholder": ""
+        },
+        {
+          "id": 4,
+          "label": "Total Fees",
+          "type": "currency",
+          "placeholder": ""
+        },
+        {
+          "id": 5,
+          "label": "Amount Required",
+          "type": "currency",
+          "placeholder": ""
+        }
+      ],
+      "documents": [
+        {
+          "id": 1,
+          "documentName": "Letter from School"
+        },
+        {
+          "id": 2,
+          "documentName": "Marksheet"
+        },
+        {
+          "id": 3,
+          "documentName": "Attendance Record"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Health",
+      "categories": [
+        {
+          "id": 8,
+          "name": "Financial Support for treatment"
+        },
+        {
+          "id": 9,
+          "name": "Coordination with the Oncology Center"
+        }
+      ],
+      "additionalInformation": [
+        {
+          "id": 6,
+          "label": "Name of the hospital",
+          "type": "string",
+          "placeholder": ""
+        },
+        {
+          "id": 7,
+          "label": "Describe your ailment",
+          "type": "string",
+          "placeholder": ""
+        }
+      ],
+      "documents": [
+        {
+          "id": 4,
+          "documentName": "Diagnosis from the hospital"
+        },
+        {
+          "id": 5,
+          "documentName": "Bills (Upto 5)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Career Guidance",
+      "categories": [
+        {
+          "id": 10,
+          "name": "Career Counselling"
+        }
+      ],
+      "additionalInformation": [
+        {
+          "id": 8,
+          "label": "Class",
+          "type": "string",
+          "placeholder": ""
+        },
+        {
+          "id": 9,
+          "label": "Aspiration",
+          "type": "string",
+          "placeholder": ""
+        }
+      ],
+      "documents": []
+    },
+    {
+      "id": 4,
+      "name": "Counselling",
+      "categories": [
+        {
+          "id": 11,
+          "name": "Individual Session"
+        },
+        {
+          "id": 12,
+          "name": "Group Session"
+        }
+      ],
+      "additionalInformation": [],
+      "documents": []
+    },
+    {
+      "id": 5,
+      "name": "Employment",
+      "categories": [
+        {
+          "id": 13,
+          "name": "Job Seeking"
+        }
+      ],
+      "additionalInformation": [],
+      "documents": [
+        {
+          "id": 6,
+          "documentName": "Resume"
+        }
+      ]
+    }
+  ]
+}

@@ -16,10 +16,8 @@ export const CounsellingLandingPage = () => {
     <Page className="flex flex-col">
       <AppBar position="sticky">
         <Toolbar>
-          <IconButton size="large" edge="start">
-            <CalendarMonthIcon />
-          </IconButton>
-          <h1 className="flex-grow">
+          <CalendarMonthIcon color="primary" />
+          <h1 className="ml-4 flex-grow">
             <Trans id="Counselling.Header">Counselling</Trans>
           </h1>
           <IconButton size="large" edge="end">

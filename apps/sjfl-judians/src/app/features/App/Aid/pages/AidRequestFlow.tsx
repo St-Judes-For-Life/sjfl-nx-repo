@@ -32,10 +32,12 @@ export const AidRequestFlow = () => {
   }, [aidRequest.step]);
 
   return (
-    <Page>
+    <Page className="max-h-screen overflow-hidden flex flex-col">
       <AidRequestHeader />
-      <AidRequestStepper />
-      <section className="p-8">{renderStep()}</section>
+      <section className="px-6 flex-1 overflow-y-auto">
+        <AidRequestStepper />
+        {renderStep()}
+      </section>
     </Page>
   );
 };

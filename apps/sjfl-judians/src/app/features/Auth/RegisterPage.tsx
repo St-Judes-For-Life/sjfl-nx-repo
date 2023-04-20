@@ -18,7 +18,7 @@ export const RegisterPage = () => {
         <Logo size="medium"></Logo>
       </div>
 
-      <div className="p-8 w-full flex flex-col flex-1 gap-6">
+      <div className="p-6 w-full flex flex-col flex-1 gap-6">
         <FormControl fullWidth={true} required>
           <FormLabel htmlFor="uid">
             <Trans id="Auth.UID">UID</Trans>

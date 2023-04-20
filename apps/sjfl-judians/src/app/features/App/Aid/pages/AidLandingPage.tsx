@@ -21,10 +21,8 @@ export const AidLandingPage = () => {
     <Page className="flex flex-col">
       <AppBar position="sticky">
         <Toolbar>
-          <IconButton size="large" edge="start">
-            <MedicalServicesIcon />
-          </IconButton>
-          <h1 className="flex-grow">
+          <MedicalServicesIcon color="primary" />
+          <h1 className="ml-4 flex-grow">
             <Trans id="AidLanding.Header">Request Aid</Trans>
           </h1>
           <IconButton size="large" edge="end" onClick={createRequestHandler}>
