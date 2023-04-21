@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { FilterChip } from '../../../../shared/components/containers/FilterChip';
-import { Page } from '../../../../shared/components/containers/Page';
+import { Scaffold } from '../../../../shared/components/containers/Scaffold';
+import { AppHeader } from '../../../../shared/components/containers/AppHeader';
 
 export const AidLandingPage = () => {
   const { i18n } = useLingui();
@@ -17,21 +18,22 @@ export const AidLandingPage = () => {
     navigate('../editor/create');
   };
 
-  return (
-    <Page className="flex flex-col">
-      <AppBar position="sticky">
-        <Toolbar>
-          <IconButton size="large" edge="start">
-            <MedicalServicesIcon />
-          </IconButton>
-          <h1 className="flex-grow">
-            <Trans id="AidLanding.Header">Request Aid</Trans>
-          </h1>
+  const header = (
+    <AppHeader
+      slots={{
+        left: <MedicalServicesIcon color="primary" />,
+        right: (
           <IconButton size="large" edge="end" onClick={createRequestHandler}>
             <AddCircleOutlineIcon />
           </IconButton>
-        </Toolbar>
-      </AppBar>
+        ),
+      }}
+      title={i18n._(t({ id: 'AidLanding.Title', message: 'Aid' }))}
+    />
+  );
+
+  return (
+    <Scaffold header={header}>
       <div className="flex gap-4 p-4">
         <NavLink to="in-progress" className="flex-grow" draggable={false}>
           {({ isActive }) => (
@@ -55,6 +57,6 @@ export const AidLandingPage = () => {
         </NavLink>
       </div>
       <Outlet></Outlet>
-    </Page>
+    </Scaffold>
   );
 };

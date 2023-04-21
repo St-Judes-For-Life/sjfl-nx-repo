@@ -25,7 +25,7 @@ export const NoResults: FC<NoResultsProps> = ({
   );
   imgUrl ??= '/assets/empty.svg';
   return (
-    <div className="p-8 flex-grow flex flex-col items-center justify-center gap-5">
+    <div className="p-6 flex-grow flex flex-col items-center justify-center gap-5">
       <img className="h-60 w-60" src={imgUrl} alt="no results" />
       <h2 className="text-2xl text-center font-bold mb-10">{message}</h2>
       {primaryAction && onPrimaryAction && (

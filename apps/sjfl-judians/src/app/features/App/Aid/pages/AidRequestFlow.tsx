@@ -10,6 +10,7 @@ import { AidRequestSummary } from './AidRequestSummary';
 import { SelectAidNature } from './SelectAidNature';
 import { SelectAidStream } from './SelectAidStream';
 import { UploadAidDocs } from './UploadAidDocs';
+import { Scaffold } from '../../../../shared/components/containers/Scaffold';
 
 export const AidRequestFlow = () => {
   const aidRequest = useAidRequest();
@@ -32,10 +33,11 @@ export const AidRequestFlow = () => {
   }, [aidRequest.step]);
 
   return (
-    <Page>
-      <AidRequestHeader />
-      <AidRequestStepper />
-      <section className="p-8">{renderStep()}</section>
-    </Page>
+    <Scaffold header={<AidRequestHeader />}>
+      <section className="px-6">
+        <AidRequestStepper />
+        {renderStep()}
+      </section>
+    </Scaffold>
   );
 };

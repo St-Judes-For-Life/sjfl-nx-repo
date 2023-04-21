@@ -5,25 +5,11 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/sjfl-judians",
-        "index": "apps/sjfl-judians/src/index.html",
-        "baseHref": "/",
-        "main": "apps/sjfl-judians/src/main.tsx",
-        "polyfills": "apps/sjfl-judians/src/polyfills.ts",
-        "tsConfig": "apps/sjfl-judians/tsconfig.app.json",
-        "assets": [
-          "apps/sjfl-judians/src/favicon.ico",
-          "apps/sjfl-judians/src/assets"
-        ],
-        "styles": ["apps/sjfl-judians/src/styles.scss"],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack",
-        "postcssConfig": "apps/sjfl-judians/postcss.config.js"
+        "outputPath": "dist/apps/sjfl-judians"
       },
       "configurations": {
         "development": {
@@ -49,7 +35,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "sjfl-judians:build",
@@ -167,6 +153,21 @@
         },
         "android": {
           "cmd": "update android"
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sjfl-judians:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sjfl-judians:build:development"
+        },
+        "production": {
+          "buildTarget": "sjfl-judians:build:production"
         }
       }
     }

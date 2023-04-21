@@ -1,21 +1,26 @@
 import Button from '@mui/material/Button';
-import { useAidRequest } from '../hooks/useAidRequest';
+import { useAidRequest, useSelectedStream } from '../hooks/useAidRequest';
 
 export const SelectAidNature = () => {
   const aidRequest = useAidRequest();
-
+  const stream = useSelectedStream();
   return (
-    <Button
-      variant="contained"
-      fullWidth
-      onClick={() => {
-        aidRequest.nextStep({
-          stream: aidRequest.request?.stream,
-          nature: 'School / College Fee',
-        });
-      }}
-    >
-      NEXT
-    </Button>
+    <div className="grid auto-rows-[4rem] gap-4">
+      {stream.categories.map((category) => (
+        <Button
+          variant="contained"
+          fullWidth
+          color="secondary"
+          key={category.id}
+          onClick={() => {
+            aidRequest.nextStep({
+              nature: category,
+            });
+          }}
+        >
+          {category.name}
+        </Button>
+      ))}
+    </div>
   );
 };

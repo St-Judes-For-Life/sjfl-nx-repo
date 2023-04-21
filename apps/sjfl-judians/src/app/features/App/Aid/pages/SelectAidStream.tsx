@@ -1,20 +1,32 @@
-import { useAidRequest } from '../hooks/useAidRequest';
 import Button from '@mui/material/Button';
+import { useAidRequest } from '../hooks/useAidRequest';
+import { useAidWorkflowConfig } from '../hooks/useAidWorkflowConfig';
 
 export const SelectAidStream = () => {
   const aidRequest = useAidRequest();
-
+  const { data } = useAidWorkflowConfig();
+  if (!data) {
+    return <>Loading...</>;
+  }
   return (
-    <Button
-      variant="contained"
-      fullWidth
-      onClick={() => {
-        aidRequest.nextStep({
-          stream: 'Education',
-        });
-      }}
-    >
-      NEXT
-    </Button>
+    <div className="grid grid-cols-3 gap-3 auto-rows-[8rem]">
+      {data.streams.map((stream) => (
+        <Button
+          variant="contained"
+          sx={{
+            fontSize: '14px',
+          }}
+          color="primary"
+          key={stream.id}
+          onClick={() => {
+            aidRequest.nextStep({
+              stream: stream,
+            });
+          }}
+        >
+          {stream.name}
+        </Button>
+      ))}
+    </div>
   );
 };

@@ -8,7 +8,7 @@ import { RequestAidSteps } from '../models/aid-request.model';
 export const AidRequestStepper = () => {
   const aidRequest = useAidRequest();
   return (
-    <div className="py-8 px-4">
+    <div className="py-8">
       <Stepper activeStep={aidRequest.step} alternativeLabel>
         <Step
           key={RequestAidSteps.stream}

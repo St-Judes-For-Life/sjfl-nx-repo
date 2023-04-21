@@ -13,29 +13,49 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:10
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
 msgid "Aid.Completed.NoResults"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:10
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
 msgid "Aid.InProgress.NoResults"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:24
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:24
 msgid "Aid.RaiseRequest"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:44
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:51
 msgid "AidLanding.Completed"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:22
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:25
 msgid "AidLanding.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:34
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:41
 msgid "AidLanding.InProgress"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:36
+msgid "AidRequestSteps.Docs"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:31
+msgid "AidRequestSteps.Info"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:26
+msgid "AidRequestSteps.Nature"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:18
+msgid "AidRequestSteps.Stream"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
+msgid "AidRequestSummary.Title"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
@@ -112,43 +132,43 @@ msgstr ""
 msgid "ConfirmDialog.Confirm"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:23
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:21
 msgid "Counselling.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:13
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:11
 msgid "Counselling.Upcoming.NoResults"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:20
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:18
 msgid "Counselling.Upcoming.RaiseRequest"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/PastCounselling.tsx:11
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/PastCounselling.tsx:10
 msgid "Counselling.past.NoResults"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:45
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:43
 msgid "CounsellingLanding.Past"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:35
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:33
 msgid "CounsellingLanding.Upcoming"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:33
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:37
 msgid "Dashboard.Aid"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:22
 msgid "Dashboard.Hi"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:42
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:46
 msgid "Dashboard.Schedule"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:25
 msgid "Dashboard.Welcome"
 msgstr ""
 
@@ -190,4 +210,13 @@ msgstr ""
 
 #: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:21
 msgid "NoResults.DefaultMessage"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:46
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:58
+msgid "SelectAidNature.Header"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:40
+msgid "SelectAidStream.Header"
 msgstr ""

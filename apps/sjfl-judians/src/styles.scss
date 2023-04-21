@@ -14,10 +14,11 @@
 body {
   padding: 0;
   margin: 0;
-  &::-webkit-scrollbar,
-  *::-webkit-scrollbar {
-    display: none;
-  }
+  -webkit-overflow-scrolling: touch;
+  // &::-webkit-scrollbar,
+  // *::-webkit-scrollbar {
+  //   display: none;
+  // }
 }
 
 img,
@@ -37,16 +38,42 @@ a {
     0 4px 6px -2px rgb(0 0 0 / 5%);
 }
 
-.min-h-screen:has(footer.MuiAppBar-positionFixed) {
+.min-h-screen:not(.max-h-screen):has(footer.MuiAppBar-positionFixed) {
   height: unset;
   flex: 1;
   padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
 }
-.min-h-screen:has(+ footer > .MuiBottomNavigation-root) {
+.min-h-screen:not(.max-h-screen):has(+ footer > .MuiBottomNavigation-root) {
   height: unset;
   flex: 1;
   padding-bottom: calc(
     60px + max(env(safe-area-inset-bottom), 20px) +
       max(env(safe-area-inset-top), 20px)
   ) !important;
+}
+
+.max-h-screen:has(footer.MuiAppBar-positionFixed) {
+  height: unset;
+  flex: 1;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+}
+.max-h-screen:has(+ footer > .MuiBottomNavigation-root) {
+  height: unset;
+  flex: 1;
+  padding-bottom: calc(
+    60px + min(env(safe-area-inset-bottom), 20px) +
+      min(env(safe-area-inset-top), 20px)
+  ) !important;
+}
+
+.scaffold-content:has(.scaffold-content) {
+  overflow: hidden;
+}
+
+.page .page {
+  height: 100%;
+}
+
+.page .page .scaffold-content {
+  padding-bottom: 1em;
 }

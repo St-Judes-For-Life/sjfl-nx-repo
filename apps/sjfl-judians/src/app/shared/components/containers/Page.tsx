@@ -6,7 +6,7 @@ export const Page: FC<PropsWithChildren<{ className?: string }>> = ({
   className,
 }) => {
   return (
-    <div className={classNames('min-h-screen bg-lightGray', className)}>
+    <div className={classNames('page h-screen h-[100dvh]', className)}>
       {children}
     </div>
   );

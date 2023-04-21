@@ -4,7 +4,7 @@ import { LanguageSelectionPage } from '../../features/Common/LanguageSelectionPa
 import { SplashPage } from '../../features/Splash/SplashPage';
 import { useLoadedQuery } from '../hooks/useLoadedQuery';
 import { rootDataQuery } from '../queries/rootQuery';
-import { LocaleContext } from '../store/InternationalizationProvider';
+import { LocaleContext } from '../store/context/LocaleContext';
 
 /**
  * The root layout component.

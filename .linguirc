@@ -13,7 +13,10 @@
   ],
   "compileNamespace": "cjs",
   "extractBabelOptions": {
-    "rootMode": "upward"
+    "rootMode": "upward",
+    "presets": [
+      "@babel/preset-typescript"
+    ]
   },
   "fallbackLocales": {
     "default": "en"

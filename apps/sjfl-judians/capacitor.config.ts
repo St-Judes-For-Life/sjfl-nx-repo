@@ -5,12 +5,14 @@ const config: CapacitorConfig = {
   appName: 'St. Judes For Life - Judians',
   webDir: '../../dist/apps/sjfl-judians',
   bundledWebRuntime: false,
-  server: {
-    url: 'http://localhost:4200',
-    cleartext: true,
-  },
+  server:
+    process.env.NODE_ENV === 'production'
+      ? undefined
+      : {
+          url: 'http://100.109.137.47:4200',
+          cleartext: true,
+        },
   ios: {
-    scrollEnabled: false,
     allowsLinkPreview: false,
   },
   plugins: {

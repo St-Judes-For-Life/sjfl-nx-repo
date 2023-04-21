@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import { useContext, useState } from 'react';
 import { LanguageSelectionPage } from '../../../features/Common/LanguageSelectionPage';
 import { SlideUp } from '../../helpers/transitions/SlideUp';
-import { LocaleContext } from '../../store/InternationalizationProvider';
+import { LocaleContext } from '../../store/context/LocaleContext';
 
 export const LanguageButton = () => {
   const { locale } = useContext(LocaleContext);
@@ -15,7 +15,7 @@ export const LanguageButton = () => {
         variant="outlined"
         size="small"
         startIcon={<LanguageIcon />}
-        className="border-1 !rounded-full !capitalize"
+        className="!border-1 !rounded-full !capitalize"
         onClick={() => setIsOpen(true)}
       >
         {locale?.name}
