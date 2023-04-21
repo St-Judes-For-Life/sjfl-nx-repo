@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useAidRequest, useSelectedStream } from '../hooks/useAidRequest';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
+import { Trans } from '@lingui/macro';
 
 export const AidAdditionalInfo = () => {
   const aidRequest = useAidRequest();
@@ -12,33 +13,30 @@ export const AidAdditionalInfo = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (event: any) => {
-    console.log(event);
+    aidRequest.nextStep({
+      ...aidRequest.request,
+    });
   };
+
+  const submitBtn = (
+    <Button fullWidth variant="contained" type="submit" className="!mt-4">
+      <Trans id="AidAdditionalInfo.next">NEXT</Trans>
+    </Button>
+  );
 
   if (stream.additionalInformation.length === 0) {
     return (
-      <>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         No Additional information required
-        <Button
-          fullWidth
-          variant="contained"
-          onClick={() => {
-            aidRequest.nextStep({
-              ...aidRequest.request,
-            });
-          }}
-        >
-          NEXT
-        </Button>
-      </>
+        {submitBtn}
+      </form>
     );
   }
   return (
-    <div className="flex flex-col gap-4">
-      <form onSubmit={handleSubmit(onSubmit)}></form>
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       {stream.additionalInformation.map((info, index) => {
         return (
-          <FormControl fullWidth={true} key={info.id}>
+          <FormControl fullWidth key={info.id}>
             <FormLabel htmlFor={info.label}>{info.label}</FormLabel>
 
             {(() => {
@@ -85,6 +83,7 @@ export const AidAdditionalInfo = () => {
           </FormControl>
         );
       })}
-    </div>
+      {submitBtn}
+    </form>
   );
 };

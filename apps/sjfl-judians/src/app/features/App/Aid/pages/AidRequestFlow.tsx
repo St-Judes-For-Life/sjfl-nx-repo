@@ -10,6 +10,7 @@ import { AidRequestSummary } from './AidRequestSummary';
 import { SelectAidNature } from './SelectAidNature';
 import { SelectAidStream } from './SelectAidStream';
 import { UploadAidDocs } from './UploadAidDocs';
+import { Scaffold } from '../../../../shared/components/containers/Scaffold';
 
 export const AidRequestFlow = () => {
   const aidRequest = useAidRequest();
@@ -32,12 +33,11 @@ export const AidRequestFlow = () => {
   }, [aidRequest.step]);
 
   return (
-    <Page className="max-h-screen overflow-hidden flex flex-col">
-      <AidRequestHeader />
-      <section className="px-6 flex-1 overflow-y-auto">
+    <Scaffold header={<AidRequestHeader />}>
+      <section className="px-6">
         <AidRequestStepper />
         {renderStep()}
       </section>
-    </Page>
+    </Scaffold>
   );
 };

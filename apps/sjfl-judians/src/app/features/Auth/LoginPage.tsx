@@ -32,21 +32,21 @@ export const LoginPage = () => {
       </div>
 
       <div className="p-6 w-full flex flex-col flex-1 gap-6">
-        <FormControl fullWidth={true}>
+        <FormControl fullWidth>
           <FormLabel htmlFor="uid">
             <Trans id="Auth.UID">UID</Trans>
           </FormLabel>
           <OutlinedInput
             id="uid"
             autoFocus={true}
-            fullWidth={true}
+            fullWidth
             autoComplete="username"
             placeholder={i18n._(
               t({ id: 'Auth.UID_Placeholder', message: 'Enter your UID' })
             )}
           />
         </FormControl>
-        <FormControl fullWidth={true}>
+        <FormControl fullWidth>
           <FormLabel htmlFor="password">
             <Trans id="Auth.Password">Password</Trans>
           </FormLabel>
@@ -54,7 +54,7 @@ export const LoginPage = () => {
             id="password"
             type={showPassword ? 'text' : 'password'}
             autoComplete="current-password"
-            fullWidth={true}
+            fullWidth
             placeholder={i18n._(
               t({
                 id: 'Auth.Password_Placeholder',
@@ -83,7 +83,7 @@ export const LoginPage = () => {
         <div className="flex-1 flex justify-end flex-col">
           <Button
             size="large"
-            fullWidth={true}
+            fullWidth
             variant="contained"
             color="primary"
             onClick={logIn}

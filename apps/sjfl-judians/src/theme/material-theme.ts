@@ -35,10 +35,11 @@ export const materialTheme = createTheme({
       },
     },
     MuiButton: {
-      defaultProps: {
-        className: classNames('!rounded-2xl', '!border-2'),
-      },
       styleOverrides: {
+        root: {
+          borderRadius: '1em',
+          borderWidth: '2px',
+        },
         text: {
           fontSize: 16,
         },
@@ -61,7 +62,7 @@ export const materialTheme = createTheme({
         elevation: 1,
       },
       styleOverrides: {
-        positionSticky: {
+        positionStatic: {
           paddingTop: `env(safe-area-inset-top)`,
           paddingLeft: `env(safe-area-inset-left)`,
           paddingRight: `env(safe-area-inset-right)`,
@@ -119,6 +120,7 @@ export const materialTheme = createTheme({
       },
       styleOverrides: {
         root: {
+          backgroundColor: 'white',
           fontSize: 16,
         },
       },

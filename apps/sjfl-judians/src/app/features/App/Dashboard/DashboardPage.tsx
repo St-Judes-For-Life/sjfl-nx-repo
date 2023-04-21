@@ -16,20 +16,20 @@ export const DashboardPage = () => {
   };
 
   return (
-    <Page className="flex flex-col">
-      <div className="flex-grow flex flex-col items-center justify-end">
+    <>
+      <div className="flex-grow flex flex-col items-center justify-center">
         <h2 className="text-3xl text-primary font-bold text-center">
-          <Trans id="Dashboard.Hi">Hi {firstName},</Trans>
+          <Trans id="Dashboard.Hi">Hello {firstName},</Trans>
         </h2>
         <h2 className="pt-2 pb-10 text-2xl text-primary font-bold text-center">
           <Trans id="Dashboard.Welcome">Welcome to</Trans>
         </h2>
         <Logo></Logo>
       </div>
-      <div className="flex-1 flex flex-col justify-end px-6 gap-4">
+      <div className="flex-1 flex flex-col justify-center px-6 gap-4">
         <Button
           size="large"
-          fullWidth={true}
+          fullWidth
           variant="contained"
           color="primary"
           onClick={createRequestHandler}
@@ -38,7 +38,7 @@ export const DashboardPage = () => {
         </Button>
         <Button
           size="large"
-          fullWidth={true}
+          fullWidth
           variant="contained"
           color="primary"
           onClick={() => navigate('counselling')}
@@ -46,6 +46,6 @@ export const DashboardPage = () => {
           <Trans id="Dashboard.Schedule">SCHEDULE A SESSION</Trans>
         </Button>
       </div>
-    </Page>
+    </>
   );
 };

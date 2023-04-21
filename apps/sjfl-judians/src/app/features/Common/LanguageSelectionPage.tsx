@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import CloseIcon from '@mui/icons-material/Close';
 import AppBar from '@mui/material/AppBar';
@@ -14,8 +14,10 @@ import { Page } from '../../shared/components/containers/Page';
 import { Locale } from '../../shared/models/i18n.model';
 import { Maybe } from '../../shared/models/maybe.model';
 
-import { LocaleContext } from '../../shared/store/InternationalizationProvider';
 import { locales } from '../../shared/utils/i18n';
+import { LocaleContext } from '../../shared/store/context/LocaleContext';
+import { Scaffold } from '../../shared/components/containers/Scaffold';
+import { AppHeader } from '../../shared/components/containers/AppHeader';
 
 type LanguageSelectionPageProps =
   | { canDismiss?: undefined; onDismiss?: undefined }
@@ -27,10 +29,10 @@ type LanguageSelectionPageProps =
 export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
   props
 ) => {
-  const lingui = useLingui();
+  const { i18n } = useLingui();
   const { locale, setLocale } = useContext(LocaleContext);
   const [selection, setSelection] = useState<Maybe<Locale>>(
-    locales.find((locale) => locale.code === lingui.i18n.locale)
+    locales.find((locale) => locale.code === i18n.locale)
   );
 
   const localeSelectHandler = (locale: Locale) => {
@@ -44,43 +46,51 @@ export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
     }
     props.onDismiss?.();
   };
-  return (
-    <Page>
-      <AppBar position="sticky">
-        <Toolbar>
-          {props.canDismiss && (
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="close"
-              onClick={props.onDismiss}
-            >
-              <CloseIcon />
-            </IconButton>
-          )}
-          <h1>
-            <Trans id="LanguageSelection.Header">
-              Select your preferred language
-            </Trans>
-          </h1>
-        </Toolbar>
-      </AppBar>
 
+  const header = (
+    <AppHeader
+      title={i18n._(
+        t({
+          id: 'LanguageSelection.Heade',
+          message: 'Select your preferred language',
+        })
+      )}
+      backEnabled={props.canDismiss}
+      onBack={props.onDismiss}
+    />
+  );
+
+  const footer = (
+    <BottomAppBar>
+      <div className="p-2">
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          onClick={continueHandler}
+          disabled={!selection}
+        >
+          <Trans id="LanguageSelection.Continue">Continue</Trans>
+        </Button>
+      </div>
+    </BottomAppBar>
+  );
+  return (
+    <Scaffold header={header} footer={footer}>
       <div className="p-4">
         <ToggleButtonGroup
           orientation="vertical"
           value={selection || locale}
           color="primary"
           exclusive
-          fullWidth={true}
+          fullWidth
           onChange={(e, code: Locale) => localeSelectHandler(code)}
         >
           {locales.map((locale) => (
             <ToggleButton
               value={locale}
               aria-label={locale.code}
-              fullWidth={true}
+              fullWidth
               key={locale.code}
             >
               {locale.name}
@@ -88,19 +98,6 @@ export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
           ))}
         </ToggleButtonGroup>
       </div>
-      <BottomAppBar>
-        <div className="p-2">
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            onClick={continueHandler}
-            disabled={!selection}
-          >
-            <Trans id="LanguageSelection.Continue">Continue</Trans>
-          </Button>
-        </div>
-      </BottomAppBar>
-    </Page>
+    </Scaffold>
   );
 };

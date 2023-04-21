@@ -65,3 +65,15 @@ a {
       min(env(safe-area-inset-top), 20px)
   ) !important;
 }
+
+.scaffold-content:has(.scaffold-content) {
+  overflow: hidden;
+}
+
+.page .page {
+  height: 100%;
+}
+
+.page .page .scaffold-content {
+  padding-bottom: 1em;
+}

@@ -13,9 +13,9 @@ import {
   useNavigate,
   useNavigation,
 } from 'react-router-dom';
-import { DrawerMenu } from './DrawerMenu/DrawerMenu';
+import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { FullScreenSpinner } from '../../shared/components/progress/FullScreenSpinner';
-import { AnimatePresence } from 'framer-motion';
+import { DrawerMenu } from './DrawerMenu/DrawerMenu';
 
 export const AppLayout = () => {
   const location = useLocation();
@@ -43,47 +43,38 @@ export const AppLayout = () => {
   const navigation = useNavigation();
   const showSpinner = navigation.state === 'loading';
 
+  const footer = (
+    <Paper component="footer" elevation={3}>
+      <BottomNavigation showLabels value={route} onChange={onRouteChange}>
+        <BottomNavigationAction label="Home" value="" icon={<HomeIcon />} />
+        <BottomNavigationAction
+          label="Aid"
+          value="aid"
+          icon={<MedicalServicesIcon />}
+        />
+        <BottomNavigationAction
+          label="Counselling"
+          value="counselling"
+          icon={<CalendarMonthIcon />}
+        />
+        <BottomNavigationAction label="Menu" value="menu" icon={<MenuIcon />} />
+      </BottomNavigation>
+    </Paper>
+  );
+
   return (
-    <>
-      {showSpinner ? (
-        <FullScreenSpinner />
-      ) : (
-        <AnimatePresence mode="wait">
-          <Outlet key={location.pathname} />
-        </AnimatePresence>
-      )}
-      <Paper
-        component="footer"
-        className="fixed bottom-0 left-0 right-0"
-        elevation={3}
-      >
-        <BottomNavigation showLabels value={route} onChange={onRouteChange}>
-          <BottomNavigationAction label="Home" value="" icon={<HomeIcon />} />
-          <BottomNavigationAction
-            label="Aid"
-            value="aid"
-            icon={<MedicalServicesIcon />}
-          />
-          <BottomNavigationAction
-            label="Counselling"
-            value="counselling"
-            icon={<CalendarMonthIcon />}
-          />
-          <BottomNavigationAction
-            label="Menu"
-            value="menu"
-            icon={<MenuIcon />}
-          />
-        </BottomNavigation>
-      </Paper>
-      <SwipeableDrawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={closeDrawer}
-        onOpen={openDrawer}
-      >
-        <DrawerMenu onDismiss={closeDrawer} />
-      </SwipeableDrawer>
-    </>
+    <Scaffold footer={footer}>
+      <>
+        {showSpinner ? <FullScreenSpinner /> : <Outlet />}
+        <SwipeableDrawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={closeDrawer}
+          onOpen={openDrawer}
+        >
+          <DrawerMenu onDismiss={closeDrawer} />
+        </SwipeableDrawer>
+      </>
+    </Scaffold>
   );
 };

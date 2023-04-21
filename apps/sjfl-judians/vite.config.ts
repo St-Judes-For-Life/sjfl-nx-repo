@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite';
+import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 
@@ -9,6 +9,13 @@ export default defineConfig({
   server: {
     port: 4200,
     host: 'localhost',
+    fs: {
+      allow: [
+        searchForWorkspaceRoot(process.cwd()),
+        // your custom rules
+        '../../node-modules',
+      ],
+    },
   },
 
   preview: {
@@ -17,7 +24,12 @@ export default defineConfig({
   },
 
   plugins: [
-    react(),
+    react({
+      babel: {
+        // babel-macro is needed for lingui
+        plugins: ['macros'],
+      },
+    }),
     viteTsConfigPaths({
       root: '../../',
     }),

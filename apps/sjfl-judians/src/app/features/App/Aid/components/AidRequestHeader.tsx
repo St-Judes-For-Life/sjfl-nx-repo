@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
@@ -7,12 +7,19 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAidRequest } from '../hooks/useAidRequest';
 import { RequestAidSteps } from '../models/aid-request.model';
+import { useLingui } from '@lingui/react';
+import { AppHeader } from '../../../../shared/components/containers/AppHeader';
+import { Maybe } from '../../../../shared/models/maybe.model';
 
 export const AidRequestHeader = () => {
+  const { i18n } = useLingui();
   const aidRequest = useAidRequest();
   const navigate = useNavigate();
 
-  const canGoBack = !(
+  let title: string;
+  let subtitle: Maybe<string>;
+
+  const backEnabled = !(
     aidRequest.step === RequestAidSteps.complete ||
     (aidRequest.mode === 'edit' && aidRequest.step === RequestAidSteps.info)
   );
@@ -32,48 +39,40 @@ export const AidRequestHeader = () => {
     aidRequest.previousStep();
   }, [aidRequest, navigate]);
 
-  const createTitle = useCallback(() => {
-    switch (aidRequest.step) {
-      case RequestAidSteps.stream:
-        return (
-          <h1 className="flex-grow">
-            <Trans id="SelectAidStream.Header">Raise a new request</Trans>
-          </h1>
-        );
-      case RequestAidSteps.nature:
-        return (
-          <h1 className="flex-grow">
-            <Trans id="SelectAidNature.Header">
-              {aidRequest.request?.stream?.name} Aid
-            </Trans>
-          </h1>
-        );
-      case RequestAidSteps.info:
-      case RequestAidSteps.docs:
-      case RequestAidSteps.summary:
-      case RequestAidSteps.complete:
-        return (
-          <span className="flex-grow">
-            <h1 className="text-sm">
-              <Trans id="SelectAidNature.Header">
-                {aidRequest.request?.stream?.name} Aid
-              </Trans>
-            </h1>
-            <h3 className="text-xs">{aidRequest.request?.nature?.name}</h3>
-          </span>
-        );
-    }
-  }, [aidRequest]);
+  switch (aidRequest.step) {
+    case RequestAidSteps.stream:
+      title = i18n._(
+        t({ id: 'SelectAidStream.Header', message: 'Raise a new request' })
+      );
+      break;
+    case RequestAidSteps.nature:
+      title = i18n._(
+        t({
+          id: 'SelectAidNature.Header',
+          message: `${aidRequest.request?.stream?.name} Aid`,
+        })
+      );
+      break;
+    case RequestAidSteps.info:
+    case RequestAidSteps.docs:
+    case RequestAidSteps.summary:
+    case RequestAidSteps.complete:
+    case RequestAidSteps.nature:
+      title = i18n._(
+        t({
+          id: 'SelectAidNature.Header',
+          message: `${aidRequest.request?.stream?.name} Aid`,
+        })
+      );
+      subtitle = aidRequest.request?.nature?.name;
+      break;
+  }
   return (
-    <AppBar position="sticky">
-      <Toolbar>
-        {canGoBack && (
-          <IconButton size="large" edge="start" onClick={backHandler}>
-            <ArrowBackIcon />
-          </IconButton>
-        )}
-        {createTitle()}
-      </Toolbar>
-    </AppBar>
+    <AppHeader
+      title={title}
+      subtitle={subtitle}
+      backEnabled={backEnabled}
+      onBack={backHandler}
+    />
   );
 };

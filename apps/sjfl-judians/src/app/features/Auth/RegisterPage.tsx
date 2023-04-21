@@ -19,27 +19,27 @@ export const RegisterPage = () => {
       </div>
 
       <div className="p-6 w-full flex flex-col flex-1 gap-6">
-        <FormControl fullWidth={true} required>
+        <FormControl fullWidth required>
           <FormLabel htmlFor="uid">
             <Trans id="Auth.UID">UID</Trans>
           </FormLabel>
           <OutlinedInput
             id="uid"
             autoFocus={true}
-            fullWidth={true}
+            fullWidth
             autoComplete="username"
             placeholder={i18n._(
               t({ id: 'Auth.UID_Placeholder', message: 'Enter your UID' })
             )}
           />
         </FormControl>
-        <FormControl fullWidth={true} required>
+        <FormControl fullWidth required>
           <FormLabel htmlFor="name">
             <Trans id="Auth.Name">Name</Trans>
           </FormLabel>
           <OutlinedInput
             id="name"
-            fullWidth={true}
+            fullWidth
             autoComplete="name"
             placeholder={i18n._(
               t({
@@ -49,13 +49,13 @@ export const RegisterPage = () => {
             )}
           />
         </FormControl>
-        <FormControl fullWidth={true} required>
+        <FormControl fullWidth required>
           <FormLabel htmlFor="mobile">
             <Trans id="Auth.Mobile">Mobile</Trans>
           </FormLabel>
           <OutlinedInput
             id="mobile"
-            fullWidth={true}
+            fullWidth
             autoComplete="tel"
             type="tel"
             inputMode="tel"
@@ -67,13 +67,13 @@ export const RegisterPage = () => {
             )}
           />
         </FormControl>
-        <FormControl fullWidth={true} required={false}>
+        <FormControl fullWidth required={false}>
           <FormLabel htmlFor="email">
             <Trans id="Auth.Email">Email</Trans>
           </FormLabel>
           <OutlinedInput
             id="email"
-            fullWidth={true}
+            fullWidth
             autoComplete="email"
             type="email"
             inputMode="email"
@@ -87,12 +87,7 @@ export const RegisterPage = () => {
         </FormControl>
 
         <div className="flex-1 flex justify-end flex-col">
-          <Button
-            size="large"
-            fullWidth={true}
-            variant="contained"
-            color="primary"
-          >
+          <Button size="large" fullWidth variant="contained" color="primary">
             <Trans id="Auth.Register"></Trans>
           </Button>
           <span className="flex items-center justify-center pt-4">

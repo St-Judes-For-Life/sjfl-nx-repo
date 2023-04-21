@@ -27,7 +27,7 @@ export const AuthLandingPage = () => {
         </Button>
         <Button
           size="large"
-          fullWidth={true}
+          fullWidth
           variant="outlined"
           color="primary"
           onClick={() => {

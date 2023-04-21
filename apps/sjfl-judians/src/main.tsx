@@ -9,7 +9,6 @@ import { ReactQueryProvider } from './app/shared/store/ReactQueryProvider';
 import { capacitorInit } from './app/shared/utils/capacitor';
 import { Router } from './router/Router';
 import { materialTheme } from './theme/material-theme';
-import './assets/aid.json';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
