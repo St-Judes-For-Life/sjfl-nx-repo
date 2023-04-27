@@ -5,15 +5,15 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { useNavigate } from 'react-router-dom';
+import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { Logo } from '../../shared/components/images/Logo';
-import { Page } from '../../shared/components/containers/Page';
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const { i18n } = useLingui();
 
   return (
-    <Page className="flex flex-col">
+    <Scaffold>
       <div className="flex justify-center items-end pt-24 pb-10">
         <Logo size="medium"></Logo>
       </div>
@@ -105,6 +105,6 @@ export const RegisterPage = () => {
           </span>
         </div>
       </div>
-    </Page>
+    </Scaffold>
   );
 };

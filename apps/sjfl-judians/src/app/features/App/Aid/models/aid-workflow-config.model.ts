@@ -23,6 +23,6 @@ export type Category = {
 };
 
 export type Document = {
-  id: number;
+  id: string;
   documentName: string;
 };

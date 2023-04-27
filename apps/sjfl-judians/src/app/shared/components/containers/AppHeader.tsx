@@ -13,6 +13,7 @@ type AppHeaderProps = {
   title: ReactNode;
   subtitle?: ReactNode;
   backEnabled?: boolean;
+  backIcon?: ReactNode;
   onBack?: () => void;
   className?: string;
 };
@@ -22,12 +23,15 @@ export const AppHeader = ({
   title,
   subtitle,
   backEnabled = false,
+  backIcon,
   onBack = () => {},
   className,
 }: AppHeaderProps) => {
+  backIcon ??= <ArrowBackIcon />;
+
   const leftSlot = backEnabled ? (
     <IconButton size="large" edge="start" onClick={onBack}>
-      <ArrowBackIcon />
+      {backIcon}
     </IconButton>
   ) : (
     slots?.left

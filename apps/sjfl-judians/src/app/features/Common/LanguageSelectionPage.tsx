@@ -1,23 +1,18 @@
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import CloseIcon from '@mui/icons-material/Close';
-import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import Toolbar from '@mui/material/Toolbar';
 import { FC, useContext, useState } from 'react';
 
 import { BottomAppBar } from '../../shared/components/containers/BottomAppBar';
-import { Page } from '../../shared/components/containers/Page';
 import { Locale } from '../../shared/models/i18n.model';
 import { Maybe } from '../../shared/models/maybe.model';
 
-import { locales } from '../../shared/utils/i18n';
-import { LocaleContext } from '../../shared/store/context/LocaleContext';
-import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { AppHeader } from '../../shared/components/containers/AppHeader';
+import { Scaffold } from '../../shared/components/containers/Scaffold';
+import { LocaleContext } from '../../shared/store/context/LocaleContext';
+import { locales } from '../../shared/utils/i18n';
 
 type LanguageSelectionPageProps =
   | { canDismiss?: undefined; onDismiss?: undefined }
@@ -51,7 +46,7 @@ export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
     <AppHeader
       title={i18n._(
         t({
-          id: 'LanguageSelection.Heade',
+          id: 'LanguageSelection.Header',
           message: 'Select your preferred language',
         })
       )}

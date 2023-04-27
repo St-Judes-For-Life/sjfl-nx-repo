@@ -24,17 +24,25 @@ msgstr "You don't have any in progress requests"
 msgid "Aid.RaiseRequest"
 msgstr "RAISE A REQUEST"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:51
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:23
+msgid "AidAdditionalInfo.next"
+msgstr "NEXT"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:52
 msgid "AidLanding.Completed"
 msgstr "Completed"
 
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:25
-msgid "AidLanding.Header"
-msgstr "Request Aid"
+#~ msgid "AidLanding.Header"
+#~ msgstr "Request Aid"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:41
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:42
 msgid "AidLanding.InProgress"
 msgstr "In Progress"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:31
+msgid "AidLanding.Title"
+msgstr "Aid"
 
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:36
 msgid "AidRequestSteps.Docs"
@@ -98,17 +106,17 @@ msgstr "Enter your Password"
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:96
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
 msgid "Auth.Register"
 msgstr "REGISTER"
 
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:99
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
 msgid "Auth.Register.AlreadyHaveAccount"
 msgstr "Already have an account?"
 
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:108
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
 msgid "Auth.SignIn"
 msgstr "SIGN IN"
 
@@ -122,6 +130,10 @@ msgstr "UID"
 msgid "Auth.UID_Placeholder"
 msgstr "Enter your UID"
 
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:37
+msgid "Btn.save"
+msgstr "SAVE"
+
 #: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
 msgid "ConfirmDialog.Cancel"
 msgstr "CANCEL"
@@ -130,7 +142,7 @@ msgstr "CANCEL"
 msgid "ConfirmDialog.Confirm"
 msgstr "CONFIRM"
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:24
 msgid "Counselling.Header"
 msgstr "Counselling"
 
@@ -146,11 +158,11 @@ msgstr "SCHEDULE A SESSION"
 msgid "Counselling.past.NoResults"
 msgstr "You don't have any past sessions"
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:43
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:44
 msgid "CounsellingLanding.Past"
 msgstr "Past"
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:33
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:34
 msgid "CounsellingLanding.Upcoming"
 msgstr "Upcoming"
 
@@ -190,11 +202,40 @@ msgstr "Profile"
 msgid "Drawer.Settings"
 msgstr "Settings"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:100
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:156
+msgid "FilePicker.ClickPicture"
+msgstr "Click a Picture"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:168
+msgid "FilePicker.SelectFile"
+msgstr "Select from files"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:162
+msgid "FilePicker.SelectGallery"
+msgstr "Select from Gallery"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:137
+msgid "FilePickerDialog.FileError"
+msgstr "Unable to select files"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:52
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:78
+msgid "FilePickerDialog.GalleryError"
+msgstr "Unable to read image"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:110
+msgid "FilePickerDialog.PictureError"
+msgstr "Unable to take picture"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:26
+msgid "FilePickerDialog.Title"
+msgstr "Select a file to upload"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
 msgid "LanguageSelection.Continue"
 msgstr "CONTINUE"
 
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:63
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:48
 msgid "LanguageSelection.Header"
 msgstr "Select your preferred language"
 
@@ -210,11 +251,16 @@ msgstr "Are you sure you want to log out?"
 msgid "NoResults.DefaultMessage"
 msgstr "No results found"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:46
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:58
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:50
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:62
 msgid "SelectAidNature.Header"
 msgstr "{0} Aid"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:40
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:45
 msgid "SelectAidStream.Header"
 msgstr "Raise a new request"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:27
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:22
+msgid "UploadFiles.title"
+msgstr "Upload File(s)"

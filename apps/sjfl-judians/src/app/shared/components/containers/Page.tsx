@@ -11,3 +11,5 @@ export const Page: FC<PropsWithChildren<{ className?: string }>> = ({
     </div>
   );
 };
+
+Page.displayName = 'Page';

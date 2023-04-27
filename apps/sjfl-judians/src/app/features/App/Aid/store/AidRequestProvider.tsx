@@ -7,6 +7,8 @@ import {
   RequestAidSteps,
 } from '../models/aid-request.model';
 
+import { v4 as uuid } from 'uuid';
+
 export const AidRequestContext = createContext<
   AidRequestContextType | undefined
 >(undefined);
@@ -48,6 +50,61 @@ export const AidRequestProvider: FC<PropsWithChildren> = ({ children }) => {
     setStep((step) => step + 1);
   };
 
+  const addFile = (files: File[], documentName: string, docId: string) => {
+    setRequest((request) => {
+      let { docs = [] } = request!;
+      const docIndex = docs.findIndex((doc) => doc.docId === docId);
+      if (docIndex < 0) {
+        docs = [
+          ...docs,
+          {
+            docId: docId,
+            documentName: documentName,
+            files: files.map((file) => ({
+              id: uuid(),
+              file: file,
+            })),
+          },
+        ];
+      } else {
+        const document = docs[docIndex];
+        document.files = [
+          ...document.files,
+          ...files.map((file) => ({ id: uuid(), file })),
+        ];
+        docs = [...docs];
+      }
+      return {
+        ...request,
+        docs: docs,
+      };
+    });
+  };
+
+  const removeFile = (docId: string, fileId: string) => {
+    setRequest((request) => {
+      let { docs = [] } = request!;
+      const docIndex = docs.findIndex((doc) => doc.docId === docId);
+
+      if (docIndex < 0) {
+        return request;
+      }
+
+      const fileIndex = docs[docIndex].files.findIndex(
+        (file) => file.id === fileId
+      );
+
+      if (fileIndex >= 0) {
+        docs[docIndex].files.splice(fileIndex);
+      }
+
+      return {
+        ...request,
+        docs,
+      };
+    });
+  };
+
   const state: AidRequestState = { step, request, mode };
 
   return (
@@ -58,6 +115,8 @@ export const AidRequestProvider: FC<PropsWithChildren> = ({ children }) => {
         startEditMode,
         previousStep,
         nextStep,
+        addFile,
+        removeFile,
         ...state,
       }}
     >
