@@ -10,8 +10,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { Logo } from '../../shared/components/images/Logo';
-import { Page } from '../../shared/components/containers/Page';
 import { useAuth } from '../../shared/hooks/useAuth';
 
 export const LoginPage = () => {
@@ -26,7 +26,7 @@ export const LoginPage = () => {
     event.preventDefault();
   };
   return (
-    <Page className="flex flex-col">
+    <Scaffold>
       <div className="flex justify-center pt-24 pb-10">
         <Logo size="medium"></Logo>
       </div>
@@ -105,6 +105,6 @@ export const LoginPage = () => {
           </span>
         </div>
       </div>
-    </Page>
+    </Scaffold>
   );
 };

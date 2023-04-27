@@ -8,6 +8,8 @@ type NoResultsProps = {
   imgUrl?: string;
   primaryAction?: string;
   onPrimaryAction?: () => void;
+  fullWidth?: boolean;
+  buttonVariant?: 'contained' | 'outlined';
 };
 
 export const NoResults: FC<NoResultsProps> = ({
@@ -15,6 +17,8 @@ export const NoResults: FC<NoResultsProps> = ({
   imgUrl,
   primaryAction,
   onPrimaryAction,
+  fullWidth = true,
+  buttonVariant = 'contained',
 }) => {
   const { i18n } = useLingui();
   message ??= i18n._(
@@ -30,9 +34,9 @@ export const NoResults: FC<NoResultsProps> = ({
       <h2 className="text-2xl text-center font-bold mb-10">{message}</h2>
       {primaryAction && onPrimaryAction && (
         <Button
-          fullWidth
+          fullWidth={fullWidth}
           color="primary"
-          variant="contained"
+          variant={buttonVariant}
           onClick={onPrimaryAction}
         >
           {primaryAction}

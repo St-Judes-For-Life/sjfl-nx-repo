@@ -32,7 +32,11 @@ export enum RequestAidSteps {
 
 export type RequestSteps = keyof typeof RequestAidSteps;
 
-type UploadFile = { file: File[]; documentName: string };
+export type DocumentFiles = {
+  files: { file: File; id: string }[];
+  docId: string;
+  documentName: string;
+};
 
 export type AidRequest = {
   stream: Stream;
@@ -40,7 +44,7 @@ export type AidRequest = {
   additionalInfo: ({
     value: string;
   } & InfoType)[];
-  files: UploadFile[];
+  docs: DocumentFiles[];
 };
 
 export type AidRequestState = {
@@ -55,4 +59,6 @@ export type AidRequestContextType = {
   startCreateMode: () => void;
   previousStep: () => void;
   nextStep: (request: Partial<AidRequest>) => void;
+  addFile: (files: File[], documentName: string, docId: string) => void;
+  removeFile: (docId: string, fileId: string) => void;
 } & AidRequestState;
