@@ -31,7 +31,7 @@ export const materialTheme = createTheme({
   components: {
     MuiButtonBase: {
       defaultProps: {
-        // disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true, // No more ripple, on the whole application 💣!
       },
     },
     MuiButton: {
@@ -113,20 +113,60 @@ export const materialTheme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      defaultProps: {
+        className: classNames('!rounded-xl'),
+        size: 'small',
+        onFocus: (e) => {
+          setTimeout(() => {
+            e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        },
+      },
+      styleOverrides: {
+        nativeInput: {
+          fontSize: 16,
+          '> select:focus-visible': {
+            borderRadius: '0.75rem',
+            outlineWidth: '1px !important',
+          },
+        },
+      },
+    },
     MuiOutlinedInput: {
       defaultProps: {
         className: classNames('!rounded-xl'),
         size: 'small',
+        onFocus: (e) => {
+          setTimeout(() => {
+            e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        },
       },
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           backgroundColor: 'white',
           fontSize: 16,
-        },
+          '> input:focus-visible': {
+            borderRadius: '0.75rem',
+            outlineWidth: '1px !important',
+          },
+
+          '> .MuiSelect-select:focus-visible, > .MuiSelect-select:has(+ input:focus-visible)':
+            {
+              borderRadius: '0.75rem',
+              outlineWidth: '1px !important',
+              outlineStyle: 'solid',
+              outlineColor: theme.palette.accent.main,
+            },
+        }),
       },
     },
     MuiDrawer: {
       styleOverrides: {
+        root: {
+          zIndex: 1500,
+        },
         paperAnchorBottom: {
           paddingBottom: `env(safe-area-inset-bottom)`,
           paddingLeft: `env(safe-area-inset-left)`,

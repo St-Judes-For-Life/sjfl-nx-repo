@@ -11,7 +11,6 @@ import { ReactQueryProvider } from './app/shared/store/ReactQueryProvider';
 import { capacitorInit } from './app/shared/utils/capacitor';
 import { Router } from './router/Router';
 import { materialTheme } from './theme/material-theme';
-import { ToastService } from './app/shared/components/containers/Toast';
 import { ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(
@@ -27,8 +26,8 @@ root.render(
           </AuthProvider>
         </ThemeProvider>
       </ReactQueryProvider>
+      <ToastContainer position="top-center" />
     </InternationalizationProvider>
-    <ToastContainer position="top-center" />
   </StrictMode>
 );
 

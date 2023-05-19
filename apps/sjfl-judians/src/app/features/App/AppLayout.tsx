@@ -23,6 +23,8 @@ export const AppLayout = () => {
   const [route, setRoute] = useState<string>('');
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
   const navigate = useNavigate();
+  const navigation = useNavigation();
+  const showSpinner = navigation.state === 'submitting';
 
   useEffect(() => {
     setRoute(location.pathname.split('/')[1]);
@@ -39,9 +41,6 @@ export const AppLayout = () => {
 
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
-
-  const navigation = useNavigation();
-  const showSpinner = navigation.state === 'loading';
 
   const footer = (
     <Paper component="footer" elevation={3}>

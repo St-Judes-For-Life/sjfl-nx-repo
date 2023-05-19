@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useContext, useState } from 'react';
 import { LanguageSelectionPage } from '../../../features/Common/LanguageSelectionPage';
-import { SlideUp } from '../../helpers/transitions/SlideUp';
+import { SlideUp } from '../../helpers/transitions/DialogTransitions';
 import { LocaleContext } from '../../store/context/LocaleContext';
 
 export const LanguageButton = () => {

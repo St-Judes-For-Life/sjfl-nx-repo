@@ -10,3 +10,12 @@ export const SlideUp = forwardRef(
     );
   }
 );
+export const SlideFromRight = forwardRef(
+  ({ children, ...props }: PropsWithChildren<SlideProps>, ref) => {
+    return (
+      <Slide direction="right" ref={ref} {...props}>
+        {children}
+      </Slide>
+    );
+  }
+);

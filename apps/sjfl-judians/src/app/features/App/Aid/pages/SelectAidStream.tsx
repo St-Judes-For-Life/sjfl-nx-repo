@@ -21,6 +21,8 @@ export const SelectAidStream = () => {
           onClick={() => {
             aidRequest.nextStep({
               stream: stream,
+              nature: undefined,
+              additionalInfo: undefined,
             });
           }}
         >

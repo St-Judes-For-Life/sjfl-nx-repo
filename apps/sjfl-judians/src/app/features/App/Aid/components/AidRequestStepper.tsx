@@ -7,6 +7,9 @@ import { RequestAidSteps } from '../models/aid-request.model';
 
 export const AidRequestStepper = () => {
   const aidRequest = useAidRequest();
+  if (aidRequest.step === RequestAidSteps.complete) {
+    return <></>;
+  }
   return (
     <div className="py-8">
       <Stepper activeStep={aidRequest.step} alternativeLabel>

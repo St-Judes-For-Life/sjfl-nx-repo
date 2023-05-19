@@ -1,10 +1,14 @@
 import { Maybe } from '../../../../shared/models/maybe.model';
-import { Category, Stream } from './aid-workflow-config.model';
+import {
+  AdditionalInformationConfig,
+  CategoryConfig,
+  StreamConfig,
+} from './aid-workflow-config.model';
 
 type StringInfoType = { type: 'string'; value: string; label: string };
 type NumberInfoType = { type: 'number'; value: number; label: string };
 type DateInfoType = { type: 'date'; value: Date; label: string };
-type CurrencyInfoType = { type: 'currency'; value: Date; label: string };
+type CurrencyInfoType = { type: 'currency'; value: number; label: string };
 type SelectType = {
   type: 'select';
   value: string;
@@ -32,19 +36,17 @@ export enum RequestAidSteps {
 
 export type RequestSteps = keyof typeof RequestAidSteps;
 
-export type DocumentFiles = {
+export type AidReqDocumentFiles = {
   files: { file: File; id: string }[];
   docId: string;
   documentName: string;
 };
 
 export type AidRequest = {
-  stream: Stream;
-  nature: Category;
-  additionalInfo: ({
-    value: string;
-  } & InfoType)[];
-  docs: DocumentFiles[];
+  stream: StreamConfig;
+  nature: CategoryConfig;
+  additionalInfo: AdditionalInformationConfig[];
+  docs: AidReqDocumentFiles[];
 };
 
 export type AidRequestState = {
