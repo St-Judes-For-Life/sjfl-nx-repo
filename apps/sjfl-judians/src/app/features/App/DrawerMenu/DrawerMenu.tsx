@@ -15,7 +15,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ onDismiss }) => {
     <div className="h-screen flex flex-col safe-area">
       <IconButton
         aria-label="close-menu"
-        className="!justify-end !pr-4 mt-2"
+        className="!ml-auto !pr-4 mt-2"
         onClick={onDismiss}
         color="secondary"
       >

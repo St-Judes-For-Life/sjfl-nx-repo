@@ -95,7 +95,7 @@ export const AidRequestProvider: FC<PropsWithChildren> = ({ children }) => {
       );
 
       if (fileIndex >= 0) {
-        docs[docIndex].files.splice(fileIndex);
+        docs[docIndex].files.splice(fileIndex, 1);
       }
 
       return {

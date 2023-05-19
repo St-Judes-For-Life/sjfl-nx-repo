@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
 import Button from '@mui/material/Button';
+import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../../shared/components/images/Logo';
-import { Page } from '../../../shared/components/containers/Page';
 import { useLoggedInUser } from '../../../shared/hooks/useAuth';
 
 export const DashboardPage = () => {
@@ -17,7 +17,11 @@ export const DashboardPage = () => {
 
   return (
     <>
-      <div className="flex-grow flex flex-col items-center justify-center">
+      <div
+        className={classNames(
+          'flex-grow flex flex-col items-center justify-center'
+        )}
+      >
         <h2 className="text-3xl text-primary font-bold text-center">
           <Trans id="Dashboard.Hi">Hello {firstName},</Trans>
         </h2>
@@ -26,7 +30,9 @@ export const DashboardPage = () => {
         </h2>
         <Logo></Logo>
       </div>
-      <div className="flex-1 flex flex-col justify-center px-6 gap-4">
+      <div
+        className={classNames('flex-1 flex flex-col px-6 gap-4 justify-center')}
+      >
         <Button
           size="large"
           fullWidth

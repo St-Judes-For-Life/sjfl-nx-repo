@@ -1,28 +1,28 @@
 import { InfoType } from './aid-request.model';
 
 export type AidWorkflowConfig = {
-  streams: Stream[];
+  streams: StreamConfig[];
 };
 
-export type Stream = {
+export type StreamConfig = {
   id: number;
   name: string;
-  categories: Category[];
-  additionalInformation: AdditionalInformation[];
-  documents: Document[];
+  categories: CategoryConfig[];
+  additionalInformation: AdditionalInformationConfig[];
+  docs: DocumentConfig[];
 };
 
-export type AdditionalInformation = InfoType & {
+export type AdditionalInformationConfig = InfoType & {
   id: number;
-  placeholder: string;
+  placeholder?: string;
 };
 
-export type Category = {
+export type CategoryConfig = {
   id: number;
   name: string;
 };
 
-export type Document = {
+export type DocumentConfig = {
   id: string;
   documentName: string;
 };

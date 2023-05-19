@@ -13,6 +13,15 @@
   user-select: none;
 }
 
+*:focus-visible {
+  outline: theme('colors.accent') 4px solid !important;
+}
+
+/* Remove outline for non-keyboard :focus */
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
 body {
   padding: 0;
   margin: 0;

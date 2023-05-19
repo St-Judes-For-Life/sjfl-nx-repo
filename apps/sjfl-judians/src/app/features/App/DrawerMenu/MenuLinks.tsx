@@ -66,7 +66,7 @@ export const MenuLinks = () => {
         confirmText={i18n._(
           t({ id: 'LogOut.ConfirmBtn.Label', message: 'SIGN OUT' })
         )}
-        isDangerous={true}
+        destructive={true}
         onCancel={closeModal}
         onConfirm={logOut}
         open={logoutConfirmOpen}

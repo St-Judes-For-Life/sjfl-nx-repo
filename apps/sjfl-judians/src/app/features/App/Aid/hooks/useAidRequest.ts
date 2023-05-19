@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AidRequestContext } from '../store/AidRequestProvider';
 import { useNavigate } from 'react-router-dom';
-import { Stream } from '../models/aid-workflow-config.model';
+import { StreamConfig } from '../models/aid-workflow-config.model';
 
 export function useAidRequest() {
   const context = useContext(AidRequestContext);
@@ -12,7 +12,7 @@ export function useAidRequest() {
   return context;
 }
 
-export function useSelectedStream(): Stream {
+export function useSelectedStream(): StreamConfig {
   const context = useContext(AidRequestContext);
   const navigate = useNavigate();
   if (!context) {
