@@ -8,11 +8,14 @@ import { MenuItem } from './MenuItem';
 import Divider from '@mui/material/Divider';
 import { t, Trans } from '@lingui/macro';
 import { ConfirmationDialog } from '../../../shared/components/dialogs/ConfirmationDialog';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useLingui } from '@lingui/react';
 import { useAuth } from '../../../shared/hooks/useAuth';
+type MenuLinksProps = {
+  onMenuItemClick: (menuItemName: string) => void;
+};
 
-export const MenuLinks = () => {
+export const MenuLinks: FC<MenuLinksProps> = ({onMenuItemClick}) => {
   const { logOut } = useAuth();
 
   const { i18n } = useLingui();
@@ -26,23 +29,22 @@ export const MenuLinks = () => {
   const closeModal = () => {
     setLogoutConfirmOpen(false);
   };
+  const onItemClick = (name: string) => {
+    onMenuItemClick(name);
+  }
 
   return (
     <>
       <section className="flex-1 flex flex-col items-start p-4 gap-8">
-        <MenuItem>
+        <MenuItem onClick={() => onItemClick('profile')}>
           <AccountCircleIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Profile">Profile</Trans>
         </MenuItem>
-        <MenuItem>
-          <LockResetIcon fontSize="medium" className="mr-8" />
-          <Trans id="Drawer.ChangePassword">Change Password</Trans>
-        </MenuItem>
-        <MenuItem>
+        <MenuItem  onClick={() => onItemClick('help')}>
           <HelpOutlineIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Help">Help</Trans>
         </MenuItem>
-        <MenuItem>
+        <MenuItem  onClick={() => onItemClick('settings')}>
           <SettingsIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Settings">Settings</Trans>
         </MenuItem>

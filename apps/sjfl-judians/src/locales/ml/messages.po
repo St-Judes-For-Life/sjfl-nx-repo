@@ -26,7 +26,7 @@ msgstr ""
 msgid "Aid.RaiseRequest"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:23
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:97
 msgid "AidAdditionalInfo.next"
 msgstr ""
 
@@ -46,30 +46,56 @@ msgstr ""
 msgid "AidLanding.Title"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:36
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
 msgid "AidRequestSteps.Docs"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:31
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
 msgid "AidRequestSteps.Info"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:26
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:29
 msgid "AidRequestSteps.Nature"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:21
 msgid "AidRequestSteps.Stream"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:17
+msgid "AidRequestSuccess.Created"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:29
+msgid "AidRequestSuccess.ViewReq"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
+msgid "AidRequestSummary.Docs"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
+msgid "AidRequestSummary.Info"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
+msgid "AidRequestSummary.Nature"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
+msgid "AidRequestSummary.Stream"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
 msgid "AidRequestSummary.Title"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:76
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
 msgid "Auth.Email"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:85
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
 msgid "Auth.Email_Placeholder"
 msgstr ""
@@ -82,18 +108,22 @@ msgstr ""
 msgid "Auth.Login.TroubleWithSignIn"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:58
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
 msgid "Auth.Mobile"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:67
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
 msgid "Auth.Mobile_Placeholder"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:42
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
 msgid "Auth.Name"
 msgstr ""
 
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:49
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
 msgid "Auth.Name_Placeholder"
 msgstr ""
@@ -132,7 +162,24 @@ msgstr ""
 msgid "Auth.UID_Placeholder"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:37
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:72
+msgid "Btn.Close"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:191
+msgid "Btn.Delete"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:26
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:41
+msgid "Btn.GoHome"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:96
+msgid "Btn.Upload"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:31
 msgid "Btn.save"
 msgstr ""
 
@@ -148,11 +195,11 @@ msgstr ""
 msgid "Counselling.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:11
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:13
 msgid "Counselling.Upcoming.NoResults"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:18
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:20
 msgid "Counselling.Upcoming.RaiseRequest"
 msgstr ""
 
@@ -168,55 +215,55 @@ msgstr ""
 msgid "CounsellingLanding.Upcoming"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:37
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:43
 msgid "Dashboard.Aid"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:22
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:26
 msgid "Dashboard.Hi"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:46
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:52
 msgid "Dashboard.Schedule"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:25
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:29
 msgid "Dashboard.Welcome"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:39
-msgid "Drawer.ChangePassword"
-msgstr ""
+#~ msgid "Drawer.ChangePassword"
+#~ msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:43
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:45
 msgid "Drawer.Help"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:54
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:56
 msgid "Drawer.Logout"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:35
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:41
 msgid "Drawer.Profile"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:47
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:49
 msgid "Drawer.Settings"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:156
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:155
 msgid "FilePicker.ClickPicture"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:168
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:167
 msgid "FilePicker.SelectFile"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:162
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:161
 msgid "FilePicker.SelectGallery"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:137
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:136
 msgid "FilePickerDialog.FileError"
 msgstr ""
 
@@ -225,12 +272,20 @@ msgstr ""
 msgid "FilePickerDialog.GalleryError"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:110
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:109
 msgid "FilePickerDialog.PictureError"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:26
 msgid "FilePickerDialog.Title"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:55
+msgid "Forms.ReqdError"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
+msgid "Help.Header"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
@@ -241,16 +296,80 @@ msgstr ""
 msgid "LanguageSelection.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:67
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
 msgid "LogOut.ConfirmBtn.Label"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:61
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:63
 msgid "LogOut.ConfirmText"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:21
+#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:25
 msgid "NoResults.DefaultMessage"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:129
+msgid "Profile.DOB"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:94
+msgid "Profile.Gender"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:120
+msgid "Profile.Gender_Female"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:117
+msgid "Profile.Gender_Male"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:123
+msgid "Profile.Gender_Other"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:101
+#~ msgid "Profile.Gender_Placeholder"
+#~ msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
+msgid "Profile.Header"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:136
+msgid "Profile.Save"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
+msgid "ScheduleCouncelling.ConfirmationMessagePart1"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
+msgid "ScheduleCouncelling.ConfirmationMessagePart2"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:36
+msgid "ScheduleCouncelling.Header"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
+msgid "ScheduleCouncelling.MeetingID"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
+msgid "ScheduleCouncelling.Note"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:68
+msgid "ScheduleCouncelling.Schedule"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:46
+msgid "ScheduleCouncelling.SelectDate"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:49
+msgid "ScheduleCouncelling.ViewSchedule"
 msgstr ""
 
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:50
@@ -262,7 +381,47 @@ msgstr ""
 msgid "SelectAidStream.Header"
 msgstr ""
 
-#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:27
-#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:22
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
+msgid "Settings.Header"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
+msgid "Settings.Language"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:12
+msgid "Settings.Notification"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:13
+#~ msgid "Settings.Save"
+#~ msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:16
+msgid "UploadAidDocs.FileSize"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:19
+msgid "UploadAidDocs.Formats"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:182
+msgid "UploadDocsDrawer.ConfirmDelete"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:153
+msgid "UploadDocsDrawer.FileDeleted"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:54
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:25
 msgid "UploadFiles.title"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:90
+msgid "UploadFilesDrawer.NoFiles"
+msgstr ""
+
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:50
+msgid "{0, plural, =0 { Please select a file to upload} one { Selected <0>#</0> file} other { Selected <1>#</1> files}}"
 msgstr ""

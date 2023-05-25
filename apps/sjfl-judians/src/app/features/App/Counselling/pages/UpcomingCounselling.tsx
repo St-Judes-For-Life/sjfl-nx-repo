@@ -2,9 +2,11 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
+import { useNavigate } from 'react-router-dom';
 
 export const UpcomingCounselling = () => {
   const { i18n } = useLingui();
+  const navigate = useNavigate();
   return (
     <NoResults
       message={i18n._(
@@ -20,7 +22,7 @@ export const UpcomingCounselling = () => {
           message: 'SCHEDULE A SESSION',
         })
       )}
-      onPrimaryAction={() => true}
+      onPrimaryAction={() => navigate('../../schedule/new')}
     />
   );
 };
