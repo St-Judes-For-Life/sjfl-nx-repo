@@ -67,3 +67,7 @@ a {
 .Toastify__toast-container--top-center {
   top: env(safe-area-inset-top) !important;
 }
+
+.MuiDateCalendar-root {
+  margin: 0 !important;
+}

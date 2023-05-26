@@ -143,7 +143,7 @@ export const FilePickerDialog: FC<
   };
 
   return (
-    <Drawer onClose={onClose} anchor="bottom" open={open}>
+    <Drawer onClose={onClose} anchor="bottom" open={open} sx={{zIndex: 9999}}>
       <h3 className="text-center mt-2">{label}</h3>
       <div className="mt-4 px-2">
         {(fileType === 'image' || fileType === 'image+file') && (

@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, redirect } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 import { ProtectedRouteLayout } from '../app/shared/layout/ProtectedRouteLayout';
 import { RootLayout } from '../app/shared/layout/RootLayout';
 import { rootLoader } from '../app/shared/loaders/rootLoader';
@@ -100,12 +100,15 @@ export const router = createBrowserRouter([
                   },
                 ],
               },
-
               {
                 path: 'counselling',
                 children: [
                   {
                     path: '',
+                    loader: () => redirect('requests'),
+                  },
+                  {
+                    path: 'requests',
                     lazy: async () => {
                       const { CounsellingLandingPage } = await import(
                         '../app/features/App/Counselling'
@@ -137,8 +140,62 @@ export const router = createBrowserRouter([
                       },
                     ],
                   },
+                  {
+                    path: 'schedule',
+                    lazy: async () => {
+                      const { CounsellingLayout } = await import(
+                        '../app/features/App/Counselling'
+                      );
+                      return { Component: CounsellingLayout };
+                    },
+                    children: [
+                      {
+                        path: '',
+                        loader: () => redirect('new'),
+                      },
+                      {
+                        path: 'new',
+                        lazy: async () => {
+                          const { ScheduleCounselling } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: ScheduleCounselling };
+                        },
+                      },
+                      {
+                        path: 'confirmation',
+                        lazy: async () => {
+                          const { ScheduleConfirmation } = await import(
+                            '../app/features/App/Counselling'
+                          );
+                          return { Component: ScheduleConfirmation };
+                        },
+                      },
+                    ],
+                  }
                 ],
               },
+              {
+                path: 'profile',
+                lazy: async () => {
+                  const { ProfilePage } = await import('../app/features/App/DrawerMenu');
+                  return { Component: ProfilePage };
+                },
+              },
+              {
+                path: 'help',
+                lazy: async () => {
+                  const { HelpPage } = await import('../app/features/App/DrawerMenu');
+                  return { Component: HelpPage };
+                },
+              },
+              {
+                path: 'settings',
+                lazy: async () => {
+                  const { SettingsPage } = await import('../app/features/App/DrawerMenu');
+                  return { Component: SettingsPage };
+                },
+              }
             ],
           },
         ],

@@ -7,9 +7,10 @@ import { UserProfileLink } from './UserProfileLink';
 
 type DrawerMenuProps = {
   onDismiss: () => void;
+  onMenuItemClick: (menuItemName: string) => void;
 };
 
-export const DrawerMenu: FC<DrawerMenuProps> = ({ onDismiss }) => {
+export const DrawerMenu: FC<DrawerMenuProps> = ({ onDismiss, onMenuItemClick }) => {
   const user = useLoggedInUser();
   return (
     <div className="h-screen flex flex-col safe-area">
@@ -22,7 +23,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ onDismiss }) => {
         <ClearIcon fontSize="large" />
       </IconButton>
       <UserProfileLink user={user} />
-      <MenuLinks />
+      <MenuLinks onMenuItemClick={onMenuItemClick}/>
     </div>
   );
 };
