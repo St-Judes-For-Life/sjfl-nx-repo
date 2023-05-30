@@ -12,6 +12,8 @@ import { capacitorInit } from './app/shared/utils/capacitor';
 import { Router } from './router/Router';
 import { materialTheme } from './theme/material-theme';
 import { ToastContainer } from 'react-toastify';
+import { queryClient } from './app/shared/utils/react-query';
+import { workflowConfigQuery } from './app/features/App/Aid/queries/aid-workflow.query';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

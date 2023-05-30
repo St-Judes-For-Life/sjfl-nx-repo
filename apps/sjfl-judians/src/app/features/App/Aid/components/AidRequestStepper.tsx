@@ -18,7 +18,7 @@ export const AidRequestStepper = () => {
           disabled={aidRequest.mode === 'edit'}
         >
           <StepLabel>
-            <Trans id="AidRequestSteps.Stream">Select Stream</Trans>
+            <Trans id="AidRequestSteps.Stream">Support Stream</Trans>
           </StepLabel>
         </Step>
         <Step

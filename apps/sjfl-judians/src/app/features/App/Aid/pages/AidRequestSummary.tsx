@@ -13,14 +13,14 @@ export const AidRequestSummary = () => {
       <div className="grid gap-6">
         <section>
           <h3 className="text-primary text-lg font-semibold">
-            <Trans id="AidRequestSummary.Stream">Support Stream</Trans>
+            <Trans id="AidRequestSteps.Stream">Support Stream</Trans>
           </h3>
           <p>{request?.stream?.name}</p>
         </section>
 
         <section>
           <h3 className="text-primary text-lg font-semibold">
-            <Trans id="AidRequestSummary.Nature">Nature of Support</Trans>
+            <Trans id="AidRequestSteps.Nature">Nature of Support</Trans>
           </h3>
           <p>{request?.nature?.name}</p>
         </section>
@@ -30,7 +30,7 @@ export const AidRequestSummary = () => {
           request?.additionalInfo?.length > 0 && (
             <section>
               <h3 className="text-primary text-lg font-semibold">
-                <Trans id="AidRequestSummary.Info">Additional Info</Trans>
+                <Trans id="AidRequestSteps.Info">Additional Info</Trans>
               </h3>
               {request?.additionalInfo?.map((info) => (
                 <p>
@@ -43,7 +43,7 @@ export const AidRequestSummary = () => {
         {request && request.docs && request?.docs?.length > 0 && (
           <section>
             <h3 className="text-primary text-lg font-semibold">
-              <Trans id="AidRequestSummary.Docs">Documents Uploaded</Trans>
+              <Trans id="AidRequestSteps.Docs">Documents Upload</Trans>
             </h3>
             {request?.docs?.map((doc) => (
               <p>{doc.documentName}</p>

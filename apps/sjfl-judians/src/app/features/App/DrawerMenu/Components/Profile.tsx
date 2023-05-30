@@ -1,38 +1,51 @@
-import { i18n } from "@lingui/core";
-import { Trans, t } from "@lingui/macro";
+import { i18n } from '@lingui/core';
+import { Trans, t } from '@lingui/macro';
+import EditIcon from '@mui/icons-material/Edit';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
-import { useForm } from "react-hook-form";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import EditIcon from '@mui/icons-material/Edit';
-import Button from '@mui/material/Button';
-
-import { useLoggedInUser } from "apps/sjfl-judians/src/app/shared/hooks/useAuth";
-import { FilePickerDialog } from "apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog";
-import { useState } from "react";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FilePickerDialog } from '../../../../shared/components/dialogs/FilePickerDialog';
+import { useLoggedInUser } from '../../../../shared/hooks/useAuth';
 
 export const Profile = () => {
   const [fileDialogOpen, setFileDialogOpen] = useState(false);
-  const { register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
   const user = useLoggedInUser();
 
   return (
     <section>
-      <div style={{position: 'relative'}}>
+      <div style={{ position: 'relative' }}>
         <Avatar
-            src={user.imageUrl}
-            sx={{ width: '6rem', height: '6rem', fontSize: '3rem', margin: '0 auto' }}
-          >
-            {user.name.substring(0, 1).toLocaleUpperCase()}
+          src={user.imageUrl}
+          sx={{
+            width: '6rem',
+            height: '6rem',
+            fontSize: '3rem',
+            margin: '0 auto',
+          }}
+        >
+          {user.name.substring(0, 1).toLocaleUpperCase()}
         </Avatar>
-        <IconButton size="small" onClick={() => setFileDialogOpen(true)} sx={{ position: 'absolute', top:'60%', left: '50%', borderRadius: '50%' }}>
+        <IconButton
+          size="small"
+          onClick={() => setFileDialogOpen(true)}
+          sx={{
+            position: 'absolute',
+            top: '60%',
+            left: '50%',
+            borderRadius: '50%',
+          }}
+        >
           <EditIcon />
         </IconButton>
       </div>
@@ -107,12 +120,11 @@ export const Profile = () => {
               return value ? (
                 <>{value}</>
               ) : (
-                <span className="text-gray-400">
-                  Please select gender
-                </span>
+                <span className="text-gray-400">Please select gender</span>
               );
             }}
-            value="">
+            value=""
+          >
             <MenuItem value="male" key="male">
               <Trans id="Profile.Gender_Male">Male</Trans>
             </MenuItem>
@@ -137,12 +149,12 @@ export const Profile = () => {
         </Button>
       </form>
       <FilePickerDialog
-        fileType='image'
+        fileType="image"
         open={fileDialogOpen}
         onClose={() => setFileDialogOpen(false)}
-        label='Select A Profile Picture'
-        onPick={(files) => { }}
+        label="Select A Profile Picture"
+        onPick={(files) => {}}
       />
     </section>
-  )
-}
+  );
+};
