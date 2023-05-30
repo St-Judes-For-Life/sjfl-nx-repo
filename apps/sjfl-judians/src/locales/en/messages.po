@@ -124,7 +124,7 @@ msgstr "Aid"
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
 msgid "AidRequestSteps.Docs"
-msgstr "Documents Upload"
+msgstr "Upload Documents"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
@@ -177,7 +177,7 @@ msgstr "VIEW REQUEST"
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
 msgid "AidRequestSummary.Title"
-msgstr "Request Summary"
+msgstr "AidRequestSummary.Title"
 
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
 #~ msgid "Aid.InProgress.NoResults"

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-05-30 16:13+0530\n"
+"POT-Creation-Date: 2023-05-30 16:28+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,7 +41,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:31
 msgid "AidLanding.Title"
-msgstr ""
+msgstr "सहायता"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
@@ -143,19 +143,19 @@ msgstr ""
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
 msgid "Auth.Register"
-msgstr ""
+msgstr "रजिस्टर"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
 msgid "Auth.Register.AlreadyHaveAccount"
-msgstr ""
+msgstr "क्या आपके पास पहले से एक खाता मौजूद है?"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
 msgid "Auth.SignIn"
-msgstr ""
+msgstr "साइन इन करें"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
@@ -334,12 +334,12 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
 msgid "LogOut.ConfirmBtn.Label"
-msgstr ""
+msgstr "साइन आउट"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:63
 msgid "LogOut.ConfirmText"
-msgstr ""
+msgstr "क्या आप लॉग आउट करना चाहते हैं?"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:25
@@ -460,7 +460,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:182
 msgid "UploadDocsDrawer.ConfirmDelete"
-msgstr ""
+msgstr "क्या आप द्वारा इस फाइल को हटाया जाना सुनिश्चित है?"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:153
