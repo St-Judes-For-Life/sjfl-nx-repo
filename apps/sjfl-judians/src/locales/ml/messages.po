@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"POT-Creation-Date: 2023-05-30 15:56+0530\n"
+"POT-Creation-Date: 2023-05-30 16:13+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,21 +45,25 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
 msgid "AidRequestSteps.Docs"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
 msgid "AidRequestSteps.Info"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:29
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
 msgid "AidRequestSteps.Nature"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
 msgid "AidRequestSteps.Stream"
 msgstr ""
 
@@ -71,26 +75,6 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:29
 msgid "AidRequestSuccess.ViewReq"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
-msgid "AidRequestSummary.Docs"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
-msgid "AidRequestSummary.Info"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
-msgid "AidRequestSummary.Nature"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
-msgid "AidRequestSummary.Stream"
 msgstr ""
 
 #. js-lingui-explicit-id

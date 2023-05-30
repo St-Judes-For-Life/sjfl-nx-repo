@@ -122,21 +122,25 @@ msgstr "Aid"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
 msgid "AidRequestSteps.Docs"
 msgstr "Documents Upload"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
 msgid "AidRequestSteps.Info"
 msgstr "Additional Info"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:29
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
 msgid "AidRequestSteps.Nature"
 msgstr "Nature of support"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
 msgid "AidRequestSteps.Stream"
 msgstr "Support Stream"
 
@@ -152,23 +156,23 @@ msgstr "VIEW REQUEST"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
-msgid "AidRequestSummary.Docs"
-msgstr "Documents Uploaded"
+#~ msgid "AidRequestSummary.Docs"
+#~ msgstr "Documents Uploaded"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
-msgid "AidRequestSummary.Info"
-msgstr "Additional Info"
+#~ msgid "AidRequestSummary.Info"
+#~ msgstr "Additional Info"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
-msgid "AidRequestSummary.Nature"
-msgstr "Nature of Support"
+#~ msgid "AidRequestSummary.Nature"
+#~ msgstr "Nature of Support"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
-msgid "AidRequestSummary.Stream"
-msgstr "Support Stream"
+#~ msgid "AidRequestSummary.Stream"
+#~ msgstr "Support Stream"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
