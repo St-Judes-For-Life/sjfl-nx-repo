@@ -1,5 +1,5 @@
 import { i18n } from '@lingui/core';
-import { bn, en, hi, kn, ml, mr, ta, te } from 'make-plural/plurals';
+// import { bn, en, hi, kn, ml, mr, ta, te } from 'make-plural/plurals';
 import { Locale } from '../models/i18n.model';
 import { asyncStore } from './async-storage/async-storage';
 
@@ -46,16 +46,16 @@ export const locales: Locale[] = [
   },
 ];
 
-i18n.loadLocaleData({
-  en: { plurals: en },
-  hi: { plurals: hi },
-  mr: { plurals: mr },
-  bn: { plurals: bn },
-  kn: { plurals: kn },
-  ta: { plurals: ta },
-  te: { plurals: te },
-  ml: { plurals: ml },
-});
+// i18n.loadLocaleData({
+//   en: { plurals: en },
+//   hi: { plurals: hi },
+//   mr: { plurals: mr },
+//   bn: { plurals: bn },
+//   kn: { plurals: kn },
+//   ta: { plurals: ta },
+//   te: { plurals: te },
+//   ml: { plurals: ml },
+// });
 
 /**
  * Do a dynamic import of just the catalog that we need

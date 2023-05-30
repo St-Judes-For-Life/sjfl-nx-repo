@@ -11,13 +11,7 @@
       ]
     }
   ],
-  "compileNamespace": "cjs",
-  "extractBabelOptions": {
-    "rootMode": "upward",
-    "presets": [
-      "@babel/preset-typescript"
-    ]
-  },
+  "compileNamespace": "ts",
   "fallbackLocales": {
     "default": "en"
   },
@@ -39,5 +33,9 @@
     "@lingui/core",
     "i18n"
   ],
-  "sourceLocale": "en"
+  "sourceLocale": "en",
+  "service": {
+    "name": "TranslationIO",
+    "apiKey": "c7f8be8c88bc424fbe52afd565ad368d"
+  }
 }

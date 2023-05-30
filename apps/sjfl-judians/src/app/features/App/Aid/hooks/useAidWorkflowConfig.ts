@@ -1,6 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { workflowConfigQuery } from '../queries/aid-workflow.query';
+import { useLoadedQuery } from '../../../../shared/hooks/useLoadedQuery';
 
 export function useAidWorkflowConfig() {
-  return useQuery(workflowConfigQuery.queryKey, workflowConfigQuery.queryFn);
+  return useLoadedQuery(
+    workflowConfigQuery.queryKey,
+    workflowConfigQuery.queryFn
+  );
 }

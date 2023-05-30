@@ -11,415 +11,910 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:26
+#~ msgid "FilePickerDialog.Title"
+#~ msgstr "Select a file to upload"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:55
+#~ msgid "Forms.ReqdError"
+#~ msgstr "Missing Input: {label}"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:12
+#~ msgid "Settings.Notification"
+#~ msgstr "Notification"
+
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:50
+msgid "{0, plural, =0 {Please select a file to upload} one {Selected <0>#</0> file} other {Selected <1>#</1> files}}"
+msgstr "{0, plural, =0 {Please select a file to upload} one {Selected <0>#</0> file} other {Selected <1>#</1> files}}"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:13
+#~ msgid "Counselling.Upcoming.NoResults"
+#~ msgstr "You don't have any session scheduled"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
+#~ msgid "LanguageSelection.Continue"
+#~ msgstr "CONTINUE"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:167
+#~ msgid "FilePicker.SelectFile"
+#~ msgstr "Select from files"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
+#~ msgid "ScheduleCouncelling.ConfirmationMessagePart2"
+#~ msgstr "SJFL will reach out to you"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:59
+#~ msgid "Auth.Password_Placeholder"
+#~ msgstr "Enter your Password"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:45
+#~ msgid "SelectAidStream.Header"
+#~ msgstr "Raise a new request"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:72
+#~ msgid "Btn.Close"
+#~ msgstr "CLOSE"
+
+#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:25
+#~ msgid "NoResults.DefaultMessage"
+#~ msgstr "No results found"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:97
+#~ msgid "AidAdditionalInfo.next"
+#~ msgstr "NEXT"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:16
+#~ msgid "UploadAidDocs.FileSize"
+#~ msgstr "File cannot exceed 5Mb"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:123
+#~ msgid "Profile.Gender_Other"
+#~ msgstr "Other"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:36
+#~ msgid "ScheduleCouncelling.Header"
+#~ msgstr "Schedule a session"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:58
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
+#~ msgid "Auth.Mobile"
+#~ msgstr "Mobile"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
+#~ msgid "AidRequestSteps.Info"
+#~ msgstr "Additional Info"
+
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
 msgid "Aid.Completed.NoResults"
 msgstr "You don't have any completed requests"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
 msgid "Aid.InProgress.NoResults"
 msgstr "You don't have any in progress requests"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:24
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:24
 msgid "Aid.RaiseRequest"
 msgstr "RAISE A REQUEST"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:97
 msgid "AidAdditionalInfo.next"
 msgstr "NEXT"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:52
 msgid "AidLanding.Completed"
 msgstr "Completed"
 
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:25
-#~ msgid "AidLanding.Header"
-#~ msgstr "Request Aid"
-
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:42
 msgid "AidLanding.InProgress"
 msgstr "In Progress"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:31
 msgid "AidLanding.Title"
 msgstr "Aid"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
 msgid "AidRequestSteps.Docs"
-msgstr "Upload Documents"
+msgstr "Documents Upload"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:34
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
 msgid "AidRequestSteps.Info"
 msgstr "Additional Info"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:29
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
 msgid "AidRequestSteps.Nature"
 msgstr "Nature of support"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:21
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
 msgid "AidRequestSteps.Stream"
-msgstr "Select Stream"
+msgstr "Support Stream"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:17
 msgid "AidRequestSuccess.Created"
 msgstr "Your request has been received"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:29
 msgid "AidRequestSuccess.ViewReq"
 msgstr "VIEW REQUEST"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
-msgid "AidRequestSummary.Docs"
-msgstr "Documents Uploaded"
+#~ msgid "AidRequestSummary.Docs"
+#~ msgstr "Documents Uploaded"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
-msgid "AidRequestSummary.Info"
-msgstr "Additional Info"
+#~ msgid "AidRequestSummary.Info"
+#~ msgstr "Additional Info"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
-msgid "AidRequestSummary.Nature"
-msgstr "Nature of Support"
+#~ msgid "AidRequestSummary.Nature"
+#~ msgstr "Nature of Support"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
-msgid "AidRequestSummary.Stream"
-msgstr "Support Stream"
+#~ msgid "AidRequestSummary.Stream"
+#~ msgstr "Support Stream"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
 msgid "AidRequestSummary.Title"
 msgstr "Request Summary"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:76
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:17
+#~ msgid "Aid.InProgress.NoResults"
+#~ msgstr "You don't have any in progress requests"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:89
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
 msgid "Auth.Email"
 msgstr "Email"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:85
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:98
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
 msgid "Auth.Email_Placeholder"
 msgstr "Enter your email id"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:94
 msgid "Auth.Login.DontHaveAccount"
 msgstr "Don't have an account?"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:79
 msgid "Auth.Login.TroubleWithSignIn"
 msgstr "Having trouble signing in?"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:58
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:71
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
 msgid "Auth.Mobile"
 msgstr "Mobile"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:67
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:80
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
 msgid "Auth.Mobile_Placeholder"
 msgstr "Enter your mobile number"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:42
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:55
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
 msgid "Auth.Name"
 msgstr "Name"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:49
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:62
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
 msgid "Auth.Name_Placeholder"
 msgstr "Enter your full name"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:51
 msgid "Auth.Password"
 msgstr "Password"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:59
 msgid "Auth.Password_Placeholder"
 msgstr "Enter your Password"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
 msgid "Auth.Register"
 msgstr "REGISTER"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
 msgid "Auth.Register.AlreadyHaveAccount"
 msgstr "Already have an account?"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
 msgid "Auth.SignIn"
 msgstr "SIGN IN"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:24
 msgid "Auth.UID"
 msgstr "UID"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:45
 #: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:32
 msgid "Auth.UID_Placeholder"
 msgstr "Enter your UID"
 
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:42
+#~ msgid "AidLanding.InProgress"
+#~ msgstr "In Progress"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:161
+#~ msgid "FilePicker.SelectGallery"
+#~ msgstr "Select from Gallery"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:85
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
+#~ msgid "Auth.Email_Placeholder"
+#~ msgstr "Enter your email id"
+
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:72
 msgid "Btn.Close"
 msgstr "CLOSE"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:191
 msgid "Btn.Delete"
 msgstr "DELETE"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:26
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:41
 msgid "Btn.GoHome"
 msgstr "GO TO HOME"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:96
 msgid "Btn.Upload"
 msgstr "UPLOAD"
 
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:31
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:41
 msgid "Btn.save"
-msgstr "SAVE"
+msgstr "Btn.save"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
 msgid "ConfirmDialog.Cancel"
 msgstr "CANCEL"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:27
 msgid "ConfirmDialog.Confirm"
 msgstr "CONFIRM"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:24
 msgid "Counselling.Header"
 msgstr "Counselling"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:13
 msgid "Counselling.Upcoming.NoResults"
 msgstr "You don't have any session scheduled"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:20
 msgid "Counselling.Upcoming.RaiseRequest"
 msgstr "SCHEDULE A SESSION"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/PastCounselling.tsx:10
 msgid "Counselling.past.NoResults"
 msgstr "You don't have any past sessions"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:44
 msgid "CounsellingLanding.Past"
 msgstr "Past"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:34
 msgid "CounsellingLanding.Upcoming"
 msgstr "Upcoming"
 
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:43
-msgid "Dashboard.Aid"
-msgstr "REQUEST FOR AID"
-
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:26
-msgid "Dashboard.Hi"
-msgstr "Hello {firstName},"
-
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:52
-msgid "Dashboard.Schedule"
-msgstr "SCHEDULE A SESSION"
-
-#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:29
-msgid "Dashboard.Welcome"
-msgstr "Welcome to"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:39
-#~ msgid "Drawer.ChangePassword"
-#~ msgstr "Change Password"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:45
-msgid "Drawer.Help"
-msgstr "Help"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:56
-msgid "Drawer.Logout"
-msgstr "Log out"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:41
-msgid "Drawer.Profile"
-msgstr "Profile"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:49
-msgid "Drawer.Settings"
-msgstr "Settings"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:155
-msgid "FilePicker.ClickPicture"
-msgstr "Click a Picture"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:167
-msgid "FilePicker.SelectFile"
-msgstr "Select from files"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:161
-msgid "FilePicker.SelectGallery"
-msgstr "Select from Gallery"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:136
-msgid "FilePickerDialog.FileError"
-msgstr "Unable to select files"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:52
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:78
-msgid "FilePickerDialog.GalleryError"
-msgstr "Unable to read image"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:109
-msgid "FilePickerDialog.PictureError"
-msgstr "Unable to take picture"
-
-#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:26
-msgid "FilePickerDialog.Title"
-msgstr "Select a file to upload"
-
-#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:55
-msgid "Forms.ReqdError"
-msgstr "Missing Input: {label}"
-
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
-msgid "Help.Header"
-msgstr "Help"
-
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
-msgid "LanguageSelection.Continue"
-msgstr "CONTINUE"
-
-#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:48
-msgid "LanguageSelection.Header"
-msgstr "Select your preferred language"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
-msgid "LogOut.ConfirmBtn.Label"
-msgstr "SIGN OUT"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:63
-msgid "LogOut.ConfirmText"
-msgstr "Are you sure you want to log out?"
-
-#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:25
-msgid "NoResults.DefaultMessage"
-msgstr "No results found"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:129
-msgid "Profile.DOB"
-msgstr "Date Of Birth"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:94
-msgid "Profile.Gender"
-msgstr "Gender"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:120
-msgid "Profile.Gender_Female"
-msgstr "Female"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:117
-msgid "Profile.Gender_Male"
-msgstr "Male"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:123
-msgid "Profile.Gender_Other"
-msgstr "Other"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:101
-#~ msgid "Profile.Gender_Placeholder"
-#~ msgstr "Select your gender"
-
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
-msgid "Profile.Header"
-msgstr "Profile"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:136
-msgid "Profile.Save"
-msgstr "Save"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
-msgid "ScheduleCouncelling.ConfirmationMessagePart1"
-msgstr "Your session has been scheduled."
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
-msgid "ScheduleCouncelling.ConfirmationMessagePart2"
-msgstr "SJFL will reach out to you"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:36
-msgid "ScheduleCouncelling.Header"
-msgstr "Schedule a session"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
-msgid "ScheduleCouncelling.MeetingID"
-msgstr "Meeting ID -"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
-msgid "ScheduleCouncelling.Note"
-msgstr "Note"
-
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:68
-msgid "ScheduleCouncelling.Schedule"
-msgstr "SCHEDULE"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:46
-msgid "ScheduleCouncelling.SelectDate"
-msgstr "Select a date"
-
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:49
-msgid "ScheduleCouncelling.ViewSchedule"
-msgstr "VIEW SCHEDULE"
-
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:50
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:62
-msgid "SelectAidNature.Header"
-msgstr "{0} Aid"
-
-#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:45
-msgid "SelectAidStream.Header"
-msgstr "Raise a new request"
-
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
-msgid "Settings.Header"
-msgstr "Settings"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
-msgid "Settings.Language"
-msgstr "Language"
-
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:12
-msgid "Settings.Notification"
-msgstr "Notification"
+#~ msgid "ScheduleCouncelling.Schedule"
+#~ msgstr "SCHEDULE"
 
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:13
 #~ msgid "Settings.Save"
 #~ msgstr "Save"
 
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:43
+msgid "Dashboard.Aid"
+msgstr "REQUEST FOR AID"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:26
+msgid "Dashboard.Hi"
+msgstr "Hello {firstName},"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:52
+msgid "Dashboard.Schedule"
+msgstr "SCHEDULE A SESSION"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:29
+msgid "Dashboard.Welcome"
+msgstr "Welcome to"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:45
+msgid "Drawer.Help"
+msgstr "Help"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:56
+msgid "Drawer.Logout"
+msgstr "Log out"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:41
+msgid "Drawer.Profile"
+msgstr "Profile"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:49
+msgid "Drawer.Settings"
+msgstr "Settings"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:45
+#~ msgid "Drawer.Help"
+#~ msgstr "Help"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:19
+#~ msgid "UploadAidDocs.Formats"
+#~ msgstr "Allowed formats - PDF, DOC, JPG, PNG"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:109
+#~ msgid "FilePickerDialog.PictureError"
+#~ msgstr "Unable to take picture"
+
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
+#~ msgid "Auth.Register.AlreadyHaveAccount"
+#~ msgstr "Already have an account?"
+
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:26
+#~ msgid "Dashboard.Hi"
+#~ msgstr "Hello {firstName},"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:155
+msgid "FilePicker.ClickPicture"
+msgstr "Click a Picture"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:167
+msgid "FilePicker.SelectFile"
+msgstr "Select from files"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:161
+msgid "FilePicker.SelectGallery"
+msgstr "Select from Gallery"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:136
+msgid "FilePickerDialog.FileError"
+msgstr "Unable to select files"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:52
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:78
+msgid "FilePickerDialog.GalleryError"
+msgstr "Unable to read image"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:109
+msgid "FilePickerDialog.PictureError"
+msgstr "Unable to take picture"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:26
+msgid "FilePickerDialog.Title"
+msgstr "Select a file to upload"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidAdditionalInfo.tsx:55
+msgid "Forms.ReqdError"
+msgstr "Missing Input: {label}"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:54
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:25
+#~ msgid "UploadFiles.title"
+#~ msgstr "Upload File(s)"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
+msgid "Help.Header"
+msgstr "Help.Header"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:56
+#~ msgid "Drawer.Logout"
+#~ msgstr "Log out"
+
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
+#~ msgid "Auth.SignIn"
+#~ msgstr "SIGN IN"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:117
+#~ msgid "Profile.Gender_Male"
+#~ msgstr "Male"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
+msgid "LanguageSelection.Continue"
+msgstr "Continue"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:48
+msgid "LanguageSelection.Header"
+msgstr "Select your preferred language"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
+msgid "LogOut.ConfirmBtn.Label"
+msgstr "SIGN OUT"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:63
+msgid "LogOut.ConfirmText"
+msgstr "Are you sure you want to log out?"
+
+#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
+#~ msgid "Auth.Register"
+#~ msgstr "REGISTER"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/PastCounselling.tsx:10
+#~ msgid "Counselling.past.NoResults"
+#~ msgstr "You don't have any past sessions"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:52
+#~ msgid "AidLanding.Completed"
+#~ msgstr "Completed"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/shared/components/error-states/NoResults.tsx:25
+msgid "NoResults.DefaultMessage"
+msgstr "No results found"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:24
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/InProgressAid.tsx:24
+#~ msgid "Aid.RaiseRequest"
+#~ msgstr "RAISE A REQUEST"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:23
+#~ msgid "AidRequestSummary.Nature"
+#~ msgstr "Nature of Support"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:141
+msgid "Profile.DOB"
+msgstr "Date Of Birth"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:107
+msgid "Profile.Gender"
+msgstr "Gender"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:132
+msgid "Profile.Gender_Female"
+msgstr "Female"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:129
+msgid "Profile.Gender_Male"
+msgstr "Male"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:135
+msgid "Profile.Gender_Other"
+msgstr "Other"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
+msgid "Profile.Header"
+msgstr "Profile.Header"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:148
+msgid "Profile.Save"
+msgstr "Save"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:26
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:41
+#~ msgid "Btn.GoHome"
+#~ msgstr "GO TO HOME"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:153
+#~ msgid "UploadDocsDrawer.FileDeleted"
+#~ msgstr "File was removed successfully!"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:129
+#~ msgid "Profile.DOB"
+#~ msgstr "Date Of Birth"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:101
+#~ msgid "Profile.Gender_Placeholder"
+#~ msgstr "Select your gender"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:50
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:62
+#~ msgid "SelectAidNature.Header"
+#~ msgstr "{0} Aid"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:34
+#~ msgid "CounsellingLanding.Upcoming"
+#~ msgstr "Upcoming"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
+msgid "ScheduleCouncelling.ConfirmationMessagePart1"
+msgstr "Your session has been scheduled."
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
+msgid "ScheduleCouncelling.ConfirmationMessagePart2"
+msgstr "SJFL will reach out to you"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:36
+msgid "ScheduleCouncelling.Header"
+msgstr "Schedule a session"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
+msgid "ScheduleCouncelling.MeetingID"
+msgstr "Meeting ID -"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
+msgid "ScheduleCouncelling.Note"
+msgstr "Note"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:68
+msgid "ScheduleCouncelling.Schedule"
+msgstr "SCHEDULE"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:46
+msgid "ScheduleCouncelling.SelectDate"
+msgstr "Select a date"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:49
+msgid "ScheduleCouncelling.ViewSchedule"
+msgstr "VIEW SCHEDULE"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:50
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:62
+msgid "SelectAidNature.Header"
+msgstr "{0} Aid"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestHeader.tsx:45
+msgid "SelectAidStream.Header"
+msgstr "Raise a new request"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
+msgid "Settings.Header"
+msgstr "Settings.Header"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:32
+msgid "Settings.Language"
+msgstr "Settings.Language"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
+msgid "Settings.Notification"
+msgstr "Settings.Notification"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
+#~ msgid "AidRequestSummary.Title"
+#~ msgstr "Request Summary"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:45
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:32
+#~ msgid "Auth.UID_Placeholder"
+#~ msgstr "Enter your UID"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:31
+#~ msgid "Btn.save"
+#~ msgstr "SAVE"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:94
+#~ msgid "Profile.Gender"
+#~ msgstr "Gender"
+
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:16
 msgid "UploadAidDocs.FileSize"
 msgstr "File cannot exceed 5Mb"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:19
 msgid "UploadAidDocs.Formats"
 msgstr "Allowed formats - PDF, DOC, JPG, PNG"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:182
 msgid "UploadDocsDrawer.ConfirmDelete"
 msgstr "Are you sure you want to delete this file?"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:153
 msgid "UploadDocsDrawer.FileDeleted"
 msgstr "File was removed successfully!"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:54
 #: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:25
 msgid "UploadFiles.title"
-msgstr "Upload File(s)"
+msgstr "UploadFiles.title"
 
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:90
 msgid "UploadFilesDrawer.NoFiles"
 msgstr "No uploads yet!"
 
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:16
+#~ msgid "AidRequestSummary.Stream"
+#~ msgstr "Support Stream"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:96
+#~ msgid "Btn.Upload"
+#~ msgstr "UPLOAD"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:182
+#~ msgid "UploadDocsDrawer.ConfirmDelete"
+#~ msgstr "Are you sure you want to delete this file?"
+
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
+#~ msgid "Settings.Header"
+#~ msgstr "Settings"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:41
+#~ msgid "Drawer.Profile"
+#~ msgstr "Profile"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:49
+#~ msgid "Drawer.Settings"
+#~ msgstr "Settings"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:29
+#~ msgid "AidRequestSteps.Nature"
+#~ msgstr "Nature of support"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:44
+#~ msgid "CounsellingLanding.Past"
+#~ msgstr "Past"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:191
+#~ msgid "Btn.Delete"
+#~ msgstr "DELETE"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:21
+#~ msgid "AidRequestSteps.Stream"
+#~ msgstr "Select Stream"
+
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
+#~ msgid "Help.Header"
+#~ msgstr "Help"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/CounsellingLandingPage.tsx:24
+#~ msgid "Counselling.Header"
+#~ msgstr "Counselling"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:51
+#~ msgid "Auth.Password"
+#~ msgstr "Password"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:27
+#~ msgid "ConfirmDialog.Confirm"
+#~ msgstr "CONFIRM"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:63
+#~ msgid "LogOut.ConfirmText"
+#~ msgstr "Are you sure you want to log out?"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:155
+#~ msgid "FilePicker.ClickPicture"
+#~ msgstr "Click a Picture"
+
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:29
+#~ msgid "Dashboard.Welcome"
+#~ msgstr "Welcome to"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/AidRequestStepper.tsx:39
+#~ msgid "AidRequestSteps.Docs"
+#~ msgstr "Upload Documents"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:136
+#~ msgid "Profile.Save"
+#~ msgstr "Save"
+
 #: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:50
-msgid "{0, plural, =0 { Please select a file to upload} one { Selected <0>#</0> file} other { Selected <1>#</1> files}}"
-msgstr "{0, plural, =0 { Please select a file to upload} one { Selected <0>#</0> file} other { Selected <1>#</1> files}}"
+#~ msgid "{0, plural, =0 { Please select a file to upload} one { Selected <0>#</0> file} other { Selected <1>#</1> files}}"
+#~ msgstr "{0, plural, =0 { Please select a file to upload} one { Selected <0>#</0> file} other { Selected <1>#</1> files}}"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
+#~ msgid "LogOut.ConfirmBtn.Label"
+#~ msgstr "SIGN OUT"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
+#~ msgid "Aid.Completed.NoResults"
+#~ msgstr "You don't have any completed requests"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:24
+#~ msgid "Auth.UID"
+#~ msgstr "UID"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:42
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
+#~ msgid "Auth.Name"
+#~ msgstr "Name"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:94
+#~ msgid "Auth.Login.DontHaveAccount"
+#~ msgstr "Don't have an account?"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/UpcomingCounselling.tsx:20
+#~ msgid "Counselling.Upcoming.RaiseRequest"
+#~ msgstr "SCHEDULE A SESSION"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:49
+#~ msgid "ScheduleCouncelling.ViewSchedule"
+#~ msgstr "VIEW SCHEDULE"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:33
+#~ msgid "AidRequestSummary.Info"
+#~ msgstr "Additional Info"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:76
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
+#~ msgid "Auth.Email"
+#~ msgstr "Email"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:136
+#~ msgid "FilePickerDialog.FileError"
+#~ msgstr "Unable to select files"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
+#~ msgid "ConfirmDialog.Cancel"
+#~ msgstr "CANCEL"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:67
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
+#~ msgid "Auth.Mobile_Placeholder"
+#~ msgstr "Enter your mobile number"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
+#~ msgid "Settings.Language"
+#~ msgstr "Language"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:120
+#~ msgid "Profile.Gender_Female"
+#~ msgstr "Female"
+
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:52
+#: apps/sjfl-judians/src/app/shared/components/dialogs/FilePickerDialog.tsx:78
+#~ msgid "FilePickerDialog.GalleryError"
+#~ msgstr "Unable to read image"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
+#~ msgid "ScheduleCouncelling.Note"
+#~ msgstr "Note"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:17
+#~ msgid "AidRequestSuccess.Created"
+#~ msgstr "Your request has been received"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:39
+#~ msgid "Drawer.ChangePassword"
+#~ msgstr "Change Password"
+
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:52
+#~ msgid "Dashboard.Schedule"
+#~ msgstr "SCHEDULE A SESSION"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:31
+#~ msgid "AidLanding.Title"
+#~ msgstr "Aid"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:25
+#~ msgid "AidLanding.Header"
+#~ msgstr "Request Aid"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:46
+#~ msgid "AidRequestSummary.Docs"
+#~ msgstr "Documents Uploaded"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSuccess.tsx:29
+#~ msgid "AidRequestSuccess.ViewReq"
+#~ msgstr "VIEW REQUEST"
+
+#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:79
+#~ msgid "Auth.Login.TroubleWithSignIn"
+#~ msgstr "Having trouble signing in?"
+
+#: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:90
+#~ msgid "UploadFilesDrawer.NoFiles"
+#~ msgstr "No uploads yet!"
+
+#: apps/sjfl-judians/src/app/features/App/Dashboard/DashboardPage.tsx:43
+#~ msgid "Dashboard.Aid"
+#~ msgstr "REQUEST FOR AID"
+
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:49
+#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
+#~ msgid "Auth.Name_Placeholder"
+#~ msgstr "Enter your full name"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
+#~ msgid "ScheduleCouncelling.ConfirmationMessagePart1"
+#~ msgstr "Your session has been scheduled."
+
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
+#~ msgid "Profile.Header"
+#~ msgstr "Profile"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:46
+#~ msgid "ScheduleCouncelling.SelectDate"
+#~ msgstr "Select a date"
+
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
+#~ msgid "ScheduleCouncelling.MeetingID"
+#~ msgstr "Meeting ID -"
+
+#: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:48
+#~ msgid "LanguageSelection.Header"
+#~ msgstr "Select your preferred language"

@@ -1,6 +1,16 @@
-import { Trans } from "@lingui/react";
-import { FormGroup, FormControlLabel, Switch, Button, Box, FormControl, InputLabel, Grid, Paper } from "@mui/material";
-import { LanguageButton } from "apps/sjfl-judians/src/app/shared/components/language/LanguageButton";
+import { Trans } from '@lingui/react';
+import {
+  FormGroup,
+  FormControlLabel,
+  Switch,
+  Button,
+  Box,
+  FormControl,
+  InputLabel,
+  Grid,
+  Paper,
+} from '@mui/material';
+import { LanguageButton } from '../../../../shared/components/language/LanguageButton';
 
 export const Settings = () => {
   return (
@@ -31,5 +41,5 @@ export const Settings = () => {
         <Trans id="Btn.save"></Trans>
       </Button>
     </section>
-  )
-}
+  );
+};

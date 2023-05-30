@@ -3,6 +3,8 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
 
+import { lingui } from '@lingui/vite-plugin';
+
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/sjfl-judians',
 
@@ -24,9 +26,9 @@ export default defineConfig({
   },
 
   plugins: [
+    lingui(),
     react({
       babel: {
-        // babel-macro is needed for lingui
         plugins: ['macros'],
       },
     }),
