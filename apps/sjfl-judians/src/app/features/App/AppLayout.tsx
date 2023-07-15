@@ -101,7 +101,7 @@ export const AppLayout = () => {
       </BottomNavigation>
       <Dialog
         sx={{
-          zIndex: 9999
+          zIndex: 1500
         }}
         TransitionComponent={Transition}
         open={isDialogOpen}

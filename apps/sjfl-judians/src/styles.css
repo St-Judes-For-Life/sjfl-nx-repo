@@ -71,3 +71,7 @@ a {
 .MuiDateCalendar-root {
   margin: 0 !important;
 }
+
+.MuiDialog-root, .MuiPopover-root {
+  z-index: 1500 !important;
+}
