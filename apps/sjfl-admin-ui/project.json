@@ -1,0 +1,67 @@
+{
+  "name": "sjfl-admin-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/sjfl-admin-ui/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/sjfl-admin-ui"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sjfl-admin-ui:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sjfl-admin-ui:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "sjfl-admin-ui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sjfl-admin-ui:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sjfl-admin-ui:build:development"
+        },
+        "production": {
+          "buildTarget": "sjfl-admin-ui:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/apps/sjfl-admin-ui"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": []
+}

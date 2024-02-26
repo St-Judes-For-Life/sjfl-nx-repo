@@ -1,11 +1,19 @@
 /// <reference types="vitest" />
-import { defineConfig, searchForWorkspaceRoot } from 'vite';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import react from '@vitejs/plugin-react';
-import viteTsConfigPaths from 'vite-tsconfig-paths';
+import { defineConfig, searchForWorkspaceRoot } from 'vite';
 
 import { lingui } from '@lingui/vite-plugin';
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../../dist/apps/sjfl-judians',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   cacheDir: '../../node_modules/.vite/sjfl-judians',
 
   server: {
@@ -32,9 +40,7 @@ export default defineConfig({
         plugins: ['macros'],
       },
     }),
-    viteTsConfigPaths({
-      root: '../../',
-    }),
+    nxViteTsPaths(),
   ],
 
   // Uncomment this if you are using workers.
