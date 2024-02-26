@@ -1,8 +1,7 @@
 /// <reference types="vitest" />
-import replaceFiles from '@nx/vite/plugins/rollup-replace-files.plugin';
-import { defineConfig, searchForWorkspaceRoot } from 'vite';
-import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import react from '@vitejs/plugin-react';
+import { defineConfig, searchForWorkspaceRoot } from 'vite';
 
 import { lingui } from '@lingui/vite-plugin';
 
@@ -35,12 +34,6 @@ export default defineConfig({
   },
 
   plugins: [
-    replaceFiles([
-      {
-        replace: 'apps/sjfl-judians/src/environments/environment.ts',
-        with: 'apps/sjfl-judians/src/environments/environment.prod.ts',
-      },
-    ]),
     lingui(),
     react({
       babel: {
