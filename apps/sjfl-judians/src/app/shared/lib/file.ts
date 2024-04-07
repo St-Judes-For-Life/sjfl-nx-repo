@@ -4,7 +4,7 @@ export async function webPathToFile(
   webPath: string,
   filename?: string
 ): Promise<File> {
-  let blob = await fetch(webPath).then((r) => r.blob());
+  const blob = await fetch(webPath).then((r) => r.blob());
   return new File([blob], filename || 'image.jpg');
 }
 

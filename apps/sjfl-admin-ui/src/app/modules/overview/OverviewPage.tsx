@@ -5,7 +5,7 @@ import { SummaryTableCard } from './components/SummaryTableCard';
 
 export const OverviewPage = () => {
   return (
-    <Page title={'Overview'}>
+    <Page title={'Overview'} className="grid gap-4 auto-rows-min">
       <div className="grid gap-4 auto-cols-fr grid-flow-col justify-between">
         <StatsCard title="Judians Registered" stat="54" />
         <StatsCard title="Total Aid Provided" stat="₹5.4L" />

@@ -3,10 +3,10 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import classNames from 'classnames';
 import { FC } from 'react';
-import { User } from '../../../shared/models/auth.model';
+import { UserProfile } from '../../Auth/models/Profile';
 
 type UserProfileLinkProps = {
-  user: User;
+  user: UserProfile;
   className?: string;
 };
 
@@ -16,7 +16,10 @@ export const UserProfileLink: FC<UserProfileLinkProps> = ({
 }) => {
   return (
     <section
-      className={classNames(className, 'flex flex-col justify-end pt-2')}
+      className={classNames(
+        className,
+        'flex flex-col justify-end items-start pt-2'
+      )}
     >
       <Button className="flex gap-4 !p-3">
         <Avatar
@@ -30,10 +33,9 @@ export const UserProfileLink: FC<UserProfileLinkProps> = ({
           {user.email && (
             <h3 className="text-lg text-secondary">{user.email}</h3>
           )}
-          <h4 className="text-tertiary">{user.mobile}</h4>
+          <h4 className="text-tertiary">{user.mobileNumber}</h4>
         </span>
       </Button>
-      <Divider variant="middle"></Divider>
     </section>
   );
 };

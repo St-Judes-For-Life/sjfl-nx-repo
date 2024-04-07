@@ -24,7 +24,7 @@ export const AppHeader = ({
   subtitle,
   backEnabled = false,
   backIcon,
-  onBack = () => {},
+  onBack = () => null,
   className,
 }: AppHeaderProps) => {
   backIcon ??= <ArrowBackIcon />;

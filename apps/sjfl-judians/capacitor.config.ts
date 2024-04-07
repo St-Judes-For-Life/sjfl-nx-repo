@@ -9,13 +9,16 @@ const config: CapacitorConfig = {
     process.env.NODE_ENV === 'production'
       ? undefined
       : {
-          url: 'http://100.109.137.47:4200',
+          url: 'http://192.168.0.137:4200',
           cleartext: true,
         },
   ios: {
     allowsLinkPreview: false,
   },
   plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    },
     SplashScreen: {
       launchShowDuration: 100,
       launchAutoHide: true,

@@ -29,10 +29,7 @@ export function useLoadedQuery<
   }
 ): UseQueryResult<TData, TError> {
   const state = queryKey && queryClient.getQueryState(queryKey);
-
-  return useQuery(
-    queryKey,
-    queryFn,
+  const additionalOptions =
     state?.status === 'success'
       ? {
           ...options,
@@ -40,7 +37,8 @@ export function useLoadedQuery<
         }
       : {
           ...options,
+
           staleTime: Infinity,
-        }
-  );
+        };
+  return useQuery({ queryKey, queryFn, ...additionalOptions });
 }
