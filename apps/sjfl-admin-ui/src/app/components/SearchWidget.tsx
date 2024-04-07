@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
+import { useSearchParams } from 'react-router-dom';
+import { filterEmptyProps, parseSearchParams } from '../../lib/utils';
 import { Button } from '../../ui/components/Button';
 import { Card, CardContent, CardTitle } from '../../ui/components/Card';
 import { Input } from '../../ui/components/Input';
 import { Label } from '../../ui/components/Label';
 import { Text } from '../../ui/components/Text';
 import { SearchItem } from '../models/Search';
-import { useSearchParams } from 'react-router-dom';
-import { filterEmptyProps } from '../../lib/utils';
 
 type SearchWidgetProps = {
   title: string;
@@ -14,8 +14,11 @@ type SearchWidgetProps = {
 };
 
 export const SearchWidget = ({ title, fields }: SearchWidgetProps) => {
-  const [, setSearchParams] = useSearchParams();
-  const { register, handleSubmit, reset } = useForm();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const { register, handleSubmit, reset } = useForm({
+    defaultValues: parseSearchParams(searchParams),
+  });
 
   const handleReset = () => reset();
 

@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { LanguageButton } from '../../shared/components/language/LanguageButton';
-import { Logo } from '../../shared/components/images/Logo';
-import { Page } from '../../shared/components/containers/Page';
+import { LanguageButton } from '../../../shared/components/language/LanguageButton';
+import { Logo } from '../../../shared/components/images/Logo';
+import { Page } from '../../../shared/components/containers/Page';
 
 export const AuthLandingPage = () => {
   const navigate = useNavigate();

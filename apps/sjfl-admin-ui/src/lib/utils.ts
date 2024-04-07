@@ -23,3 +23,23 @@ export function filterEmptyProps(obj: Record<string, string>) {
   });
   return object;
 }
+
+export function parseSearchParams(
+  params: URLSearchParams
+): Record<string, string> {
+  const record: Record<string, string> = {};
+  for (const entry in params.entries()) {
+    console.log(entry);
+  }
+  for (const key in params.keys()) {
+    const value = params.get(key);
+    if (value) {
+      if (record[key]) {
+        record[key] += `,${params.get(key)}`;
+      } else {
+        record[key] = value;
+      }
+    }
+  }
+  return record;
+}

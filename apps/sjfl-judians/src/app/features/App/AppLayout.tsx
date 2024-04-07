@@ -7,7 +7,14 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import CloseIcon from '@mui/icons-material/Close';
-import { FC, SyntheticEvent, forwardRef, useCallback, useEffect, useState } from 'react';
+import {
+  FC,
+  SyntheticEvent,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import {
   Outlet,
   useLocation,
@@ -17,7 +24,18 @@ import {
 import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { FullScreenSpinner } from '../../shared/components/progress/FullScreenSpinner';
 import { DrawerMenu } from './DrawerMenu/DrawerMenu';
-import { AppBar, Dialog, DialogContent, DialogTitle, IconButton, Modal, Slide, Slider, Toolbar, styled } from '@mui/material';
+import {
+  AppBar,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Modal,
+  Slide,
+  Slider,
+  Toolbar,
+  styled,
+} from '@mui/material';
 import { Trans } from '@lingui/react';
 import { ActiveMenuItem } from './DrawerMenu';
 import { TransitionProps } from '@mui/material/transitions';
@@ -26,7 +44,7 @@ const Transition = forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement<any, any>;
   },
-  ref: React.Ref<unknown>,
+  ref: React.Ref<unknown>
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -61,7 +79,7 @@ export const AppLayout = () => {
   const showPage = (menuItemName: string) => {
     setActiveMenuItem(menuItemName);
     setIsDialogOpen(true);
-  }
+  };
 
   const handleCloseDialog = () => {
     setActiveMenuItem('');
@@ -75,13 +93,13 @@ export const AppLayout = () => {
       case 'help':
         return <Trans id="Help.Header">Help</Trans>;
       case 'settings':
-        return <Trans id="Settings.Header">Settings</Trans>
+        return <Trans id="Settings.Header">Settings</Trans>;
     }
   }, [activeMenuItem]);
 
   const closeBtnHandler = () => {
     handleCloseDialog();
-  }
+  };
 
   const footer = (
     <Paper component="footer" elevation={3}>
@@ -101,21 +119,19 @@ export const AppLayout = () => {
       </BottomNavigation>
       <Dialog
         sx={{
-          zIndex: 1500
+          zIndex: 1500,
         }}
         TransitionComponent={Transition}
         open={isDialogOpen}
         onClose={handleCloseDialog}
         fullScreen
       >
-        <DialogTitle sx={{p:0}}>
+        <DialogTitle sx={{ p: 0 }}>
           <Toolbar>
             <IconButton size="large" edge="start" onClick={closeBtnHandler}>
               <CloseIcon />
             </IconButton>
-            <h1 className="flex-grow">
-              {dialogHeader()}
-            </h1>
+            <h1 className="flex-grow">{dialogHeader()}</h1>
           </Toolbar>
         </DialogTitle>
         <DialogContent dividers>
@@ -135,7 +151,7 @@ export const AppLayout = () => {
           onClose={closeDrawer}
           onOpen={openDrawer}
         >
-          <DrawerMenu onDismiss={closeDrawer} onMenuItemClick={showPage}/>
+          <DrawerMenu onDismiss={closeDrawer} onMenuItemClick={showPage} />
         </SwipeableDrawer>
       </>
     </Scaffold>

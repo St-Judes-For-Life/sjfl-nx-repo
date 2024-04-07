@@ -5,47 +5,36 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { IAuthContext, User } from '../models/auth.model';
+import { useFetchProfile } from '../../features/Auth/hooks/profile';
+import { useRegisterUser } from '../../features/Auth/hooks/register';
+import { useVerifyOtp } from '../../features/Auth/hooks/verifyOtp';
+import { VerifyOtpRequest } from '../../features/Auth/models/Otp';
+import { UserProfile } from '../../features/Auth/models/Profile';
+import { IAuthContext } from '../models/auth.model';
 import { Maybe } from '../models/maybe.model';
 import { asyncStore } from '../utils/async-storage/async-storage';
 
-export const AuthContext = createContext<IAuthContext>({
-  isLoggedIn: false,
-  user: undefined,
-  logIn: () => {
-    return;
-  },
-  logOut: () => {
-    return;
-  },
-});
+export const AuthContext = createContext<IAuthContext | null>(null);
 
 export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState<Maybe<User>>(undefined);
+  const [user, setUser] = useState<Maybe<UserProfile>>(undefined);
+  const isLoggedIn = !!user;
 
-  const logIn = () => {
-    setLoggedIn(true);
-    const loggedInUser = {
-      uid: '',
-      name: 'Rahul Sharma',
-      email: 'rahul.sharma@gmail.com',
-      mobile: '+91 9988776655',
-    };
-    setUser(loggedInUser);
-    asyncStore.set('user', loggedInUser);
+  const logIn = (user: UserProfile) => {
+    setUser(user);
+    asyncStore.set('user', user);
   };
+
   const logOut = () => {
-    setLoggedIn(false);
     setUser(undefined);
     asyncStore.delete('user');
   };
 
   useEffect(() => {
     (async () => {
-      const user = await asyncStore.get<Maybe<User>>('user');
+      const user = await asyncStore.get<Maybe<UserProfile>>('user');
       if (user) {
-        logIn();
+        setUser(user);
       }
     })();
   }, []);
