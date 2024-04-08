@@ -13,6 +13,7 @@ import { AppHeader } from '../../shared/components/containers/AppHeader';
 import { Scaffold } from '../../shared/components/containers/Scaffold';
 import { LocaleContext } from '../../shared/store/context/LocaleContext';
 import { locales } from '../../shared/utils/i18n';
+import { useLocale } from '../../shared/hooks/useLocale';
 
 type LanguageSelectionPageProps =
   | { canDismiss?: undefined; onDismiss?: undefined }
@@ -25,7 +26,7 @@ export const LanguageSelectionPage: FC<LanguageSelectionPageProps> = (
   props
 ) => {
   const { i18n } = useLingui();
-  const { locale, setLocale } = useContext(LocaleContext);
+  const { locale, setLocale } = useLocale();
   const [selection, setSelection] = useState<Maybe<Locale>>(
     locales.find((locale) => locale.code === i18n.locale)
   );

@@ -185,90 +185,99 @@ msgstr "AidRequestSummary.Title"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:89
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:130
 msgid "Auth.Email"
 msgstr "Email"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:98
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:140
 msgid "Auth.Email_Placeholder"
 msgstr "Enter your email id"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:94
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:96
 msgid "Auth.Login.DontHaveAccount"
 msgstr "Don't have an account?"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:79
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:75
 msgid "Auth.Login.TroubleWithSignIn"
 msgstr "Having trouble signing in?"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:71
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:111
 msgid "Auth.Mobile"
 msgstr "Mobile"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:80
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:121
 msgid "Auth.Mobile_Placeholder"
 msgstr "Enter your mobile number"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:55
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:94
 msgid "Auth.Name"
 msgstr "Name"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:62
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:102
 msgid "Auth.Name_Placeholder"
 msgstr "Enter your full name"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:51
-msgid "Auth.Password"
-msgstr "Password"
+#~ msgid "Auth.Password"
+#~ msgstr "Password"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:59
-msgid "Auth.Password_Placeholder"
-msgstr "Enter your Password"
+#~ msgid "Auth.Password_Placeholder"
+#~ msgstr "Enter your Password"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
+#: apps/sjfl-judians/src/app/features/Auth/pages/AuthLandingPage.tsx:26
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:106
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:158
 msgid "Auth.Register"
 msgstr "REGISTER"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:164
 msgid "Auth.Register.AlreadyHaveAccount"
 msgstr "Already have an account?"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:89
+msgid "Auth.SendOtp"
+msgstr "Send OTP"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Auth/pages/AuthLandingPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:174
 msgid "Auth.SignIn"
 msgstr "SIGN IN"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:24
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:63
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:79
 msgid "Auth.UID"
 msgstr "UID"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:45
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:32
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:71
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:88
 msgid "Auth.UID_Placeholder"
 msgstr "Enter your UID"
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Auth/components/VerifyOtp.tsx:92
+msgid "Auth.VerifyOTP"
+msgstr "Verify OTP"
 
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidLandingPage.tsx:42
 #~ msgid "AidLanding.InProgress"
@@ -300,14 +309,19 @@ msgid "Btn.GoHome"
 msgstr "GO TO HOME"
 
 #. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:47
+msgid "Btn.Save"
+msgstr "Save"
+
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:96
 msgid "Btn.Upload"
 msgstr "UPLOAD"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:41
-msgid "Btn.save"
-msgstr "Btn.save"
+#~ msgid "Btn.save"
+#~ msgstr "Btn.save"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
@@ -464,7 +478,7 @@ msgstr "Missing Input: {label}"
 #~ msgstr "Upload File(s)"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:94
 msgid "Help.Header"
 msgstr "Help.Header"
 
@@ -556,7 +570,7 @@ msgid "Profile.Gender_Other"
 msgstr "Other"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:92
 msgid "Profile.Header"
 msgstr "Profile.Header"
 
@@ -593,11 +607,11 @@ msgstr "Save"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
-msgid "ScheduleCouncelling.ConfirmationMessagePart1"
-msgstr "Your session has been scheduled."
+#~ msgid "ScheduleCouncelling.ConfirmationMessagePart1"
+#~ msgstr "Your session has been scheduled."
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:27
 msgid "ScheduleCouncelling.ConfirmationMessagePart2"
 msgstr "SJFL will reach out to you"
 
@@ -608,8 +622,8 @@ msgstr "Schedule a session"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
-msgid "ScheduleCouncelling.MeetingID"
-msgstr "Meeting ID -"
+#~ msgid "ScheduleCouncelling.MeetingID"
+#~ msgstr "Meeting ID -"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
@@ -643,19 +657,20 @@ msgid "SelectAidStream.Header"
 msgstr "Raise a new request"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:96
 msgid "Settings.Header"
-msgstr "Settings.Header"
+msgstr "Settings"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:32
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:38
 msgid "Settings.Language"
-msgstr "Settings.Language"
+msgstr "Language"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:15
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:28
 msgid "Settings.Notification"
-msgstr "Settings.Notification"
+msgstr "Notifications"
 
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/AidRequestSummary.tsx:11
 #~ msgid "AidRequestSummary.Title"

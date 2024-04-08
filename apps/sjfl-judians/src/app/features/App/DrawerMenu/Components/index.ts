@@ -1,4 +1,4 @@
 export * from './ActiveMenuItem';
-export * from './Profile';
+export * from './ProfilePage';
 export * from './Help';
 export * from './Settings';

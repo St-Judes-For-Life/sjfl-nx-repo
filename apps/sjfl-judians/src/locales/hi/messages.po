@@ -6,6 +6,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: hi\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:50
+msgid "{0, plural, =0 {Please select a file to upload} one {Selected <0>#</0> file} other {Selected <1>#</1> files}}"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/CompletedAid.tsx:17
@@ -84,89 +94,98 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:89
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:72
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:130
 msgid "Auth.Email"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:98
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:81
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:140
 msgid "Auth.Email_Placeholder"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:94
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:96
 msgid "Auth.Login.DontHaveAccount"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:79
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:75
 msgid "Auth.Login.TroubleWithSignIn"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:71
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:54
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:111
 msgid "Auth.Mobile"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:80
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:63
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:121
 msgid "Auth.Mobile_Placeholder"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:55
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:38
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:94
 msgid "Auth.Name"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Profile.tsx:62
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:45
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:102
 msgid "Auth.Name_Placeholder"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:51
-msgid "Auth.Password"
-msgstr ""
+#~ msgid "Auth.Password"
+#~ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:59
-msgid "Auth.Password_Placeholder"
-msgstr ""
+#~ msgid "Auth.Password_Placeholder"
+#~ msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:26
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:103
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:91
+#: apps/sjfl-judians/src/app/features/Auth/pages/AuthLandingPage.tsx:26
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:106
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:158
 msgid "Auth.Register"
 msgstr "रजिस्टर"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:94
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:164
 msgid "Auth.Register.AlreadyHaveAccount"
 msgstr "क्या आपके पास पहले से एक खाता मौजूद है?"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/AuthLandingPage.tsx:37
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:91
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:103
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:89
+msgid "Auth.SendOtp"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Auth/pages/AuthLandingPage.tsx:37
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:174
 msgid "Auth.SignIn"
 msgstr "साइन इन करें"
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:37
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:24
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:63
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:79
 msgid "Auth.UID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/Auth/LoginPage.tsx:45
-#: apps/sjfl-judians/src/app/features/Auth/RegisterPage.tsx:32
+#: apps/sjfl-judians/src/app/features/Auth/pages/LoginPage.tsx:71
+#: apps/sjfl-judians/src/app/features/Auth/pages/RegisterPage.tsx:88
 msgid "Auth.UID_Placeholder"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/Auth/components/VerifyOtp.tsx:92
+msgid "Auth.VerifyOTP"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -186,14 +205,19 @@ msgid "Btn.GoHome"
 msgstr ""
 
 #. js-lingui-explicit-id
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:47
+msgid "Btn.Save"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:96
 msgid "Btn.Upload"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:41
-msgid "Btn.save"
-msgstr ""
+#~ msgid "Btn.save"
+#~ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/shared/components/dialogs/ConfirmationDialog.tsx:41
@@ -317,7 +341,7 @@ msgid "Forms.ReqdError"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:76
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:94
 msgid "Help.Header"
 msgstr ""
 
@@ -372,7 +396,7 @@ msgid "Profile.Gender_Other"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:74
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:92
 msgid "Profile.Header"
 msgstr ""
 
@@ -383,11 +407,11 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:20
-msgid "ScheduleCouncelling.ConfirmationMessagePart1"
-msgstr ""
+#~ msgid "ScheduleCouncelling.ConfirmationMessagePart1"
+#~ msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:25
+#: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:27
 msgid "ScheduleCouncelling.ConfirmationMessagePart2"
 msgstr ""
 
@@ -398,8 +422,8 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleConfirmation.tsx:31
-msgid "ScheduleCouncelling.MeetingID"
-msgstr ""
+#~ msgid "ScheduleCouncelling.MeetingID"
+#~ msgstr ""
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Counselling/pages/ScheduleCounselling.tsx:56
@@ -433,17 +457,18 @@ msgid "SelectAidStream.Header"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:78
+#: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:96
 msgid "Settings.Header"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:32
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:38
 msgid "Settings.Language"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:22
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:15
+#: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:28
 msgid "Settings.Notification"
 msgstr ""
 
@@ -476,8 +501,4 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/components/UploadDocsDrawer.tsx:90
 msgid "UploadFilesDrawer.NoFiles"
-msgstr ""
-
-#: apps/sjfl-judians/src/app/shared/components/buttons/UploadFileBtn.tsx:50
-msgid "{0, plural, =0 {Please select a file to upload} one {Selected <0>#</0> file} other {Selected <1>#</1> files}}"
 msgstr ""

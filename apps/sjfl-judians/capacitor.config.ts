@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
     process.env.NODE_ENV === 'production'
       ? undefined
       : {
-          url: 'http://192.168.0.137:4200',
+          url: 'http://localhost:4200/',
           cleartext: true,
         },
   ios: {
