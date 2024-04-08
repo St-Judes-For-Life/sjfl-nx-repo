@@ -172,30 +172,9 @@ export const router = createBrowserRouter([
                         },
                       },
                     ],
-                  }
+                  },
                 ],
               },
-              {
-                path: 'profile',
-                lazy: async () => {
-                  const { ProfilePage } = await import('../app/features/App/DrawerMenu');
-                  return { Component: ProfilePage };
-                },
-              },
-              {
-                path: 'help',
-                lazy: async () => {
-                  const { HelpPage } = await import('../app/features/App/DrawerMenu');
-                  return { Component: HelpPage };
-                },
-              },
-              {
-                path: 'settings',
-                lazy: async () => {
-                  const { SettingsPage } = await import('../app/features/App/DrawerMenu');
-                  return { Component: SettingsPage };
-                },
-              }
             ],
           },
         ],

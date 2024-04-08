@@ -43,9 +43,7 @@ export const InternationalizationProvider: FC<PropsWithChildren> = ({
         setLocale: (locale: Locale) => setLocaleCode(locale),
       }}
     >
-      <I18nProvider i18n={i18n} forceRenderOnLocaleChange={true}>
-        {children}
-      </I18nProvider>
+      <I18nProvider i18n={i18n}>{children}</I18nProvider>
     </LocaleContext.Provider>
   );
 };

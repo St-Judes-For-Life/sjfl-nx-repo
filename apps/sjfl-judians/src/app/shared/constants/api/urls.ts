@@ -9,4 +9,10 @@ export const API = {
     verify: `${baseUrl}/user/otp/verify`,
     send: `${baseUrl}/user/otp/send`,
   },
+  counselling: {
+    base: `${baseUrl}/user/counselling`,
+    create: `${baseUrl}/user/counselling/schedule`,
+    upcoming: `${baseUrl}/user/counselling/upcoming`,
+    past: `${baseUrl}/user/counselling/past`,
+  },
 };

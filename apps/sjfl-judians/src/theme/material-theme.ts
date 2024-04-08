@@ -133,6 +133,7 @@ export const materialTheme = createTheme({
         },
       },
     },
+
     MuiOutlinedInput: {
       defaultProps: {
         className: classNames('!rounded-xl'),

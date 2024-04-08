@@ -17,7 +17,7 @@
     "@fontsource/inter": "^4.5.15",
     "@hookform/resolvers": "^3.3.4",
     "@lingui/loader": "^4.2.0",
-    "@lingui/react": "^4.2.0",
+    "@lingui/react": "^4.7.0",
     "@mui/icons-material": "^5.11.11",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.11.12",

@@ -1,13 +1,13 @@
 import LanguageIcon from '@mui/icons-material/Language';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { LanguageSelectionPage } from '../../../features/Common/LanguageSelectionPage';
 import { SlideUp } from '../../helpers/transitions/DialogTransitions';
-import { LocaleContext } from '../../store/context/LocaleContext';
+import { useLocale } from '../../hooks/useLocale';
 
 export const LanguageButton = () => {
-  const { locale } = useContext(LocaleContext);
+  const { locale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>

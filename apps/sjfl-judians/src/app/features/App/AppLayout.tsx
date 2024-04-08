@@ -39,6 +39,7 @@ import {
 import { Trans } from '@lingui/react';
 import { ActiveMenuItem } from './DrawerMenu';
 import { TransitionProps } from '@mui/material/transitions';
+import { DrawerItems } from './DrawerMenu/models/DrawerItem';
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -57,7 +58,7 @@ export const AppLayout = () => {
   const navigate = useNavigate();
   const navigation = useNavigation();
   const showSpinner = navigation.state === 'submitting';
-  const [activeMenuItem, setActiveMenuItem] = useState<string>('');
+  const [activeMenuItem, setActiveMenuItem] = useState<DrawerItems>(undefined);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
@@ -76,29 +77,14 @@ export const AppLayout = () => {
   const openDrawer = () => setDrawerOpen(true);
   const closeDrawer = () => setDrawerOpen(false);
 
-  const showPage = (menuItemName: string) => {
+  const showPage = (menuItemName: DrawerItems) => {
     setActiveMenuItem(menuItemName);
     setIsDialogOpen(true);
   };
 
   const handleCloseDialog = () => {
-    setActiveMenuItem('');
+    setActiveMenuItem(undefined);
     setIsDialogOpen(false);
-  };
-
-  const dialogHeader = useCallback(() => {
-    switch (activeMenuItem) {
-      case 'profile':
-        return <Trans id="Profile.Header">Help</Trans>;
-      case 'help':
-        return <Trans id="Help.Header">Help</Trans>;
-      case 'settings':
-        return <Trans id="Settings.Header">Settings</Trans>;
-    }
-  }, [activeMenuItem]);
-
-  const closeBtnHandler = () => {
-    handleCloseDialog();
   };
 
   const footer = (
@@ -126,17 +112,10 @@ export const AppLayout = () => {
         onClose={handleCloseDialog}
         fullScreen
       >
-        <DialogTitle sx={{ p: 0 }}>
-          <Toolbar>
-            <IconButton size="large" edge="start" onClick={closeBtnHandler}>
-              <CloseIcon />
-            </IconButton>
-            <h1 className="flex-grow">{dialogHeader()}</h1>
-          </Toolbar>
-        </DialogTitle>
-        <DialogContent dividers>
-          <ActiveMenuItem activeMenuItem={activeMenuItem}></ActiveMenuItem>
-        </DialogContent>
+        <ActiveMenuItem
+          activeMenuItem={activeMenuItem}
+          onClose={handleCloseDialog}
+        ></ActiveMenuItem>
       </Dialog>
     </Paper>
   );
