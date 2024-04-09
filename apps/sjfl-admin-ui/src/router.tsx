@@ -1,5 +1,6 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import { App } from './app/app';
+import { CounsellingRequestPage } from './app/modules/counselling/CounsellingRequestPage';
 
 export const routes: RouteObject[] = [
   {
@@ -49,10 +50,10 @@ export const routes: RouteObject[] = [
           {
             path: ':id',
             lazy: async () => {
-              const { CounsellingPage } = await import(
-                './app/modules/counselling/CounsellingPage'
+              const { CounsellingRequestPage } = await import(
+                './app/modules/counselling/CounsellingRequestPage'
               );
-              return { Component: CounsellingPage };
+              return { Component: CounsellingRequestPage };
             },
           },
         ],
