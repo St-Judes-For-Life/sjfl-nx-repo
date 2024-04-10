@@ -29,10 +29,8 @@ export const Scaffold: FC<PropsWithChildren<ScaffoldProps>> = ({
 
   useEffect(() => {
     const hasChildScaffold = !!ref.current?.querySelector('.scaffold-content');
-    console.log(hasChildScaffold);
 
     if (Capacitor.getPlatform() === 'ios' && !hasChildScaffold) {
-      console.log('add listener');
       Keyboard.addListener('keyboardWillShow', (e) => {
         setKeyboardHeight(e.keyboardHeight + 'px');
       });

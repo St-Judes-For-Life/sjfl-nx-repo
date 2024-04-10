@@ -12,7 +12,5 @@ export const API = {
   counselling: {
     base: `${baseUrl}/user/counselling`,
     create: `${baseUrl}/user/counselling/schedule`,
-    upcoming: `${baseUrl}/user/counselling/upcoming`,
-    past: `${baseUrl}/user/counselling/past`,
   },
 };

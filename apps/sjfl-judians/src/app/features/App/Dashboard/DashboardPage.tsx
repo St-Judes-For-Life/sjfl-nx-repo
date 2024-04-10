@@ -12,7 +12,10 @@ export const DashboardPage = () => {
   const navigate = useNavigate();
 
   const createRequestHandler = () => {
-    navigate('./aid/editor/create');
+    navigate('/aid/editor/create');
+  };
+  const createSessionHandler = () => {
+    navigate('/counselling/schedule/new');
   };
 
   return (
@@ -47,7 +50,7 @@ export const DashboardPage = () => {
           fullWidth
           variant="contained"
           color="primary"
-          onClick={() => navigate('counselling')}
+          onClick={createSessionHandler}
         >
           <Trans id="Dashboard.Schedule">SCHEDULE A SESSION</Trans>
         </Button>
