@@ -7,7 +7,6 @@ import { judians } from "../../mock/judians";
 import { useLocation } from "react-router-dom";
 import { todaysSessions } from "../../mock/sessions";
 import { Button } from "../../../ui/components/Button";
-import { Table, TableRow, TableBody, TableCell, TableHead, TableHeader } from "../../../ui/components/Table";
 import { CalendarDays, WatchIcon } from "lucide-react";
 
 export const CounsellingRequestPage = () => {
