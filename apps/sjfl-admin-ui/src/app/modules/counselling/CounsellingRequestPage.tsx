@@ -4,7 +4,7 @@ import { Page } from "../../components/Page";
 import { Text } from '../../../ui/components/Text';
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import { judians } from "../../mock/judians";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { todaysSessions } from "../../mock/sessions";
 import { Button } from "../../../ui/components/Button";
 import { CalendarDays, WatchIcon } from "lucide-react";
@@ -14,6 +14,11 @@ export const CounsellingRequestPage = () => {
   const counsellingID = location.pathname.split('/').pop() || -1;
   const matchedSession = todaysSessions.filter((session) => session.id === +counsellingID)[0];
   const matchedJudian = judians.filter((judian) => judian.id === matchedSession?.judian.id)[0]
+  const navigate = useNavigate();
+
+  const onViewProfileBtnClick = () => {
+    navigate(`/judians/${matchedJudian.id}`);
+  }
 
   return (
     <Page title={'Counselling Request'}>
@@ -33,7 +38,7 @@ export const CounsellingRequestPage = () => {
              </div>
               <Text as="h2" className="text-base">{matchedJudian?.name}</Text>
               <Text className="text-base">{matchedJudian?.phone}</Text>
-              <Button type="button" variant={'default'}>
+              <Button type="button" variant={'default'} onClick={onViewProfileBtnClick}>
                 View Profile
               </Button>
             </CardContent>
