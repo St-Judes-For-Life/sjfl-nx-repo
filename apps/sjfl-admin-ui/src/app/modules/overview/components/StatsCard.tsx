@@ -1,9 +1,8 @@
-import { Card, CardContent } from '../../../../ui/components/Card';
-import { Text } from '../../../../ui/components/Text';
+import { Card, CardContent, Text } from '@sjfl/ui';
 
 type StatsCardProps = {
   title: string;
-  stat: string;
+  stat: string | number;
 };
 
 export const StatsCard = ({ title, stat }: StatsCardProps) => {
@@ -13,7 +12,7 @@ export const StatsCard = ({ title, stat }: StatsCardProps) => {
         <Text as="h2" className="text-base">
           {title}
         </Text>
-        <Text className="text-4xl">{stat}</Text>
+        <Text className="text-4xl">{stat ?? '-'}</Text>
       </CardContent>
     </Card>
   );

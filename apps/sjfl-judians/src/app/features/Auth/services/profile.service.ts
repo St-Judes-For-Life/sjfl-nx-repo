@@ -7,6 +7,21 @@ export const getUserProfile = async () => {
     url: API.user.profile,
     method: 'get',
   });
+  console.log(resp.data);
+  if (resp.status === 200) {
+    return resp.data;
+  } else {
+    throw new Error('dafuq');
+  }
+};
+
+export const updateUserProfile = async (profile: UserProfile) => {
+  const resp = await RequestService.request<UserProfile>({
+    url: API.user.profile,
+    method: 'put',
+    data: profile,
+  });
+  console.log(resp);
   if (resp.status === 200) {
     return resp.data;
   } else {

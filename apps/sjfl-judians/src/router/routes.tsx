@@ -162,15 +162,6 @@ export const router = createBrowserRouter([
                           return { Component: ScheduleCounselling };
                         },
                       },
-                      {
-                        path: 'confirmation',
-                        lazy: async () => {
-                          const { ScheduleConfirmation } = await import(
-                            '../app/features/App/Counselling'
-                          );
-                          return { Component: ScheduleConfirmation };
-                        },
-                      },
                     ],
                   },
                 ],

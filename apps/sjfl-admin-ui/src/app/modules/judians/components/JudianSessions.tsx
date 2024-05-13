@@ -1,4 +1,4 @@
-import { Card, CardContent } from '../../../../ui/components/Card';
+import { Card, CardContent } from '@sjfl/ui';
 
 export const JudianSessions = () => {
   return (

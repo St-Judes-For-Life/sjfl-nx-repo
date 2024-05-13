@@ -1,10 +1,15 @@
-import { Card, CardContent } from '../../../../ui/components/Card';
-import { Input } from '../../../../ui/components/Input';
-import { Label } from '../../../../ui/components/Label';
-import { Text } from '../../../../ui/components/Text';
 import { MailIcon, PhoneCallIcon } from 'lucide-react';
-import { Textarea } from '../../../../ui/components/TextArea';
-import { Button } from '../../../../ui/components/Button';
+
+import {
+  Button,
+  Card,
+  CardContent,
+  Input,
+  Label,
+  Text,
+  Textarea,
+} from '@sjfl/ui';
+
 export const JudianInfo = () => {
   return (
     <Card className="h-full">

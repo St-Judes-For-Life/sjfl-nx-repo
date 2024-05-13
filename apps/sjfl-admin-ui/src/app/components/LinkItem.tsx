@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { cn } from '../../lib/utils';
+import { cn } from '@sjfl/ui';
 
 type LinkItemProps = {
   to: string;

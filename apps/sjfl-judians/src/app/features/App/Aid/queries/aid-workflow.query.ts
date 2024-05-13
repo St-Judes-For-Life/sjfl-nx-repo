@@ -6,5 +6,5 @@ export async function getWorkflowConfig(): Promise<AidWorkflowConfig> {
 
 export const workflowConfigQuery = {
   queryKey: ['workflow-config'],
-  queryFn: async () => getWorkflowConfig(),
+  queryFn: getWorkflowConfig,
 };

@@ -11,6 +11,13 @@ export default defineConfig({
   server: {
     port: 4200,
     host: 'localhost',
+    proxy: {
+      '/admin': {
+        target: 'https://8139-20-219-147-128.ngrok-free.app',
+        secure: false,
+        changeOrigin: true,
+      },
+    },
     fs: {
       allow: [
         searchForWorkspaceRoot(process.cwd()),

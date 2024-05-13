@@ -31,6 +31,9 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "test": {
+      "inputs": ["default", "^production"]
     }
   },
   "namedInputs": {
