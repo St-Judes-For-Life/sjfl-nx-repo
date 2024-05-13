@@ -1,16 +1,15 @@
-const baseUrl = 'https://924f-20-219-147-128.ngrok-free.app';
-
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 export const API = {
   user: {
-    register: `${baseUrl}/user/register`,
-    profile: `${baseUrl}/user/profile`,
+    register: `${baseUrl}/register`,
+    profile: `${baseUrl}/profile`,
   },
   otp: {
-    verify: `${baseUrl}/user/otp/verify`,
-    send: `${baseUrl}/user/otp/send`,
+    verify: `${baseUrl}/otp/verify`,
+    send: `${baseUrl}/otp/send`,
   },
   counselling: {
-    base: `${baseUrl}/user/counselling`,
-    create: `${baseUrl}/user/counselling/schedule`,
+    search: `${baseUrl}/counselling/search`,
+    create: `${baseUrl}/counselling/schedule`,
   },
 };

@@ -4,7 +4,7 @@ import { asyncStore } from './async-storage/async-storage';
 
 const tokenExcludeList = [API.user.register, API.otp.send, API.otp.verify];
 
-export const RequestService = axios.create();
+export const RequestService = axios.create({});
 
 RequestService.interceptors.request.use(async (config) => {
   config.headers.set('ngrok-skip-browser-warning', '1234');

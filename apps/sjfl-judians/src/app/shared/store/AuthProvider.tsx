@@ -5,10 +5,6 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useFetchProfile } from '../../features/Auth/hooks/profile';
-import { useRegisterUser } from '../../features/Auth/hooks/register';
-import { useVerifyOtp } from '../../features/Auth/hooks/verifyOtp';
-import { VerifyOtpRequest } from '../../features/Auth/models/Otp';
 import { UserProfile } from '../../features/Auth/models/Profile';
 import { IAuthContext } from '../models/auth.model';
 import { Maybe } from '../models/maybe.model';

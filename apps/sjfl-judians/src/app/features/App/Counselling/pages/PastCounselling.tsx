@@ -2,6 +2,7 @@ import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
 import { useFetchCounselling } from '../hooks/useFetchCounselling';
+import { CounsellingSessionCard } from '../components/CounsellingSessionCard';
 
 export const PastCounselling = () => {
   const { i18n } = useLingui();
@@ -26,4 +27,7 @@ export const PastCounselling = () => {
       />
     );
   }
+  return counsellings?.data.map((session) => (
+    <CounsellingSessionCard key={session.counsellingId} session={session} />
+  ));
 };

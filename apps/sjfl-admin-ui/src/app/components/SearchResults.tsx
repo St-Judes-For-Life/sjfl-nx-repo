@@ -1,15 +1,17 @@
 import { Link, useSearchParams } from 'react-router-dom';
-import { DateFormatter } from '../../lib/utils';
-import { Badge } from '../../ui/components/Badge';
-import { Card, CardContent } from '../../ui/components/Card';
 import {
+  Badge,
+  Card,
+  CardContent,
+  DateFormatter,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from '../../ui/components/Table';
+} from '@sjfl/ui';
+
 import { fetchSearchResults, useItemSearch } from '../hooks/useItemSearch';
 import { Aid } from '../models/Aid';
 import { JudianSearchResult } from '../models/Judian';

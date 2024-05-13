@@ -1,4 +1,5 @@
-import { Text } from '../../../ui/components/Text';
+import { Text } from '@sjfl/ui';
+
 import { Page } from '../../components/Page';
 import { SearchResults } from '../../components/SearchResults';
 import { SearchWidget } from '../../components/SearchWidget';

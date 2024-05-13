@@ -2,12 +2,7 @@ import z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from 'react-router-dom';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '../../ui/components/Avatar';
-import { Input } from '../../ui/components/Input';
+import { Avatar, AvatarFallback, AvatarImage, Input } from '@sjfl/ui';
 import { LinkItem } from './LinkItem';
 
 const userSearchSchema = z.object({

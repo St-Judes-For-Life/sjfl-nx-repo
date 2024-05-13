@@ -1,11 +1,16 @@
 import { useForm } from 'react-hook-form';
 import { useSearchParams } from 'react-router-dom';
-import { filterEmptyProps, parseSearchParams } from '../../lib/utils';
-import { Button } from '../../ui/components/Button';
-import { Card, CardContent, CardTitle } from '../../ui/components/Card';
-import { Input } from '../../ui/components/Input';
-import { Label } from '../../ui/components/Label';
-import { Text } from '../../ui/components/Text';
+import {
+  Button,
+  Card,
+  CardContent,
+  CardTitle,
+  Input,
+  Label,
+  Text,
+  filterEmptyProps,
+  parseSearchParams,
+} from '@sjfl/ui';
 import { SearchItem } from '../models/Search';
 
 type SearchWidgetProps = {

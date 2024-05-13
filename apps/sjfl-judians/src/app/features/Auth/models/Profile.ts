@@ -1,10 +1,10 @@
-import { Maybe } from '../../../shared/models/maybe.model';
+import { Maybe, MaybeNull } from '../../../shared/models/maybe.model';
 
 export interface UserProfile {
   name: string;
-  gender: string;
-  dateOfBirth: string;
+  gender?: Maybe<string>;
+  dateOfBirth?: MaybeNull<string>;
   mobileNumber: string;
-  email: string;
+  email?: Maybe<string>;
   imageUrl?: Maybe<string>;
 }

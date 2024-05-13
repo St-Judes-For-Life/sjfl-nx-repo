@@ -1,16 +1,19 @@
 import { FC, PropsWithChildren } from 'react';
-import { Card, CardContent, CardHeader } from '../../../../ui/components/Card';
+
 import {
+  Badge,
+  Card,
+  CardContent,
+  CardHeader,
+  DateFormatter,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from '../../../../ui/components/Table';
-import { DateFormatter } from '../../../../lib/utils';
-import { Text } from '../../../../ui/components/Text';
-import { Badge } from '../../../../ui/components/Badge';
+  Text,
+} from '@sjfl/ui';
 import { Link } from 'react-router-dom';
 import { Judian } from '../../../models/Judian';
 

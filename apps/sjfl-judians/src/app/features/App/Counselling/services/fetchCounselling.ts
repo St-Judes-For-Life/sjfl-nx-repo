@@ -13,7 +13,7 @@ export const fetchCounsellingSessions = async ({
   page = 1,
   size = 10,
 }: FetchCounsellingSessions) => {
-  const url = `${API.counselling.base}/${type}`;
+  const url = `${API.counselling.search}/${type}`;
   const resp = await RequestService.request<CounsellingSessions>({
     method: 'get',
     url,

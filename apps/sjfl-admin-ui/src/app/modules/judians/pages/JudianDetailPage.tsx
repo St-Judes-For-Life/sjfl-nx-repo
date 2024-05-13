@@ -1,9 +1,4 @@
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '../../../../ui/components/Tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@sjfl/ui';
 import { Page } from '../../../components/Page';
 import { JudianAidRequests } from '../components/JudianAidRequests';
 import { JudianInfo } from '../components/JudianInfo';

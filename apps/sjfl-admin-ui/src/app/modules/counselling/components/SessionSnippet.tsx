@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
-import { DateFormatter, TimeFormatter } from '../../../../lib/utils';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '../../../../ui/components/Avatar';
-import { Card, CardContent } from '../../../../ui/components/Card';
+  Card,
+  CardContent,
+  DateFormatter,
+  Text,
+  TimeFormatter,
+} from '@sjfl/ui';
+
 import { Session } from '../../../models/Session';
 import { CalendarDays } from 'lucide-react';
-import { Text } from '../../../../ui/components/Text';
 
 type SessionSnippetProps = {
   session: Pick<Session, 'id' | 'date' | 'judian' | 'notes'>;

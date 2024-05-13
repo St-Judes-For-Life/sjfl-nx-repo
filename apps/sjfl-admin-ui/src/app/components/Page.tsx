@@ -1,21 +1,24 @@
 import { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
-import { Text } from '../../ui/components/Text';
 import { BreadCrumbs } from '../models/BreadCrumb';
+import { Text, cn } from '@sjfl/ui';
 
-type PageProps =
+type PageProps = { className?: string } & (
   | {
       title: string;
     }
   | {
       breadcrumbs: BreadCrumbs;
-    };
+    }
+);
 
 export const Page = ({ children, ...props }: PropsWithChildren<PageProps>) => {
   const hasTitle = 'title' in props;
   const hasBreadcrumbs = 'breadcrumbs' in props;
   return (
-    <section className="grid grid-rows-[auto,1fr] gap-4 h-full ">
+    <section
+      className={cn('grid grid-rows-[auto,1fr] gap-4 h-full', props.className)}
+    >
       {hasTitle && <Text as="h1">{props.title}</Text>}
       {hasBreadcrumbs && (
         <div className="flex gap-4">
