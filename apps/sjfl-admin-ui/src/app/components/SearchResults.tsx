@@ -1,4 +1,3 @@
-import { Link, useSearchParams } from 'react-router-dom';
 import {
   Badge,
   Card,
@@ -11,105 +10,137 @@ import {
   TableHeader,
   TableRow,
 } from '@sjfl/ui';
+import { Link } from 'react-router-dom';
 
+import {
+  AdminCounsellingSession,
+  AdminJudian,
+  PaginatedResponse,
+} from '@sjfl/data';
+import { AxiosResponse } from 'axios';
 import { fetchSearchResults, useItemSearch } from '../hooks/useItemSearch';
 import { Aid } from '../models/Aid';
-import { JudianSearchResult } from '../models/Judian';
 import { SearchBy } from '../models/Search';
-import { Session } from '../models/Session';
+import { NoResults } from './NoResults';
+import { TableSkeleton } from './skeletons/TableSkeleton';
+import { SearchResultTable } from './SearchResultTable';
+import { RetrySearch } from './RetrySearch';
 
 type SearchResultsProps = {
   item: SearchBy;
 };
 
 export const SearchResults = ({ item }: SearchResultsProps) => {
-  const [searchParams] = useSearchParams();
-  const { data } = useItemSearch(item, searchParams);
+  const { data, isLoading, isFetching, isError, refetch } = useItemSearch(item);
 
-  if (data)
+  const cols =
+    item === 'aid' || item === 'counselling'
+      ? ['Requester', 'Status', 'Date']
+      : ['UID', 'Name', 'Phone', 'Email', 'Status'];
+
+  if (isLoading || isFetching) {
+    return <TableSkeleton columns={cols.length} />;
+  }
+
+  if (isError) {
+    return (
+      <Card>
+        <CardContent>
+          <SearchResultTable columns={cols}>
+            <TableRow>
+              <TableCell colSpan={3}>
+                <RetrySearch onRetry={refetch} />
+              </TableCell>
+            </TableRow>
+          </SearchResultTable>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (data) {
     return (
       <Card>
         <CardContent>{renderSearchResults(item, data)}</CardContent>
       </Card>
     );
+  }
 };
 
 function renderSearchResults(
   item: SearchBy,
-  data: ReturnType<typeof fetchSearchResults>
+  data: Awaited<ReturnType<typeof fetchSearchResults>>
 ) {
   if (item === 'counselling') {
-    return renderCounsellingSearchResults(data as Session[]);
+    return renderCounsellingSearchResults(
+      data as AxiosResponse<PaginatedResponse<AdminCounsellingSession>>
+    );
   }
-  if (item === 'aid') {
-    return renderAidSearchResults(data as Aid[]);
-  }
-  if (item === 'judian') {
-    return renderJudianSearchResults(data as JudianSearchResult[]);
+  // if (item === 'aid') {
+  //   return renderAidSearchResults(data as Aid[]);
+  // }
+  if (item === 'judians') {
+    return renderJudianSearchResults(
+      data as AxiosResponse<PaginatedResponse<AdminJudian>>
+    );
   }
 }
 
 function renderAidSearchResults(data: Aid[]) {
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Requester</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Date</TableHead>
+    <SearchResultTable columns={['Requester', 'Status', 'Date']}>
+      {data.map((record) => (
+        <TableRow key={record.id}>
+          <TableCell className="flex gap-2 items-center">
+            <Link to={`/aid/${record.id}`} className="font-medium underline">
+              {record.judian.name}
+            </Link>
+            {record.stream && (
+              <Badge variant={'outline'}>{record.stream}</Badge>
+            )}
+          </TableCell>
+          <TableCell>{record.status}</TableCell>
+          <TableCell>{DateFormatter.format(record.date)}</TableCell>
         </TableRow>
-      </TableHeader>
-      <TableBody>
-        {data.map((record) => (
-          <TableRow key={record.id}>
-            <TableCell className="flex gap-2 items-center">
-              <Link to={`/aid/${record.id}`} className="font-medium underline">
-                {record.judian.name}
-              </Link>
-              {record.stream && (
-                <Badge variant={'outline'}>{record.stream}</Badge>
-              )}
-            </TableCell>
-            <TableCell>{record.status}</TableCell>
-            <TableCell>{DateFormatter.format(record.date)}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+      ))}
+    </SearchResultTable>
   );
 }
 
-function renderCounsellingSearchResults(data: Session[]) {
+function renderCounsellingSearchResults(
+  response: AxiosResponse<PaginatedResponse<AdminCounsellingSession>>
+) {
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Requester</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Date</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {data.map((record) => (
-          <TableRow key={record.id}>
+    <SearchResultTable columns={['Requester', 'Status', 'Date']}>
+      {response.data.data && response.data.data.length > 0 ? (
+        response.data.data.map((record) => (
+          <TableRow key={record.counsellingId}>
             <TableCell className="flex gap-2 items-center">
               <Link
-                to={`/counselling/${record.id}`}
+                to={`/counselling/${record.counsellingId}`}
                 className="font-medium underline"
               >
-                {record.judian.name}
+                {record.userResponse.name}
               </Link>
             </TableCell>
-            <TableCell>{record.status}</TableCell>
-            <TableCell>{DateFormatter.format(record.date)}</TableCell>
+            <TableCell>{record.counsellingStatus}</TableCell>
+            <TableCell>{record.counsellingDate}</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        ))
+      ) : (
+        <TableRow>
+          <TableCell colSpan={3}>
+            <NoResults />
+          </TableCell>
+        </TableRow>
+      )}
+    </SearchResultTable>
   );
 }
 
-function renderJudianSearchResults(data: JudianSearchResult[]) {
+function renderJudianSearchResults(
+  response: AxiosResponse<PaginatedResponse<AdminJudian>>
+) {
   return (
     <Table>
       <TableHeader>
@@ -122,23 +153,31 @@ function renderJudianSearchResults(data: JudianSearchResult[]) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((record) => (
-          <TableRow key={record.id}>
-            <TableCell className="flex gap-2 items-center">
-              <Link
-                to={`/judians/${record.id}`}
-                className="font-medium underline"
-              >
-                {record.id}
-              </Link>
-            </TableCell>
+        {response.data.data && response.data.data.length > 0 ? (
+          response.data.data.map((record) => (
+            <TableRow key={record.uid}>
+              <TableCell className="flex gap-2 items-center">
+                <Link
+                  to={`/judians/${record.uid}`}
+                  className="font-medium underline"
+                >
+                  {record.uid}
+                </Link>
+              </TableCell>
 
-            <TableCell>{record.name}</TableCell>
-            <TableCell>{record.phone}</TableCell>
-            <TableCell>{record.email}</TableCell>
-            <TableCell>{record.status}</TableCell>
+              <TableCell>{record.fullName}</TableCell>
+              <TableCell>{record.mobileNo}</TableCell>
+              <TableCell>{record.email}</TableCell>
+              <TableCell>{record.accountLocked}</TableCell>
+            </TableRow>
+          ))
+        ) : (
+          <TableRow>
+            <TableCell colSpan={5}>
+              <NoResults />
+            </TableCell>
           </TableRow>
-        ))}
+        )}
       </TableBody>
     </Table>
   );

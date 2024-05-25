@@ -1,5 +1,5 @@
 export type Person = {
-  id: number;
+  id: string;
   name: string;
   phone: string;
   dob?: Date;

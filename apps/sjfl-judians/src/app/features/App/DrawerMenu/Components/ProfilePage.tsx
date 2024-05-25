@@ -58,7 +58,8 @@ export type ProfilePageProps = {
 export const ProfilePage = ({ onClose: handleClose }: ProfilePageProps) => {
   const [fileDialogOpen, setFileDialogOpen] = useState(false);
 
-  const { data: profile, isLoading } = useGetProfile();
+  const { data: profileResp, isLoading } = useGetProfile();
+  const profile = profileResp?.data;
   const { mutateAsync: updateProfile, isPending: updatingProfile } =
     useUpdateProfile();
 
@@ -146,7 +147,7 @@ export const ProfilePage = ({ onClose: handleClose }: ProfilePageProps) => {
                   placeholder={i18n._(
                     t({
                       id: 'Auth.Name_Placeholder',
-                      message: 'Enter your full name',
+                      message: 'Enter your full names',
                     })
                   )}
                 />
@@ -239,7 +240,6 @@ export const ProfilePage = ({ onClose: handleClose }: ProfilePageProps) => {
                     control={control}
                     name="dateOfBirth"
                     render={({ field: { onChange, value } }) => {
-                      console.log(value);
                       return (
                         <DatePicker
                           onChange={onChange}

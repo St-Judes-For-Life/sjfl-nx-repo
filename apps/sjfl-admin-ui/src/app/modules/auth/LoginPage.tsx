@@ -1,10 +1,4 @@
-import { useMemo, useState } from 'react';
-import { useLogin } from './hooks/useLogin';
-import { useAuth } from './hooks/useAuth';
-import { z } from 'zod';
-import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { AxiosError } from 'axios';
 import {
   Alert,
   AlertDescription,
@@ -20,7 +14,14 @@ import {
   Label,
   randomValue,
 } from '@sjfl/ui';
-import { AlertCircle, Link } from 'lucide-react';
+import { AxiosError } from 'axios';
+import { AlertCircle } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { useAuth } from './hooks/useAuth';
+import { useLogin } from './hooks/useLogin';
+import { Link } from 'react-router-dom';
 
 const bannerImages = ['banner.jpg', 'banner2.jpg'];
 
@@ -105,6 +106,7 @@ export const LoginPage = () => {
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
+                    autoComplete="username"
                     placeholder="email@stjudechild.org"
                     {...register('usernameOrEmail')}
                     required
@@ -115,7 +117,7 @@ export const LoginPage = () => {
                     <Label htmlFor="password">Password</Label>
                     <Link
                       className="text-sm underline underline-offset-4"
-                      to="#"
+                      to="/auth/forgot-password"
                     >
                       Forgot password?
                     </Link>
@@ -123,6 +125,7 @@ export const LoginPage = () => {
                   <Input
                     id="password"
                     required
+                    autoComplete="current-password"
                     type="password"
                     {...register('password')}
                   />

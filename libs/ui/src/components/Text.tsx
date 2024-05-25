@@ -13,11 +13,24 @@ const textVariants = cva('', {
       h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
       h5: 'scroll-m-20 text-lg font-semibold tracking-tigh',
     },
+    color: {
+      primary: 'text-primary',
+      warning: 'text-warning',
+      success: 'text-green-500',
+      error: 'text-error',
+      muted: 'text-slate-400',
+    },
   },
   defaultVariants: {
     as: 'p',
+    color: 'primary',
   },
 });
+
+export type TextColors = Exclude<
+  VariantProps<typeof textVariants>['color'],
+  null
+>;
 
 type TextElement = HTMLParagraphElement | HTMLHeadingElement;
 
@@ -29,7 +42,10 @@ export const Text = React.forwardRef<
   return (
     <Component
       ref={ref}
-      className={cn(textVariants({ as: props.as }), props.className)}
+      className={cn(
+        textVariants({ as: props.as, color: props.color }),
+        props.className
+      )}
     >
       {props.children}
     </Component>

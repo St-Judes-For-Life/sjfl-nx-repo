@@ -8,7 +8,7 @@ export const JudiansPage = () => {
     <Page title={'Judians'}>
       <div className="grid gap-4 auto-rows-min">
         <SearchWidget title="Judians" fields={JudiansSearchConfig} />
-        <SearchResults item="judian"></SearchResults>
+        <SearchResults item="judians"></SearchResults>
       </div>
     </Page>
   );

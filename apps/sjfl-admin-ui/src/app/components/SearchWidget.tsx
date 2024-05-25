@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -12,6 +12,7 @@ import {
   parseSearchParams,
 } from '@sjfl/ui';
 import { SearchItem } from '../models/Search';
+import { useQueryClient } from '@tanstack/react-query';
 
 type SearchWidgetProps = {
   title: string;
@@ -19,6 +20,8 @@ type SearchWidgetProps = {
 };
 
 export const SearchWidget = ({ title, fields }: SearchWidgetProps) => {
+  const queryClient = useQueryClient();
+  const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { register, handleSubmit, reset } = useForm({
@@ -28,15 +31,19 @@ export const SearchWidget = ({ title, fields }: SearchWidgetProps) => {
   const handleReset = () => reset();
 
   const handleSearch = (query: Record<string, string>) => {
-    const filtered = filterEmptyProps(query);
-    console.log(query, filtered);
+    const filtered: Record<string, string> = filterEmptyProps(query);
+    const item = location.pathname.replace('/', '');
+    const queryKey = ['search', item, new URLSearchParams(filtered).toString()];
+    queryClient.invalidateQueries({
+      queryKey: queryKey,
+    });
     setSearchParams(filtered);
   };
 
   return (
     <Card>
       <CardTitle>
-        <Text className="text-muted font-thin">Search for {title}</Text>
+        <Text className="text-slate-500 font-thin">Search for {title}</Text>
       </CardTitle>
       <CardContent>
         <form onSubmit={handleSubmit(handleSearch)} className="grid gap-2">
