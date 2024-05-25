@@ -1,4 +1,4 @@
-export interface Stats {
+export interface StatsResponse {
   totalJudiansActive: number;
   totalJudiansInactive: number;
   totalAidProvided: number;

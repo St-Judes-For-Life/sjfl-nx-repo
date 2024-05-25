@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  DateFormatter,
   Table,
   TableBody,
   TableCell,
@@ -15,18 +14,21 @@ import {
   Text,
 } from '@sjfl/ui';
 import { Link } from 'react-router-dom';
+import { NoResults } from '../../../components/NoResults';
 import { Judian } from '../../../models/Judian';
+
+export type SummaryData = {
+  id: number;
+  judian: Pick<Judian, 'id' | 'name'>;
+  subtitle?: string;
+  status: string;
+  date: string;
+};
 
 type SummaryTableCardProps = {
   resourceUrl: string;
   title: string;
-  summaryData: {
-    id: number;
-    judian: Pick<Judian, 'id' | 'name'>;
-    subtitle?: string;
-    status: string;
-    date: Date;
-  }[];
+  summaryData: SummaryData[];
 };
 
 export const SummaryTableCard: FC<PropsWithChildren<SummaryTableCardProps>> = ({
@@ -50,23 +52,31 @@ export const SummaryTableCard: FC<PropsWithChildren<SummaryTableCardProps>> = ({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {summaryData.map((request) => (
-              <TableRow key={request.id}>
-                <TableCell className="flex gap-2 items-center">
-                  <Link
-                    to={`${resourceUrl}/${request.id}`}
-                    className="font-medium underline"
-                  >
-                    {request.judian.name}
-                  </Link>
-                  {request.subtitle && (
-                    <Badge variant={'outline'}>{request.subtitle}</Badge>
-                  )}
+            {summaryData.length > 0 ? (
+              summaryData.map((request) => (
+                <TableRow key={request.id}>
+                  <TableCell className="flex gap-2 items-center">
+                    <Link
+                      to={`${resourceUrl}/${request.id}`}
+                      className="font-medium underline"
+                    >
+                      {request.judian.name}
+                    </Link>
+                    {request.subtitle && (
+                      <Badge variant={'outline'}>{request.subtitle}</Badge>
+                    )}
+                  </TableCell>
+                  <TableCell>{request.status}</TableCell>
+                  <TableCell>{request.date}</TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <NoResults />
                 </TableCell>
-                <TableCell>{request.status}</TableCell>
-                <TableCell>{DateFormatter.format(request.date)}</TableCell>
               </TableRow>
-            ))}
+            )}
           </TableBody>
         </Table>
       </CardContent>

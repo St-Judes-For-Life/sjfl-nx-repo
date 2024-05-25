@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getUserProfile, updateUserProfile } from '../services/profile.service';
+import { getUserProfile, updateUserProfile } from '@sjfl/data';
 
 export function useFetchProfile() {
   return useMutation({ mutationFn: getUserProfile });

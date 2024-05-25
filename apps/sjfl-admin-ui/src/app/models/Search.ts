@@ -2,7 +2,7 @@ import { Aid } from './Aid';
 import { JudianSearchResult } from './Judian';
 import { Session } from './Session';
 
-export type SearchBy = 'aid' | 'counselling' | 'judian';
+export type SearchBy = 'aid' | 'counselling' | 'judians';
 
 export type SearchResultTypeMap = {
   judian: JudianSearchResult[];

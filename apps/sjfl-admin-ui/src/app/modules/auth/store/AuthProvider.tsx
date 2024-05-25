@@ -25,7 +25,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const logOut = () => {
     setIsLoggedIn(false);
-    localStorage.delete('token');
+    localStorage.removeItem('token');
   };
 
   useEffect(() => {

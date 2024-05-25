@@ -1,7 +1,7 @@
 import { RequestService } from '../../../../lib/axios';
 import { API } from '../../../constants/urls';
-import { Stats } from '../models/Stats';
+import { StatsResponse } from '../models/StatsResponse';
 
 export function fetchStats() {
-  return RequestService.get<Stats>(API.stats);
+  return RequestService.get<StatsResponse>(API.stats);
 }

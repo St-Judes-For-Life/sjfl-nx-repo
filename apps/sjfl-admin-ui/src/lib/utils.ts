@@ -26,21 +26,17 @@ export function filterEmptyProps(obj: Record<string, string>) {
 
 export function parseSearchParams(
   params: URLSearchParams
-): Record<string, string> {
+): Record<string, any> {
   const record: Record<string, string> = {};
-  for (const entry in params.entries()) {
-    console.log(entry);
-  }
-  for (const key in params.keys()) {
-    const value = params.get(key);
+  params.forEach((value, key) => {
     if (value) {
       if (record[key]) {
-        record[key] += `,${params.get(key)}`;
+        record[key] += `,${value}`;
       } else {
         record[key] = value;
       }
     }
-  }
+  });
   return record;
 }
 

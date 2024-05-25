@@ -7,7 +7,7 @@ export const getUserProfile = async () => {
     url: API.user.profile,
     method: 'get',
   });
-  console.log(resp.data);
+  console.log({ data: resp.data });
   if (resp.status === 200) {
     return resp.data;
   } else {

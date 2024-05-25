@@ -1,186 +1,49 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
-  Card,
-  CardContent,
-  Text,
-} from '@sjfl/ui';
+import { useParams } from 'react-router-dom';
 
-import { judians } from '../../mock/judians';
-import { todaysSessions } from '../../mock/sessions';
-import { CalendarDays, WatchIcon } from 'lucide-react';
 import { Page } from '../../components/Page';
+import { JudianSnippet } from './components/JudianSnippet';
+import { PreviousSessions } from './components/PreviousSessions';
+import { SessionStatus } from './components/SessionStatus';
+import { JudianSnippetSkeleton } from './components/skeletons/JudianSnippetSkeleton';
+import { PreviousSessionsSkeleton } from './components/skeletons/PreviousSessionsSkeleton';
+import { SessionStatusSkeleton } from './components/skeletons/SessionStatusSkeleton';
+import { useFetchCounsellingSessionById } from './hooks/useFetchCounsellingSessionById';
 
 export const CounsellingRequestPage = () => {
-  const location = useLocation();
-  const counsellingID = location.pathname.split('/').pop() || -1;
-  const matchedSession = todaysSessions.filter(
-    (session) => session.id === +counsellingID
-  )[0];
-  const matchedJudian = judians.filter(
-    (judian) => judian.id === matchedSession?.judian.id
-  )[0];
-  const navigate = useNavigate();
+  const { id: counsellingID } = useParams();
+  if (!counsellingID) {
+    throw Error('ID not found');
+  }
 
-  const onViewProfileBtnClick = () => {
-    navigate(`/judians/${matchedJudian.id}`);
-  };
+  const { data: counsellingResp, isLoading: isFetchingCounsellingDetails } =
+    useFetchCounsellingSessionById(counsellingID);
+  const judian = counsellingResp?.data.userResponse;
 
-  return (
-    <Page title={'Counselling Request'}>
-      <div className="grid gap-4 auto-cols-fr grid-flow-col justify-between">
-        <div className="flex flex-col gap-4">
-          <Card>
-            <CardContent className="flex flex-col items-center justify-center gap-2">
-              <div className="w-32 h-32">
-                <Avatar color="red">
-                  <AvatarImage
-                    src={`https://robohash.org/${matchedJudian?.id}`}
-                  />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </div>
-              <Text as="h2" className="text-base">
-                {matchedJudian?.name}
-              </Text>
-              <Text className="text-base">{matchedJudian?.phone}</Text>
-              <Button
-                type="button"
-                variant={'default'}
-                onClick={onViewProfileBtnClick}
-              >
-                View Profile
-              </Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="flex flex-col gap-2">
-              <Text as="h2" className="text-base mb-3 font-bold">
-                Information
-              </Text>
-              <div className="flex flex-col gap-2">
-                <div className="flex">
-                  <div>Date Of Birth</div>
-                  <div></div>
-                </div>
-                <div className="flex">
-                  <div>Gender</div>
-                  <div></div>
-                </div>
-                <div className="flex">
-                  <div>UID</div>
-                  <div></div>
-                </div>
-                <div className="flex">
-                  <div>Last Session</div>
-                  <div></div>
-                </div>
-                <div className="flex">
-                  <div>Judian Since</div>
-                  <div></div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+  if (isFetchingCounsellingDetails) {
+    return (
+      <Page title="Counselling">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 justify-between">
+          <JudianSnippetSkeleton />
+          <SessionStatusSkeleton />
+          <PreviousSessionsSkeleton />
         </div>
-        <div className="gap-4">
-          <Card>
-            <CardContent className="flex flex-col justify-start gap-2">
-              <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <div className="font-bold">Approved Date</div>
-                  <div className="font-bold">Approved Time</div>
-                </div>
-                <div className="flex">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Text as="h2" className="text-base">
-                  Notes
-                </Text>
-                <Text className="text-base">
-                  Notes provided by Judian while creating the request.
-                </Text>
-              </div>
-              <div className="flex gap-2">
-                <Text as="h2" className="text-base">
-                  Status
-                </Text>
-                <Text className="text-base text-xl text-green-600 font-bold">
-                  Approved
-                </Text>
-              </div>
-              <div className="flex gap-2">
-                <Text className="text-base">Note for Judian</Text>
-              </div>
-              <div className="flex justify-center gap-4">
-                <Button type="button" variant="default">
-                  Cancel
-                </Button>
-                <Button type="submit" variant="destructive">
-                  Reschedule
-                </Button>
-                <Button type="submit" variant="secondary">
-                  Complete
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+      </Page>
+    );
+  }
+
+  if (counsellingResp && judian)
+    return (
+      <Page
+        breadcrumbs={[
+          { title: 'Counselling', link: '/counselling' },
+          { title: counsellingID },
+        ]}
+      >
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 justify-between">
+          <JudianSnippet judian={judian} />
+          <SessionStatus session={counsellingResp.data} />
+          <PreviousSessions uid={judian.uid} />
         </div>
-        <div className="gap-4">
-          <Card>
-            <CardContent className="flex flex-col gap-2">
-              <Text as="h2" className="text-base font-bold">
-                Previous Sessions
-              </Text>
-              <Card>
-                <CardContent className="flex flex-col justify-center gap-2">
-                  <div className="flex gap-2">
-                    <CalendarDays />
-                    <Text className="text-base">29/12/2023</Text>
-                  </div>
-                  <div className="flex gap-2">
-                    <WatchIcon />
-                    <Text className="text-base">6:00 PM</Text>
-                  </div>
-                  <Text className="text-base">Session Note</Text>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="flex flex-col justify-center gap-2">
-                  <div className="flex gap-2">
-                    <CalendarDays />
-                    <Text className="text-base">29/12/2023</Text>
-                  </div>
-                  <div className="flex gap-2">
-                    <WatchIcon />
-                    <Text className="text-base">6:00 PM</Text>
-                  </div>
-                  <Text className="text-base">Session Note</Text>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="flex flex-col justify-center gap-2">
-                  <div className="flex gap-2">
-                    <CalendarDays />
-                    <Text className="text-base">29/12/2023</Text>
-                  </div>
-                  <div className="flex gap-2">
-                    <WatchIcon />
-                    <Text className="text-base">6:00 PM</Text>
-                  </div>
-                  <Text className="text-base">Session Note</Text>
-                </CardContent>
-              </Card>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </Page>
-  );
+      </Page>
+    );
 };

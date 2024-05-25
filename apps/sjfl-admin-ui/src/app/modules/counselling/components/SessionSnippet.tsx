@@ -1,47 +1,47 @@
-import { Link } from 'react-router-dom';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
   Card,
   CardContent,
-  DateFormatter,
   Text,
-  TimeFormatter,
 } from '@sjfl/ui';
+import { Link } from 'react-router-dom';
 
-import { Session } from '../../../models/Session';
+import { AdminCounsellingSession } from '@sjfl/data';
 import { CalendarDays } from 'lucide-react';
 
 type SessionSnippetProps = {
-  session: Pick<Session, 'id' | 'date' | 'judian' | 'notes'>;
+  session: Pick<
+    AdminCounsellingSession,
+    'counsellingId' | 'counsellingDate' | 'userResponse' | 'statusNote'
+  >;
 };
 
 export const SessionSnippet = ({ session }: SessionSnippetProps) => {
   return (
-    <Link to={`/counselling/${session.id}`}>
+    <Link to={`/counselling/${session.counsellingId}`}>
       <Card>
         <CardContent className="flex gap-4">
           <Avatar color="red">
             <AvatarImage
               src={
-                session.judian.imageUrl ||
-                `https://robohash.org/${session.judian.id}`
+                session.userResponse.imageUrl ||
+                `https://robohash.org/${session.userResponse.name}`
               }
-              alt={session.judian.name}
+              alt={session.userResponse.name}
             />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <div className="flex flex-col">
             <div className="flex gap-2">
               <CalendarDays />
-              <time dateTime={session.date.toDateString()}>
-                {DateFormatter.format(session.date)} &nbsp;
-                {TimeFormatter.format(session.date)}
+              <time dateTime={session.counsellingDate}>
+                {session.counsellingDate}
               </time>
             </div>
-            <Text as={'h5'}>{session.judian.name}</Text>
-            <Text as={'p'}>{session.notes}</Text>
+            <Text as={'h5'}>{session.userResponse.name}</Text>
+            <Text as={'p'}>{session.statusNote}</Text>
           </div>
         </CardContent>
       </Card>
