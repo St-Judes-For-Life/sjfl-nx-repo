@@ -1,6 +1,5 @@
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import classNames from 'classnames';
 import { FC } from 'react';
 import { UserProfile } from '../../Auth/models/Profile';
@@ -14,6 +13,7 @@ export const UserProfileLink: FC<UserProfileLinkProps> = ({
   user,
   className,
 }) => {
+  console.log(user);
   return (
     <section
       className={classNames(
@@ -26,7 +26,7 @@ export const UserProfileLink: FC<UserProfileLinkProps> = ({
           src={user.imageUrl}
           sx={{ width: '6rem', height: '6rem', fontSize: '3rem' }}
         >
-          {user.name.substring(0, 1).toLocaleUpperCase()}
+          {user.name?.substring(0, 1).toLocaleUpperCase()}
         </Avatar>
         <span className="text-left">
           <h2 className="text-2xl font-bold text-primary">{user.name}</h2>

@@ -87,11 +87,13 @@ export const ProfilePage = ({ onClose: handleClose }: ProfilePageProps) => {
     }
   }, [profile, setValue]);
 
-  const submitHandler: SubmitHandler<ProfileForm> = async (profile) => {
+  const submitHandler: SubmitHandler<ProfileForm> = async (formData) => {
+    const { dateOfBirth, ...profile } = formData;
+    console.log({ dateOfBirth, profile });
     try {
       await updateProfile({
         ...profile,
-        dateOfBirth: createDate(profile.dateOfBirth),
+        dateOfBirth: createDate(dateOfBirth),
       });
       toast.success('Profile updated successfully');
     } catch (err) {

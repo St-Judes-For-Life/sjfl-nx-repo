@@ -12,8 +12,18 @@ export interface AdminJudian {
   fullAddress: string;
   accountLocked: boolean;
   otpVerificationAttempts: string;
-  createdAt: Date;
+  createdAt: string;
   createdBy: string;
   updatedAt: Date;
   updatedBy: string;
 }
+
+export type UpdateJudianRequestAdmin = Omit<
+  AdminJudian,
+  | 'uid'
+  | 'createdAt'
+  | 'createdBy'
+  | 'updatedAt'
+  | 'updatedBy'
+  | 'otpVerificationAttempts'
+>;
