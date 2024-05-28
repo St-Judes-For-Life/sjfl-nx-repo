@@ -7,7 +7,7 @@ import { useLoggedInUser } from '../../../shared/hooks/useAuth';
 
 export const DashboardPage = () => {
   const user = useLoggedInUser();
-  const firstName = user?.name.split(' ')[0];
+  const firstName = user?.name?.split(' ')[0];
 
   const navigate = useNavigate();
 

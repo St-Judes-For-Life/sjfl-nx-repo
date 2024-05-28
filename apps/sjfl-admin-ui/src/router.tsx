@@ -78,7 +78,7 @@ export const routes: RouteObject[] = [
                 },
               },
               {
-                path: ':id',
+                path: ':uid',
                 lazy: async () => {
                   const { JudianDetailPage } = await import(
                     './app/modules/judians/pages/JudianDetailPage'

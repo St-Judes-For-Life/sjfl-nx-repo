@@ -13,7 +13,7 @@ export default defineConfig({
     host: 'localhost',
     proxy: {
       '/admin': {
-        target: 'https://c8a9-20-219-147-128.ngrok-free.app',
+        target: 'https://cbd4-20-219-147-128.ngrok-free.app',
         secure: false,
         changeOrigin: true,
       },

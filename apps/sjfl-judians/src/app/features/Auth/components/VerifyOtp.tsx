@@ -67,8 +67,8 @@ export const VerifyOtp: FC<VerifyOtpProps> = ({
 
     if (resp) {
       const profile = await fetchProfile();
-      if (profile) {
-        logIn(profile);
+      if (profile.data) {
+        logIn(profile.data);
         onVerifyComplete(true);
       } else {
         onVerifyComplete(false);

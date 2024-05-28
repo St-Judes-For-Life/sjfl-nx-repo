@@ -37,3 +37,9 @@ export const fetchJudiansAdmin = async ({
     }),
   });
 };
+
+export const fetchJudianById = (uid: string) => {
+  return AdminRequestService.get<AdminJudian>(
+    `${ADMIN_API.judian.base}/${uid}/latest`
+  );
+};

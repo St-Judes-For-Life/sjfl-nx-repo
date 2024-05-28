@@ -8,11 +8,12 @@ export const ADMIN_API = {
     search: '/counselling/search',
   },
   judian: {
+    base: '/judian',
     search: '/judian/search',
   },
 };
 
-const BASE_CLIENT_URL = 'https://c8a9-20-219-147-128.ngrok-free.app/user';
+const BASE_CLIENT_URL = 'https://cbd4-20-219-147-128.ngrok-free.app/user';
 
 export const CLIENT_API = {
   user: {
