@@ -9,11 +9,11 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/sjfl-admin-ui',
 
   server: {
-    port: 4200,
+    port: 4201,
     host: 'localhost',
     proxy: {
       '/admin': {
-        target: 'https://cbd4-20-219-147-128.ngrok-free.app',
+        target: 'https://8f07-20-219-147-128.ngrok-free.app',
         secure: false,
         changeOrigin: true,
       },

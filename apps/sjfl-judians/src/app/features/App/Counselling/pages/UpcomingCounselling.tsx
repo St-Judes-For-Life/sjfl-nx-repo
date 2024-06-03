@@ -1,10 +1,10 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 
-import { NoResults } from '../../../../shared/components/error-states/NoResults';
 import { useNavigate } from 'react-router-dom';
+import { NoResults } from '../../../../shared/components/error-states/NoResults';
+import { SessionList } from '../components/SessionList';
 import { useFetchCounselling } from '../hooks/useFetchCounselling';
-import { CounsellingSessionCard } from '../components/CounsellingSessionCard';
 
 export const UpcomingCounselling = () => {
   const { i18n } = useLingui();
@@ -17,9 +17,7 @@ export const UpcomingCounselling = () => {
     return <>Loading...</>;
   }
 
-  console.log(counsellings);
-
-  if (counsellings?.data.length === 0) {
+  if (!counsellings || counsellings.data.length === 0) {
     return (
       <NoResults
         message={i18n._(
@@ -40,7 +38,5 @@ export const UpcomingCounselling = () => {
     );
   }
 
-  return counsellings?.data.map((session) => (
-    <CounsellingSessionCard key={session.counsellingId} session={session} />
-  ));
+  return <SessionList sessions={counsellings.data} />;
 };

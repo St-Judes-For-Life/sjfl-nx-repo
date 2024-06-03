@@ -39,8 +39,8 @@ export const AppHeader = ({
   const rightSlot = slots?.right;
 
   const heading = subtitle ? (
-    <span className="flex-grow">
-      <h1 className="text-sm">{title}</h1>
+    <span className="flex-grow ml-4">
+      <h1 className="text-base font-semibold">{title}</h1>
       <h3 className="text-xs">{subtitle}</h3>
     </span>
   ) : (

@@ -108,6 +108,24 @@ export const router = createBrowserRouter([
                     loader: () => redirect('requests'),
                   },
                   {
+                    path: 'history/:sessionId',
+                    lazy: async () => {
+                      const { CounsellingSessionHistory } = await import(
+                        '../app/features/App/Counselling'
+                      );
+                      return { Component: CounsellingSessionHistory };
+                    },
+                  },
+                  {
+                    path: 'update/:sessionId',
+                    lazy: async () => {
+                      const { RescheduleCounselling } = await import(
+                        '../app/features/App/Counselling'
+                      );
+                      return { Component: RescheduleCounselling };
+                    },
+                  },
+                  {
                     path: 'requests',
                     lazy: async () => {
                       const { CounsellingLandingPage } = await import(

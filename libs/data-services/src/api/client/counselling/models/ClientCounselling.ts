@@ -1,3 +1,17 @@
+import { MaybeNull } from '../../../../models';
+
+export type CreateSessionRequest = {
+  requestDate: string;
+  note?: MaybeNull<string>;
+};
+
+export type CreateSessionResponse = {
+  counsellingId: string;
+  counsellingDate: string;
+  note: string;
+  counsellingStatus: string;
+};
+
 export type CounsellingStatus =
   | 'REQUESTED'
   | 'RESCHEDULED'
@@ -11,4 +25,7 @@ export type ClientCounsellingSession = {
   counsellingDate: string;
   note: string;
   counsellingStatus: CounsellingStatus;
+  statusNote: string;
+  userName: string;
+  eventTime: string;
 };

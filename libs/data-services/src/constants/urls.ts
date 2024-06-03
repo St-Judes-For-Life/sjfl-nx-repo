@@ -13,7 +13,7 @@ export const ADMIN_API = {
   },
 };
 
-const BASE_CLIENT_URL = 'https://cbd4-20-219-147-128.ngrok-free.app/user';
+const BASE_CLIENT_URL = 'https://8f07-20-219-147-128.ngrok-free.app/user';
 
 export const CLIENT_API = {
   user: {
@@ -25,6 +25,7 @@ export const CLIENT_API = {
     send: `${BASE_CLIENT_URL}/otp/send`,
   },
   counselling: {
+    base: `${BASE_CLIENT_URL}/counselling`,
     search: `${BASE_CLIENT_URL}/counselling/search`,
     create: `${BASE_CLIENT_URL}/counselling/schedule`,
   },

@@ -48,7 +48,7 @@ export const SearchResults = ({ item }: SearchResultsProps) => {
         <CardContent>
           <SearchResultTable columns={cols}>
             <TableRow>
-              <TableCell colSpan={3}>
+              <TableCell colSpan={cols.length}>
                 <RetrySearch onRetry={refetch} />
               </TableCell>
             </TableRow>

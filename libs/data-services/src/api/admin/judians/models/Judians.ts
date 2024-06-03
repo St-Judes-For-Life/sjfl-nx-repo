@@ -1,15 +1,17 @@
+import { MaybeNull } from '../../../../models';
+
 export interface AdminJudian {
   uid: string;
   fullName: string;
   mobileNo: string;
-  dateOfBirth: Date;
-  gender: string;
-  email: string;
-  guardianName: string;
-  guardianRelationship: string;
-  guardianMobile: string;
-  guardianEmail: string;
-  fullAddress: string;
+  dateOfBirth: MaybeNull<Date>;
+  gender: MaybeNull<string>;
+  email: MaybeNull<string>;
+  guardianName: MaybeNull<string>;
+  guardianRelationship: MaybeNull<string>;
+  guardianMobile: MaybeNull<string>;
+  guardianEmail: MaybeNull<string>;
+  fullAddress: MaybeNull<string>;
   accountLocked: boolean;
   otpVerificationAttempts: string;
   createdAt: string;

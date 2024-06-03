@@ -48,7 +48,7 @@ export const updateCounsellingSessionAdmin = ({
   id: string;
   session: UpdateCounsellingSessionAdminRequest;
 }) => {
-  return AdminRequestService.patch<AdminCounsellingSession>(
+  return AdminRequestService.post<AdminCounsellingSession>(
     `${ADMIN_API.counselling.base}/${id}/update`,
     session
   );

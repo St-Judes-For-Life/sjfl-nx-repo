@@ -1,8 +1,8 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
+import { SessionList } from '../components/SessionList';
 import { useFetchCounselling } from '../hooks/useFetchCounselling';
-import { CounsellingSessionCard } from '../components/CounsellingSessionCard';
 
 export const PastCounselling = () => {
   const { i18n } = useLingui();
@@ -14,7 +14,7 @@ export const PastCounselling = () => {
     return <>Loading...</>;
   }
 
-  if (counsellings?.data.length === 0) {
+  if (!counsellings || counsellings.data.length === 0) {
     return (
       <NoResults
         message={i18n._(
@@ -27,7 +27,5 @@ export const PastCounselling = () => {
       />
     );
   }
-  return counsellings?.data.map((session) => (
-    <CounsellingSessionCard key={session.counsellingId} session={session} />
-  ));
+  return <SessionList sessions={counsellings.data} />;
 };

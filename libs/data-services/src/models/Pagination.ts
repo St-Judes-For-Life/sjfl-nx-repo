@@ -1,6 +1,6 @@
 export type PaginationReq = {
-  page: number;
-  size: number;
+  page?: number;
+  size?: number;
 };
 
 export type PaginatedResponse<T> = {

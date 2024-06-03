@@ -15,11 +15,14 @@ import {
   FormItem,
   FormLabel,
   Textarea,
+  useToast,
 } from '@sjfl/ui';
 import { useState } from 'react';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
+import { useQueryClient } from '@tanstack/react-query';
+import { UpdateSessionModal } from '../../models/UpdateSessionModal';
 
 const RejectFormSchema = z.object({
   note: z.string().optional(),
@@ -27,8 +30,13 @@ const RejectFormSchema = z.object({
 
 type RejectForm = z.infer<typeof RejectFormSchema>;
 
-export const RejectSessionDialog = ({ id }: { id: string }) => {
+export const RejectSessionDialog = ({
+  id,
+  onUpdate,
+  disabled,
+}: UpdateSessionModal) => {
   const [open, setOpen] = useState(false);
+
   const form = useForm<RejectForm>({
     resolver: zodResolver(RejectFormSchema),
     defaultValues: {
@@ -46,7 +54,10 @@ export const RejectSessionDialog = ({ id }: { id: string }) => {
     };
 
     const resp = await rejectSession({ id, session });
-    console.log(resp);
+    if (resp.status === 200) {
+      setOpen(false);
+      onUpdate();
+    }
   };
   const onError: SubmitErrorHandler<RejectForm> = (err) => {
     console.log(err);
@@ -55,7 +66,7 @@ export const RejectSessionDialog = ({ id }: { id: string }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button type="submit" variant="destructive">
+        <Button type="submit" variant="destructive" disabled={disabled}>
           Reject
         </Button>
       </DialogTrigger>

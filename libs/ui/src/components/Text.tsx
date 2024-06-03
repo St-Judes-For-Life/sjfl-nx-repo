@@ -15,9 +15,9 @@ const textVariants = cva('', {
     },
     color: {
       primary: 'text-primary',
-      warning: 'text-warning',
+      tertiary: 'text-blue-700',
       success: 'text-green-500',
-      error: 'text-error',
+      error: 'text-destructive',
       muted: 'text-slate-400',
     },
   },

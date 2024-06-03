@@ -1,12 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import {
-  FetchCounsellingSessions,
-  fetchCounsellingSessions,
-} from '../services/fetchCounselling';
+  FetchCounsellingSessionsClientRequest,
+  fetchCounsellingSessionsClient,
+} from '@sjfl/data';
 
-export function useFetchCounselling(query: FetchCounsellingSessions) {
+export function useFetchCounselling(
+  query: FetchCounsellingSessionsClientRequest
+) {
   return useQuery({
     queryKey: ['counselling', query] as const,
-    queryFn: ({ queryKey: [, query] }) => fetchCounsellingSessions(query),
+    queryFn: ({ queryKey: [, query] }) => fetchCounsellingSessionsClient(query),
   });
 }

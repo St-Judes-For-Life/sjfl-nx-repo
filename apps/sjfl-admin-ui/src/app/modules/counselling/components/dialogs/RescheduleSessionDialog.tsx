@@ -25,7 +25,8 @@ import {
   Input,
   Textarea,
   cn,
-  parseDateTime,
+  dateTimeToString,
+  useToast,
 } from '@sjfl/ui';
 import { format, subDays } from 'date-fns';
 import { CalendarIcon, Clock } from 'lucide-react';
@@ -33,6 +34,8 @@ import { useRef, useState } from 'react';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
+import { useQueryClient } from '@tanstack/react-query';
+import { UpdateSessionModal } from '../../models/UpdateSessionModal';
 
 const RescheduleFormSchema = z.object({
   date: z.date({
@@ -46,9 +49,17 @@ const RescheduleFormSchema = z.object({
 
 type RescheduleForm = z.infer<typeof RescheduleFormSchema>;
 
-export const RescheduleSessionDialog = ({ id }: { id: string }) => {
+export const RescheduleSessionDialog = ({
+  id,
+  disabled,
+  onUpdate,
+}: UpdateSessionModal) => {
   const [open, setOpen] = useState(false);
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+
   const timeInputRef = useRef<HTMLInputElement>(null);
+
   const form = useForm<RescheduleForm>({
     resolver: zodResolver(RescheduleFormSchema),
     defaultValues: {
@@ -61,7 +72,7 @@ export const RescheduleSessionDialog = ({ id }: { id: string }) => {
     useUpdateCounsellingSession();
 
   const onSubmit = async (data: RescheduleForm) => {
-    const dateString = parseDateTime(data.date, data.time);
+    const dateString = dateTimeToString(data.date, data.time);
     const session: UpdateCounsellingSessionAdminRequest = {
       counsellingDate: dateString,
       statusNote: data.note,
@@ -69,7 +80,11 @@ export const RescheduleSessionDialog = ({ id }: { id: string }) => {
     };
 
     const resp = await rescheduleSession({ id, session });
-    console.log(resp);
+
+    if (resp.status === 200) {
+      setOpen(false);
+      onUpdate();
+    }
   };
   const onError: SubmitErrorHandler<RescheduleForm> = (err) => {
     console.log(err);
@@ -78,7 +93,7 @@ export const RescheduleSessionDialog = ({ id }: { id: string }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button type="submit" variant="tertiary">
+        <Button type="submit" variant="tertiary" disabled={disabled}>
           Reschedule
         </Button>
       </DialogTrigger>

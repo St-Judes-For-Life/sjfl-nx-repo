@@ -1,5 +1,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { UpdateCounsellingSessionAdminRequest } from '@sjfl/data';
+import {
+  CounsellingStatus,
+  UpdateCounsellingSessionAdminRequest,
+} from '@sjfl/data';
 import {
   Button,
   Dialog,
@@ -16,10 +19,11 @@ import {
   FormLabel,
   Textarea,
 } from '@sjfl/ui';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
+import { UpdateSessionModal } from '../../models/UpdateSessionModal';
 
 const ApproveFormSchema = z.object({
   note: z.string().optional(),
@@ -27,8 +31,21 @@ const ApproveFormSchema = z.object({
 
 type ApproveForm = z.infer<typeof ApproveFormSchema>;
 
-export const ApproveSessionDialog = ({ id }: { id: string }) => {
+export const ApproveSessionDialog: FC<UpdateSessionModal> = ({
+  id,
+  currentStatus,
+  disabled,
+  onUpdate,
+}) => {
   const [open, setOpen] = useState(false);
+
+  const action =
+    currentStatus.toLowerCase() === 'accepted' ? 'Complete' : 'Approve';
+  const updateStatusTo: CounsellingStatus =
+    currentStatus.toLowerCase() === 'accepted' ? 'COMPLETED' : 'ACCEPTED';
+
+  console.log({ currentStatus, action, updateStatusTo });
+
   const form = useForm<ApproveForm>({
     resolver: zodResolver(ApproveFormSchema),
     defaultValues: {
@@ -41,12 +58,15 @@ export const ApproveSessionDialog = ({ id }: { id: string }) => {
 
   const onSubmit = async (data: ApproveForm) => {
     const session: UpdateCounsellingSessionAdminRequest = {
-      counsellingStatus: 'ACCEPTED',
+      counsellingStatus: updateStatusTo,
       statusNote: data.note,
     };
 
     const resp = await approveSession({ id, session });
-    console.log(resp);
+    if (resp.status === 200) {
+      setOpen(false);
+      onUpdate();
+    }
   };
   const onError: SubmitErrorHandler<ApproveForm> = (err) => {
     console.log(err);
@@ -55,17 +75,17 @@ export const ApproveSessionDialog = ({ id }: { id: string }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button type="submit" variant="success">
-          Approve
+        <Button type="submit" variant="success" disabled={disabled}>
+          {action}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit, onError)}>
             <DialogHeader>
-              <DialogTitle>Approve Session</DialogTitle>
+              <DialogTitle>{action} Session</DialogTitle>
               <DialogDescription>
-                Are you sure you want to Approve this session?
+                Are you sure you want to {action} this session?
               </DialogDescription>
             </DialogHeader>
             <div className="grid my-8 gap-4">
@@ -94,7 +114,7 @@ export const ApproveSessionDialog = ({ id }: { id: string }) => {
                 </Button>
               </DialogClose>
               <Button loading={isPending} type="submit" variant={'success'}>
-                Approve
+                {action}
               </Button>
             </DialogFooter>
           </form>

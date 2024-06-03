@@ -5,12 +5,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const DateFormatter = new Intl.DateTimeFormat('en-IN');
+export const DateFormatter = new Intl.DateTimeFormat('en-IN', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
 export const TimeFormatter = new Intl.DateTimeFormat('en-IN', {
   timeStyle: 'short',
 });
 
-export const parseDateTime = (date: Date, time: string) => {
+export const dateTimeToString = (date: Date, time: string) => {
   return DateFormatter.format(date).replaceAll('/', '-') + ' ' + time;
 };
 
