@@ -18,7 +18,7 @@ export const ScheduleConfirmation: FC<ScheduleConfirmationProps> = ({
   };
 
   const viewScheduleHandler = () => {
-    navigate('../../');
+    navigate('/counselling/history/' + sessionId, { replace: true });
   };
 
   return (

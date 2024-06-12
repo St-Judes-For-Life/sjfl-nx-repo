@@ -1,26 +1,30 @@
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { Capacitor } from '@capacitor/core';
 import { FilePicker } from '@capawesome/capacitor-file-picker';
 import { Trans, t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import FolderIcon from '@mui/icons-material/Folder';
-import Button from '@mui/material/Button';
 import Drawer, { DrawerProps } from '@mui/material/Drawer';
-import { FC, PropsWithChildren, ReactElement } from 'react';
+import { FC } from 'react';
 import { toast } from 'react-toastify';
-import { FilePickerProps } from '../../models/file-pick.model';
-import { checkCameraPermission } from '../../lib/permissions';
+import {
+  FilePickerCancelled,
+  GalleryPickCancelled,
+} from '../../lib/exceptions/file-picker.exception';
 import { base64toFile, webPathToFile } from '../../lib/file';
-import { Capacitor } from '@capacitor/core';
-import { FilePickerCancelled } from '../../lib/exceptions/file-picker.exception';
-import { GalleryPickCancelled } from '../../lib/exceptions/file-picker.exception';
+import { checkCameraPermission } from '../../lib/permissions';
+import { FilePickerProps } from '../../models/file-pick.model';
+import { DrawerActionBtn } from '../buttons/DrawerActionBtn';
 
-type FilePickerDialogProps = {};
-
-export const FilePickerDialog: FC<
-  DrawerProps & FilePickerProps & FilePickerDialogProps
-> = ({ open, onClose, label, fileType = 'image+file', onPick }) => {
+export const FilePickerDialog: FC<DrawerProps & FilePickerProps> = ({
+  open,
+  onClose,
+  label,
+  fileType = 'image+file',
+  onPick,
+}) => {
   const { i18n } = useLingui();
   label ??= i18n._(
     t({ id: 'FilePickerDialog.Title', message: 'Select a file to upload' })
@@ -143,48 +147,28 @@ export const FilePickerDialog: FC<
   };
 
   return (
-    <Drawer onClose={onClose} anchor="bottom" open={open} sx={{zIndex: 9999}}>
+    <Drawer onClose={onClose} anchor="bottom" open={open} sx={{ zIndex: 9999 }}>
       <h3 className="text-center mt-2">{label}</h3>
       <div className="mt-4 px-2">
         {(fileType === 'image' || fileType === 'image+file') && (
           <>
-            <UploadFileDialogBtn
-              icon={<CameraAltIcon />}
-              onClick={cameraHandler}
-            >
+            <DrawerActionBtn icon={<CameraAltIcon />} onClick={cameraHandler}>
               <Trans id="FilePicker.ClickPicture">Click a Picture</Trans>
-            </UploadFileDialogBtn>
-            <UploadFileDialogBtn
+            </DrawerActionBtn>
+            <DrawerActionBtn
               icon={<CollectionsIcon />}
               onClick={galleryHandler}
             >
               <Trans id="FilePicker.SelectGallery">Select from Gallery</Trans>
-            </UploadFileDialogBtn>
+            </DrawerActionBtn>
           </>
         )}
         {(fileType === 'file' || fileType === 'image+file') && (
-          <UploadFileDialogBtn icon={<FolderIcon />} onClick={fileHandler}>
+          <DrawerActionBtn icon={<FolderIcon />} onClick={fileHandler}>
             <Trans id="FilePicker.SelectFile">Select from files</Trans>
-          </UploadFileDialogBtn>
+          </DrawerActionBtn>
         )}
       </div>
     </Drawer>
-  );
-};
-
-const UploadFileDialogBtn: FC<
-  PropsWithChildren<{ icon: ReactElement; onClick: () => void }>
-> = ({ icon, children, onClick }) => {
-  return (
-    <Button
-      size="large"
-      fullWidth
-      variant="text"
-      onClick={onClick}
-      className="!justify-start !p-4 !items-center !text-lg"
-    >
-      {icon}
-      <span className="ml-6">{children}</span>
-    </Button>
   );
 };

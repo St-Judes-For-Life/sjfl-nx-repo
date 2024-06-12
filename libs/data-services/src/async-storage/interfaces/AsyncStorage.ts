@@ -1,4 +1,4 @@
-import { Maybe } from '../../../models/maybe.model';
+import { Maybe } from '../../models';
 
 export interface AsyncStorage {
   set<T>(key: string, value: T): Promise<void>;

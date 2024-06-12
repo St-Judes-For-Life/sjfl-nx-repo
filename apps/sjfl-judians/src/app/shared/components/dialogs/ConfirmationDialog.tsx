@@ -1,5 +1,6 @@
-import { t, Trans } from '@lingui/macro';
+import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
+import { LoadingButton } from '@mui/lab';
 import Button from '@mui/material/Button';
 import Drawer, { DrawerProps } from '@mui/material/Drawer';
 import { FC, ReactElement } from 'react';
@@ -11,6 +12,8 @@ type ConfirmationDialogProps = {
   onConfirm: () => void;
   destructive?: boolean;
   confirmText?: string;
+  cancelText?: string;
+  loading?: boolean;
 };
 
 export const ConfirmationDialog: FC<DrawerProps & ConfirmationDialogProps> = ({
@@ -18,11 +21,14 @@ export const ConfirmationDialog: FC<DrawerProps & ConfirmationDialogProps> = ({
   text,
   destructive = false,
   confirmText,
+  cancelText,
   onCancel,
   onConfirm,
+  loading = false,
   ...props
 }) => {
   const { i18n } = useLingui();
+  cancelText ??= i18n._(t({ id: 'ConfirmDialog.Cancel', message: 'CANCEL' }));
   confirmText ??= i18n._(
     t({ id: 'ConfirmDialog.Confirm', message: 'CONFIRM' })
   );
@@ -38,16 +44,17 @@ export const ConfirmationDialog: FC<DrawerProps & ConfirmationDialogProps> = ({
             onClick={onCancel}
             fullWidth
           >
-            <Trans id="ConfirmDialog.Cancel">CANCEL</Trans>
+            {cancelText}
           </Button>
-          <Button
+          <LoadingButton
             variant="contained"
             color={destructive ? 'error' : 'primary'}
             onClick={onConfirm}
+            loading={loading}
             fullWidth
           >
             {confirmText}
-          </Button>
+          </LoadingButton>
         </div>
       </div>
     </Drawer>

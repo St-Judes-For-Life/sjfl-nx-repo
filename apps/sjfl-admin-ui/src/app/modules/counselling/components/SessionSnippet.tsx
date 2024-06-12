@@ -10,11 +10,16 @@ import { Link } from 'react-router-dom';
 
 import { AdminCounsellingSession } from '@sjfl/data';
 import { CalendarDays } from 'lucide-react';
+import { getStatusColor } from './SessionStatus';
 
 type SessionSnippetProps = {
   session: Pick<
     AdminCounsellingSession,
-    'counsellingId' | 'counsellingDate' | 'userResponse' | 'statusNote'
+    | 'counsellingId'
+    | 'counsellingDate'
+    | 'userResponse'
+    | 'statusNote'
+    | 'counsellingStatus'
   >;
 };
 
@@ -42,6 +47,9 @@ export const SessionSnippet = ({ session }: SessionSnippetProps) => {
             </div>
             <Text as={'h5'}>{session.userResponse.name}</Text>
             <Text as={'p'}>{session.statusNote}</Text>
+            <Text color={getStatusColor(session.counsellingStatus)} as={'p'}>
+              {session.counsellingStatus}
+            </Text>
           </div>
         </CardContent>
       </Card>

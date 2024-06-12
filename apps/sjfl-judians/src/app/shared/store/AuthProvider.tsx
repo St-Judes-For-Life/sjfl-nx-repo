@@ -8,7 +8,7 @@ import {
 import { UserProfile } from '../../features/Auth/models/Profile';
 import { IAuthContext } from '../models/auth.model';
 import { Maybe } from '../models/maybe.model';
-import { asyncStore } from '../utils/async-storage/async-storage';
+import { asyncStore } from '@sjfl/data';
 
 export const AuthContext = createContext<IAuthContext | null>(null);
 

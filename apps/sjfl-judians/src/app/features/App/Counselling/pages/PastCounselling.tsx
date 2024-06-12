@@ -1,12 +1,17 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
+import { SessionList } from '../components/SessionList';
 import { useFetchCounselling } from '../hooks/useFetchCounselling';
-import { CounsellingSessionCard } from '../components/CounsellingSessionCard';
+import PullToRefresh from 'react-simple-pull-to-refresh';
 
 export const PastCounselling = () => {
   const { i18n } = useLingui();
-  const { data: counsellings, isLoading } = useFetchCounselling({
+  const {
+    data: counsellings,
+    isLoading,
+    refetch,
+  } = useFetchCounselling({
     type: 'past',
   });
 
@@ -14,7 +19,7 @@ export const PastCounselling = () => {
     return <>Loading...</>;
   }
 
-  if (counsellings?.data.length === 0) {
+  if (!counsellings || counsellings.data.length === 0) {
     return (
       <NoResults
         message={i18n._(
@@ -27,7 +32,9 @@ export const PastCounselling = () => {
       />
     );
   }
-  return counsellings?.data.map((session) => (
-    <CounsellingSessionCard key={session.counsellingId} session={session} />
-  ));
+  return (
+    <PullToRefresh onRefresh={refetch} pullingContent={''}>
+      <SessionList sessions={counsellings.data} />
+    </PullToRefresh>
+  );
 };

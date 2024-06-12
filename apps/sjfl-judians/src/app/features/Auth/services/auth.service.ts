@@ -1,6 +1,6 @@
 import { API } from '../../../shared/constants/api/urls';
 import { User } from '../../../shared/models/auth.model';
-import { asyncStore } from '../../../shared/utils/async-storage/async-storage';
+import { asyncStore } from '@sjfl/data';
 import { RequestService } from '../../../shared/utils/axios';
 import { AccessTokenResponse } from '../models/AccessToken';
 import { VerifyOtpRequest } from '../models/Otp';

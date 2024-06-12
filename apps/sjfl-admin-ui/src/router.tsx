@@ -1,8 +1,11 @@
-import { RouteObject, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouteObject, createBrowserRouter } from 'react-router-dom';
 import { App } from './app/app';
 import { LoginPage } from './app/modules/auth/LoginPage';
 import { ProtectedLayout } from './app/layouts/ProtectedLayout';
 import { AuthLayout } from './app/modules/auth/AuthLayout';
+import { queryClient } from './lib/queryClient';
+import { fetchCommonLookupAdmin } from '@sjfl/data';
+import { GenericErrorPage } from './app/components/GenericErrorPage';
 
 export const routes: RouteObject[] = [
   {
@@ -11,7 +14,15 @@ export const routes: RouteObject[] = [
     children: [
       {
         path: '',
-        element: <App />,
+        element: <Outlet />,
+        errorElement: <GenericErrorPage />,
+        loader: () =>
+          queryClient.fetchQuery({
+            queryKey: ['common', 'lookup'] as const,
+            queryFn: fetchCommonLookupAdmin,
+            staleTime: Infinity,
+            gcTime: Infinity,
+          }),
         children: [
           {
             path: '',

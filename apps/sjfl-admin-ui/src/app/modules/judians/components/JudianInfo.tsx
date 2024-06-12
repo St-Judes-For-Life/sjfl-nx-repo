@@ -1,19 +1,21 @@
 import { MailIcon, PhoneCallIcon } from 'lucide-react';
 
+import { AdminJudian } from '@sjfl/data';
 import {
   Button,
   Card,
   CardContent,
-  DateFormatter,
   Input,
   Label,
   Text,
   Textarea,
+  filterEmptyProps,
+  useToast,
 } from '@sjfl/ui';
-import { AdminJudian } from '@sjfl/data';
 import { FC } from 'react';
+import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { useForm } from 'react-hook-form';
+import { useUpdateJudian } from '../hooks/useUpdateJudian';
 
 const JudianSchema = z.object({
   uid: z.string(),
@@ -36,10 +38,43 @@ type JudianInfoProps = {
 };
 
 export const JudianInfo: FC<JudianInfoProps> = ({ judian }) => {
-  const [createdDate] = judian.createdAt.split(' ');
-  const { register } = useForm<JudianForm>({
-    defaultValues: judian,
+  const { mutateAsync: updateJudian, isPending: isUpdatingJudian } =
+    useUpdateJudian();
+  const { register, handleSubmit } = useForm<JudianForm>({
+    defaultValues: {
+      uid: judian.uid,
+      fullName: judian.fullName,
+      mobileNo: judian.mobileNo,
+      dateOfBirth: judian.dateOfBirth,
+      gender: judian.gender,
+      email: judian.email,
+      guardianName: judian.guardianName,
+      guardianRelationship: judian.guardianRelationship,
+      guardianMobile: judian.guardianMobile,
+      guardianEmail: judian.guardianEmail,
+      fullAddress: judian.fullAddress,
+    },
   });
+  const { toast } = useToast();
+
+  const [createdDate] = judian.createdAt.split(' ');
+
+  const onSubmit: SubmitHandler<JudianForm> = async (data) => {
+    const { uid, ...judian } = data;
+    const resp = await updateJudian({ uid, judian: filterEmptyProps(judian) });
+    if (resp.status === 200) {
+      toast({
+        title: 'Judian',
+        description: 'Update was successful',
+      });
+    }
+    console.log(resp);
+  };
+
+  const onError: SubmitErrorHandler<JudianForm> = (err) => {
+    console.log(err);
+  };
+
   return (
     <Card className="h-full">
       <CardContent>
@@ -63,7 +98,10 @@ export const JudianInfo: FC<JudianInfoProps> = ({ judian }) => {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
+          <form
+            onSubmit={handleSubmit(onSubmit, onError)}
+            className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6"
+          >
             <span>
               <Label htmlFor="uid">UID</Label>
               <Input id="uid" disabled {...register('uid')}></Input>
@@ -134,10 +172,14 @@ export const JudianInfo: FC<JudianInfoProps> = ({ judian }) => {
               <Textarea id="address" {...register('fullAddress')}></Textarea>
             </span>
             <div className="mb-4 flex gap-4 justify-end items-end">
-              <Button variant={'destructive'}>Deactivate</Button>
-              <Button variant={'default'}>Save</Button>
+              <Button variant={'destructive'} disabled={isUpdatingJudian}>
+                Deactivate
+              </Button>
+              <Button variant={'default'} loading={isUpdatingJudian}>
+                Save
+              </Button>
             </div>
-          </div>
+          </form>
         </div>
       </CardContent>
     </Card>

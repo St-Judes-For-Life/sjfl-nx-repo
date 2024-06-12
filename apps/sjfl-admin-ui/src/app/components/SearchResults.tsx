@@ -48,7 +48,7 @@ export const SearchResults = ({ item }: SearchResultsProps) => {
         <CardContent>
           <SearchResultTable columns={cols}>
             <TableRow>
-              <TableCell colSpan={3}>
+              <TableCell colSpan={cols.length}>
                 <RetrySearch onRetry={refetch} />
               </TableCell>
             </TableRow>
@@ -60,7 +60,7 @@ export const SearchResults = ({ item }: SearchResultsProps) => {
 
   if (data) {
     return (
-      <Card>
+      <Card className="h-0 min-h-full overflow-x-auto">
         <CardContent>{renderSearchResults(item, data)}</CardContent>
       </Card>
     );

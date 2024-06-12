@@ -13,7 +13,6 @@ export const UserProfileLink: FC<UserProfileLinkProps> = ({
   user,
   className,
 }) => {
-  console.log(user);
   return (
     <section
       className={classNames(

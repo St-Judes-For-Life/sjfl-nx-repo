@@ -42,7 +42,7 @@ export const CounsellingRequestPage = () => {
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 justify-between">
           <JudianSnippet judian={judian} />
           <SessionStatus session={counsellingResp.data} />
-          <PreviousSessions uid={judian.uid} />
+          <PreviousSessions uid={judian.uid} currentSessionId={counsellingID} />
         </div>
       </Page>
     );

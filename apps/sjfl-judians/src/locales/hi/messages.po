@@ -348,12 +348,12 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:68
 msgid "LanguageSelection.Continue"
-msgstr ""
+msgstr "आगे बढ़ो"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/Common/LanguageSelectionPage.tsx:48
 msgid "LanguageSelection.Header"
-msgstr ""
+msgstr "अपनी पसंदीदा भाषा चुनें"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/MenuLinks.tsx:69
@@ -459,18 +459,18 @@ msgstr ""
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/AppLayout.tsx:96
 msgid "Settings.Header"
-msgstr ""
+msgstr "समायोजन"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:38
 msgid "Settings.Language"
-msgstr ""
+msgstr "भाषा"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:15
 #: apps/sjfl-judians/src/app/features/App/DrawerMenu/Components/Settings.tsx:28
 msgid "Settings.Notification"
-msgstr ""
+msgstr "अधिसूचना"
 
 #. js-lingui-explicit-id
 #: apps/sjfl-judians/src/app/features/App/Aid/pages/UploadAidDocs.tsx:16

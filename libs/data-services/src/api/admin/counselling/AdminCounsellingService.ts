@@ -1,4 +1,4 @@
-import { filterEmptyProps } from '@sjfl/ui';
+import { filterEmptyProps } from '../../../lib/utils';
 import { ADMIN_API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../lib/axios';
 import { PaginatedResponse } from '../../../models/Pagination';
@@ -48,8 +48,19 @@ export const updateCounsellingSessionAdmin = ({
   id: string;
   session: UpdateCounsellingSessionAdminRequest;
 }) => {
-  return AdminRequestService.patch<AdminCounsellingSession>(
+  return AdminRequestService.post<AdminCounsellingSession>(
     `${ADMIN_API.counselling.base}/${id}/update`,
     session
+  );
+};
+
+export const fetchSessionHistoryAdmin = (sessionId: string) => {
+  return AdminRequestService.get<PaginatedResponse<AdminCounsellingSession>>(
+    `${ADMIN_API.counselling.base}/${sessionId}/history`,
+    {
+      params: {
+        size: 1000,
+      },
+    }
   );
 };

@@ -11,11 +11,12 @@ import { ConfirmationDialog } from '../../../shared/components/dialogs/Confirmat
 import { FC, useState } from 'react';
 import { useLingui } from '@lingui/react';
 import { useAuth } from '../../../shared/hooks/useAuth';
+import { DrawerItems } from './models/DrawerItem';
 type MenuLinksProps = {
-  onMenuItemClick: (menuItemName: string) => void;
+  onMenuItemClick: (menuItemName: DrawerItems) => void;
 };
 
-export const MenuLinks: FC<MenuLinksProps> = ({onMenuItemClick}) => {
+export const MenuLinks: FC<MenuLinksProps> = ({ onMenuItemClick }) => {
   const { logOut } = useAuth();
 
   const { i18n } = useLingui();
@@ -29,9 +30,9 @@ export const MenuLinks: FC<MenuLinksProps> = ({onMenuItemClick}) => {
   const closeModal = () => {
     setLogoutConfirmOpen(false);
   };
-  const onItemClick = (name: string) => {
+  const onItemClick = (name: DrawerItems) => {
     onMenuItemClick(name);
-  }
+  };
 
   return (
     <>
@@ -40,11 +41,11 @@ export const MenuLinks: FC<MenuLinksProps> = ({onMenuItemClick}) => {
           <AccountCircleIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Profile">Profile</Trans>
         </MenuItem>
-        <MenuItem  onClick={() => onItemClick('help')}>
+        <MenuItem onClick={() => onItemClick('help')}>
           <HelpOutlineIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Help">Help</Trans>
         </MenuItem>
-        <MenuItem  onClick={() => onItemClick('settings')}>
+        <MenuItem onClick={() => onItemClick('settings')}>
           <SettingsIcon fontSize="medium" className="mr-8" />
           <Trans id="Drawer.Settings">Settings</Trans>
         </MenuItem>

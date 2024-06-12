@@ -74,7 +74,7 @@ export function serverValidationErrorToasts(err: unknown) {
   }
 }
 
-export function zodValidationErrors<T extends Record<string, any>>(
+export function zodValidationErrors<T extends Record<string, unknown>>(
   errors: FieldErrors<T>
 ) {
   Object.entries(errors).forEach(([field, error]) => {

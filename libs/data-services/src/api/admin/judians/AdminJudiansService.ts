@@ -1,6 +1,6 @@
-import { filterEmptyProps } from '@sjfl/ui';
 import { ADMIN_API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../lib/axios';
+import { filterEmptyProps } from '../../../lib/utils';
 import { PaginatedResponse } from '../../../models/Pagination';
 import { AdminJudian } from './models/Judians';
 
@@ -38,8 +38,21 @@ export const fetchJudiansAdmin = async ({
   });
 };
 
-export const fetchJudianById = (uid: string) => {
+export const fetchJudianByIdAdmin = (uid: string) => {
   return AdminRequestService.get<AdminJudian>(
     `${ADMIN_API.judian.base}/${uid}/latest`
+  );
+};
+
+export const updateJudianAdmin = ({
+  uid,
+  judian,
+}: {
+  uid: string;
+  judian: Partial<AdminJudian>;
+}) => {
+  return AdminRequestService.post<AdminJudian>(
+    `${ADMIN_API.judian.base}/${uid}/update`,
+    judian
   );
 };
