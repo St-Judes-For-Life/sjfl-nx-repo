@@ -37,7 +37,7 @@ export const SummaryTableCard: FC<PropsWithChildren<SummaryTableCardProps>> = ({
   summaryData,
 }) => {
   return (
-    <Card className="h-full">
+    <Card className="h-0 min-h-full overflow-y-auto">
       <CardHeader className="pb-3 flex items-center justify-between">
         <Text as={'h3'}>{title}</Text>
         <Link to={resourceUrl}>View All</Link>

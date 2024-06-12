@@ -8,7 +8,7 @@ type LinkItemProps = {
 
 export const LinkItem: FC<
   React.HTMLAttributes<HTMLAnchorElement> & LinkItemProps
-> = ({ to, children, className }) => {
+> = ({ to, children, className, ...props }) => {
   return (
     <NavLink
       to={to}
@@ -16,9 +16,10 @@ export const LinkItem: FC<
         cn(
           className,
           isActive ? 'border-b border-slate-800' : '',
-          'hover:border-b'
+          'md:hover:border-b'
         )
       }
+      {...props}
     >
       {children}
     </NavLink>

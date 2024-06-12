@@ -1,4 +1,7 @@
-import { fetchSessionByIdClient, fetchSessionHistoryClient } from '@sjfl/data';
+import {
+  fetchCounsellingSessionAdmin,
+  fetchSessionHistoryAdmin,
+} from '@sjfl/data';
 import { useQueries } from '@tanstack/react-query';
 
 export function useSessionHistory(sessionId: string) {
@@ -6,11 +9,11 @@ export function useSessionHistory(sessionId: string) {
     queries: [
       {
         queryKey: ['counselling', sessionId] as const,
-        queryFn: () => fetchSessionByIdClient(sessionId),
+        queryFn: () => fetchCounsellingSessionAdmin(sessionId),
       },
       {
         queryKey: ['counselling', 'history', sessionId] as const,
-        queryFn: () => fetchSessionHistoryClient(sessionId),
+        queryFn: () => fetchSessionHistoryAdmin(sessionId),
       },
     ],
     combine: (results) => {
@@ -18,7 +21,7 @@ export function useSessionHistory(sessionId: string) {
       let joinedData;
       if (sessionResp?.data && historyResp?.data?.data) {
         const historicalEvents = historyResp.data.data;
-        const latestStatus = sessionResp?.data;
+        const latestStatus = sessionResp.data;
         joinedData = [latestStatus, ...historicalEvents];
       }
       return {
@@ -26,11 +29,6 @@ export function useSessionHistory(sessionId: string) {
         isPending: results.some((result) => result.isPending),
         isLoading: results.some((result) => result.isLoading),
         isError: results.some((result) => result.isError),
-        refetch: async () => {
-          for (const result of results) {
-            await result.refetch();
-          }
-        },
       };
     },
   });

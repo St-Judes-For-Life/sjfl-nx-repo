@@ -5,8 +5,6 @@ import {
 } from '../../../client/counselling/models/ClientCounselling';
 
 export type AdminCounsellingSession = ClientCounsellingSession & {
-  statusNote: string;
-  userName: string;
   userResponse: UserResponse;
 };
 

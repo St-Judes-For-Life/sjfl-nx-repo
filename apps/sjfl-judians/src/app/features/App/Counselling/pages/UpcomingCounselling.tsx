@@ -5,11 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
 import { SessionList } from '../components/SessionList';
 import { useFetchCounselling } from '../hooks/useFetchCounselling';
+import PullToRefresh from 'react-simple-pull-to-refresh';
 
 export const UpcomingCounselling = () => {
   const { i18n } = useLingui();
   const navigate = useNavigate();
-  const { data: counsellings, isLoading } = useFetchCounselling({
+  const {
+    data: counsellings,
+    isLoading,
+    refetch,
+  } = useFetchCounselling({
     type: 'upcoming',
   });
 
@@ -38,5 +43,9 @@ export const UpcomingCounselling = () => {
     );
   }
 
-  return <SessionList sessions={counsellings.data} />;
+  return (
+    <PullToRefresh onRefresh={refetch} pullingContent={''}>
+      <SessionList sessions={counsellings.data} />
+    </PullToRefresh>
+  );
 };

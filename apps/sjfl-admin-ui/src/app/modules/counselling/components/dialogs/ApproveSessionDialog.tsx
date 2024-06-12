@@ -44,8 +44,6 @@ export const ApproveSessionDialog: FC<UpdateSessionModal> = ({
   const updateStatusTo: CounsellingStatus =
     currentStatus.toLowerCase() === 'accepted' ? 'COMPLETED' : 'ACCEPTED';
 
-  console.log({ currentStatus, action, updateStatusTo });
-
   const form = useForm<ApproveForm>({
     resolver: zodResolver(ApproveFormSchema),
     defaultValues: {

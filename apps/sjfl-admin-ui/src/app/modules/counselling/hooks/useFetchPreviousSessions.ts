@@ -8,7 +8,6 @@ export function useFetchPreviousSessions(id?: string) {
       fetchCounsellingSessionsAdmin({
         type: 'search',
         uid,
-        counsellingStatuses: 'COMPLETED',
       }),
     enabled: !!id,
   });

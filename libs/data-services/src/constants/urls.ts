@@ -1,8 +1,11 @@
 export const ADMIN_API = {
-  auth: {
-    login: 'login',
+  common: {
+    lookup: '/types',
   },
-  stats: 'stats',
+  auth: {
+    login: '/login',
+  },
+  stats: '/stats',
   counselling: {
     base: '/counselling',
     search: '/counselling/search',

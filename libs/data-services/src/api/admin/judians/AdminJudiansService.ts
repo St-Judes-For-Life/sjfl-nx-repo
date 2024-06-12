@@ -1,6 +1,6 @@
-import { filterEmptyProps } from '@sjfl/ui';
 import { ADMIN_API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../lib/axios';
+import { filterEmptyProps } from '../../../lib/utils';
 import { PaginatedResponse } from '../../../models/Pagination';
 import { AdminJudian } from './models/Judians';
 

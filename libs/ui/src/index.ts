@@ -1,3 +1,5 @@
+export * from './domain-components';
+
 export * from './components';
 
 export * from './hooks';

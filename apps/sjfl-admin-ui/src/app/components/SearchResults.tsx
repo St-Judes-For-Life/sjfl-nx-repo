@@ -60,7 +60,7 @@ export const SearchResults = ({ item }: SearchResultsProps) => {
 
   if (data) {
     return (
-      <Card>
+      <Card className="h-0 min-h-full overflow-x-auto">
         <CardContent>{renderSearchResults(item, data)}</CardContent>
       </Card>
     );

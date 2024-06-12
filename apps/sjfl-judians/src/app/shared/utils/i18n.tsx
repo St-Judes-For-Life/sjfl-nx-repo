@@ -1,7 +1,7 @@
 import { i18n } from '@lingui/core';
 // import { bn, en, hi, kn, ml, mr, ta, te } from 'make-plural/plurals';
 import { Locale } from '../models/i18n.model';
-import { asyncStore } from './async-storage/async-storage';
+import { asyncStore } from '@sjfl/data';
 
 export const locales: Locale[] = [
   {

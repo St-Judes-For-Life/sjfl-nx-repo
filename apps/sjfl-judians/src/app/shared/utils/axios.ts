@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API } from '../constants/api/urls';
-import { asyncStore } from './async-storage/async-storage';
+import { asyncStore } from '@sjfl/data';
 
 const tokenExcludeList = [API.user.register, API.otp.send, API.otp.verify];
 

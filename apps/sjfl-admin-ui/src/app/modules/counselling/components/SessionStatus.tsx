@@ -13,6 +13,7 @@ import { RejectSessionDialog } from './dialogs/RejectSessionDialog';
 import { RescheduleSessionDialog } from './dialogs/RescheduleSessionDialog';
 import { CounsellingStatus } from '@sjfl/data';
 import { useQueryClient } from '@tanstack/react-query';
+import { SessionHistoryDialog } from './dialogs/SessionHistoryDialog';
 
 type SessionStatusProps = {
   session: AdminCounsellingSession;
@@ -35,6 +36,9 @@ export const SessionStatus: FC<SessionStatusProps> = ({ session }) => {
 
     queryClient.invalidateQueries({
       queryKey: ['counselling', session.counsellingId],
+    });
+    queryClient.invalidateQueries({
+      queryKey: ['counselling', 'history', session.counsellingId],
     });
   };
 
@@ -98,15 +102,13 @@ export const SessionStatus: FC<SessionStatusProps> = ({ session }) => {
             />
           </div>
         </div>
-        <Button className="mt-auto" variant={'link'}>
-          Show full history
-        </Button>
+        <SessionHistoryDialog sessionId={session.counsellingId} />
       </CardContent>
     </Card>
   );
 };
 
-const getStatusColor = (status: CounsellingStatus): TextColors => {
+export const getStatusColor = (status: CounsellingStatus): TextColors => {
   switch (status.toLocaleLowerCase()) {
     case 'requested':
       return 'muted';
@@ -116,6 +118,7 @@ const getStatusColor = (status: CounsellingStatus): TextColors => {
     case 'completed':
       return 'success';
     case 'rejected':
+    case 'cancelled':
       return 'error';
     default:
       return 'primary';

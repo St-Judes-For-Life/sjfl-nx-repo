@@ -12,7 +12,6 @@ export type SearchResultTypeMap = {
 
 type RegularSearchItem = {
   label: string;
-  type: 'text' | 'number' | 'tel' | 'email' | 'date' | 'dropdown' | 'daterange';
   placeholder: string;
   property: string;
 };
@@ -37,7 +36,7 @@ type DatedaterangeItem = RegularSearchItem & {
   type: 'daterange';
 };
 
-type DropdownSearch<T> = RegularSearchItem & {
+export type DropdownSearch<T> = RegularSearchItem & {
   type: 'dropdown';
   options: {
     id: number;
@@ -52,6 +51,5 @@ export type SearchItem<T = string> =
   | NumberSearchItem
   | DateSearchItem
   | StringSearchItem
-  | RegularSearchItem
   | DatedaterangeItem
   | DropdownSearch<T>;

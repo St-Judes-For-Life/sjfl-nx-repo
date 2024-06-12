@@ -5,10 +5,11 @@ import { useLoggedInUser } from '../../../shared/hooks/useAuth';
 import { MenuLinks } from './MenuLinks';
 import { UserProfileLink } from './UserProfileLink';
 import { Divider } from '@mui/material';
+import { DrawerItems } from './models/DrawerItem';
 
 type DrawerMenuProps = {
   onDismiss: () => void;
-  onMenuItemClick: (menuItemName: string) => void;
+  onMenuItemClick: (menuItemName: DrawerItems) => void;
 };
 
 export const DrawerMenu: FC<DrawerMenuProps> = ({

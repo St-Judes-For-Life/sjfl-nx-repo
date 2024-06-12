@@ -3,7 +3,7 @@ import {
   PersistedClient,
   Persister,
 } from '@tanstack/react-query-persist-client';
-import { asyncStore } from './async-storage/async-storage';
+import { asyncStore } from '@sjfl/data';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
