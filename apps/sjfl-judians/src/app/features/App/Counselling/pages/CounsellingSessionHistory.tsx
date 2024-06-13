@@ -6,8 +6,8 @@ import { AdditionalNote, HistoryItem } from '@sjfl/ui';
 import { HistoryIcon, MoreVerticalIcon } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import PullToRefresh from 'react-simple-pull-to-refresh';
 import { AppHeader } from '../../../../shared/components/containers/AppHeader';
+import { DataPage } from '../../../../shared/components/containers/DataPage';
 import { Scaffold } from '../../../../shared/components/containers/Scaffold';
 import { CounsellingActionsDrawer } from '../components/CounsellingActionsDrawer';
 import { useSessionHistory } from '../hooks/useSessionHistory';
@@ -19,7 +19,12 @@ export const CounsellingSessionHistory = () => {
     throw Error('ID not found');
   }
 
-  const { data: history, isLoading, refetch } = useSessionHistory(sessionId);
+  const {
+    data: history,
+    isLoading,
+    refetch,
+    isError,
+  } = useSessionHistory(sessionId);
 
   const [openDrawer, setDrawerOpen] = useState(false);
 
@@ -58,7 +63,7 @@ export const CounsellingSessionHistory = () => {
   );
   return (
     <Scaffold header={header}>
-      <PullToRefresh pullingContent={''} onRefresh={handleRefresh}>
+      <DataPage onRefresh={handleRefresh} hasError={isError}>
         <>
           <div className="p-4 grid gap-4">
             {history?.map((entry) => (
@@ -96,7 +101,7 @@ export const CounsellingSessionHistory = () => {
             sessionStatus={history?.[0].counsellingStatus || 'REQUESTED'}
           ></CounsellingActionsDrawer>
         </>
-      </PullToRefresh>
+      </DataPage>
     </Scaffold>
   );
 };
