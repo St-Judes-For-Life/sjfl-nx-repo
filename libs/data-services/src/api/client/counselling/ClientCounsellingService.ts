@@ -3,11 +3,12 @@ import { ClientRequestService } from '../../../lib/axios';
 import { PaginatedResponse, PaginationReq } from '../../../models/Pagination';
 import {
   ClientCounsellingSession,
+  CounsellingSearchTypeClient,
   CreateSessionRequest,
 } from './models/ClientCounselling';
 
 export type FetchCounsellingSessionsClientRequest = {
-  type: 'upcoming' | 'past';
+  type: CounsellingSearchTypeClient;
 } & PaginationReq;
 
 export const fetchCounsellingSessionsClient = async ({

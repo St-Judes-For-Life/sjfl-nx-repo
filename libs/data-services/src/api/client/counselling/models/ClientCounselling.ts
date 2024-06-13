@@ -1,5 +1,7 @@
 import { MaybeNull } from '../../../../models';
 
+export type CounsellingSearchTypeClient = 'upcoming' | 'past';
+
 export type CreateSessionRequest = {
   requestDate: string;
   note?: MaybeNull<string>;

@@ -13,7 +13,7 @@ import { Page } from './Page';
 // const defaultPadding = 'calc(3em + env(safe-area-inset-bottom))';
 const defaultPadding = '2em';
 
-type ScaffoldProps = {
+export type ScaffoldProps = {
   header?: React.ReactNode;
   footer?: React.ReactNode;
 };
