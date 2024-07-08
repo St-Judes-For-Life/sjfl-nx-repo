@@ -101,12 +101,53 @@ export const routes: RouteObject[] = [
           },
           {
             path: 'settings',
-            lazy: async () => {
-              const { SettingsPage } = await import(
-                './app/modules/settings/SettingsPage'
-              );
-              return { Component: SettingsPage };
-            },
+            children: [
+              {
+                path: '',
+                lazy: async () => {
+                  const { SettingsPage } = await import(
+                    './app/modules/settings/pages/SettingsPage'
+                  );
+                  return { Component: SettingsPage };
+                },
+              },
+              {
+                path: 'manage-aid',
+                lazy: async () => {
+                  const { ManageAidPage } = await import(
+                    './app/modules/settings/pages/ManageAidPage'
+                  );
+                  return { Component: ManageAidPage };
+                },
+              },
+              {
+                path: 'manage-approvers',
+                lazy: async () => {
+                  const { ManageApproversPage } = await import(
+                    './app/modules/settings/pages/ManageApproversPage'
+                  );
+                  return { Component: ManageApproversPage };
+                },
+              },
+              {
+                path: 'manage-counselling',
+                lazy: async () => {
+                  const { ManageCounsellingPage } = await import(
+                    './app/modules/settings/pages/ManageCounsellingPage'
+                  );
+                  return { Component: ManageCounsellingPage };
+                },
+              },
+              {
+                path: 'manage-languages',
+                lazy: async () => {
+                  const { ManageLanguagesPage } = await import(
+                    './app/modules/settings/pages/ManageLanguagesPage'
+                  );
+                  return { Component: ManageLanguagesPage };
+                },
+              },
+            ],
           },
         ],
       },
