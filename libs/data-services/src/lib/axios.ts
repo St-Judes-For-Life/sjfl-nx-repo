@@ -16,7 +16,7 @@ export class RequestService {
   constructor(consumer: 'ADMIN' | 'CLIENT') {
     if (consumer === 'ADMIN') {
       this.instance = axios.create({
-        baseURL: '/admin',
+        baseURL: process.env.VITE_API_BASE_URL ?? '/admin',
       });
     } else {
       this.instance = axios.create({ baseURL: '/user' });
