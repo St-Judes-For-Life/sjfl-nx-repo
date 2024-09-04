@@ -129,5 +129,17 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "4.3.1",
     "vitest": "^0.34.6"
+  },
+  "optionalDependencies": {
+    "@nx/nx-darwin-arm64": "17.0.2",
+    "@nx/nx-darwin-x64": "17.0.2",
+    "@nx/nx-freebsd-x64": "17.0.2",
+    "@nx/nx-linux-arm-gnueabihf": "17.0.2",
+    "@nx/nx-linux-arm64-gnu": "17.0.2",
+    "@nx/nx-linux-arm64-musl": "17.0.2",
+    "@nx/nx-linux-x64-gnu": "17.0.2",
+    "@nx/nx-linux-x64-musl": "17.0.2",
+    "@nx/nx-win32-arm64-msvc": "17.0.2",
+    "@nx/nx-win32-x64-msvc": "17.0.2"
   }
 }
