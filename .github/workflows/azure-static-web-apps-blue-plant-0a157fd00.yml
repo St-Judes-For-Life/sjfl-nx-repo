@@ -17,7 +17,7 @@ jobs:
           lfs: false
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18.20.4
           cache: 'npm'
       - run: npm i --include=optional
 
