@@ -26,7 +26,10 @@ export class RequestService {
       config.headers.set('ngrok-skip-browser-warning', '1234');
       let token: MaybeNull<string>;
       if (consumer === 'ADMIN') {
-        token = localStorage.getItem('token');
+        token =
+          typeof globalThis !== 'undefined' && 'localStorage' in globalThis
+            ? (globalThis as any).localStorage?.getItem('token')
+            : null;
       } else {
         token = await asyncStore.get('token');
       }

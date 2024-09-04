@@ -4,7 +4,7 @@ export const todaysSessions: Session[] = [
   {
     id: 1,
     judian: {
-      id: 1,
+      id: '1',
       name: 'Rohit Sharma',
     },
     notes: 'some notes',
@@ -14,7 +14,7 @@ export const todaysSessions: Session[] = [
   {
     id: 2,
     judian: {
-      id: 2,
+      id: '2',
       name: 'Rahul Kumar',
     },
     notes: 'some notes',
@@ -24,7 +24,7 @@ export const todaysSessions: Session[] = [
   {
     id: 3,
     judian: {
-      id: 3,
+      id: '3',
       name: 'Amit Patel',
     },
     notes: 'some notes',

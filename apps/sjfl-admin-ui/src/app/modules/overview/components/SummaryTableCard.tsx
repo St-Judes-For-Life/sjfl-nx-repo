@@ -18,7 +18,7 @@ import { NoResults } from '../../../components/NoResults';
 import { Judian } from '../../../models/Judian';
 
 export type SummaryData = {
-  id: number;
+  id: string;
   judian: Pick<Judian, 'id' | 'name'>;
   subtitle?: string;
   status: string;
