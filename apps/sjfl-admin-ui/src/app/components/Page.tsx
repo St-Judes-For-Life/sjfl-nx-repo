@@ -27,14 +27,14 @@ export const Page = ({ children, ...props }: PropsWithChildren<PageProps>) => {
               return (
                 <span className="flex gap-4" key={i}>
                   <Link to={crumb.link} className="underline">
-                    <Text as="h1">{crumb.title}</Text>
+                    <Text as="p">{crumb.title}</Text>
                   </Link>
-                  <Text as={'h1'}> {'>'} </Text>
+                  <Text as={'p'}> {'>'} </Text>
                 </span>
               );
             } else {
               return (
-                <Text key={i} as="h1">
+                <Text key={i} as="p">
                   {crumb.title}
                 </Text>
               );
