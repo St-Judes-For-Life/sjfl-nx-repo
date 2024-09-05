@@ -22,7 +22,7 @@ export type CounsellingStatus =
   | 'REJECTED'
   | 'COMPLETED';
 
-export type ClientCounsellingSession = {
+export type CounsellingSession = {
   counsellingId: string;
   counsellingDate: string;
   note: string;

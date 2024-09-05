@@ -1,17 +1,19 @@
-import {
-  AdminCounsellingSession,
-  AdminJudian,
-  FetchCounsellingSessionsAdminRequest,
-  FetchJudiansAdminRequest,
-  PaginatedResponse,
-  fetchCounsellingSessionsAdmin,
-  fetchJudiansAdmin,
-} from '@sjfl/data';
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse } from 'axios';
 import { useSearchParams } from 'react-router-dom';
 import { parseSearchParams } from '../../lib/utils';
 import { SearchBy } from '../models/Search';
+import { PaginatedResponse } from '@sjfl/data';
+import {
+  AdminCounsellingSession,
+  FetchCounsellingSessionsAdminRequest,
+} from '../modules/counselling/models/AdminCounselling';
+import { AdminJudian } from '../modules/judians/models/Judians';
+import {
+  FetchJudiansAdminRequest,
+  fetchJudiansAdmin,
+} from '../modules/judians/services/JudiansService';
+import { fetchCounsellingSessionsAdmin } from '../modules/counselling/services/CounsellingService';
 
 export function useItemSearch(item: SearchBy) {
   const [searchParams] = useSearchParams();

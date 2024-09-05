@@ -1,7 +1,7 @@
-import { ADMIN_API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../lib/axios';
+import { API } from '../../constants/urls';
 import { CommonLookup } from './models/CommonLookup';
 
 export const fetchCommonLookupAdmin = () => {
-  return AdminRequestService.get<CommonLookup>(ADMIN_API.common.lookup);
+  return AdminRequestService.get<CommonLookup>(API.common.lookup);
 };

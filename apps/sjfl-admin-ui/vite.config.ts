@@ -12,11 +12,11 @@ export default defineConfig({
     port: 4201,
     host: 'localhost',
     proxy: {
-      '/admin': {
-        target: 'https://8f07-20-219-147-128.ngrok-free.app',
-        secure: false,
-        changeOrigin: true,
-      },
+      // '/admin': {
+      //   target: 'https://8f07-20-219-147-128.ngrok-free.app',
+      //   secure: false,
+      //   changeOrigin: true,
+      // },
     },
     fs: {
       allow: [

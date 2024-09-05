@@ -1,11 +1,10 @@
 import { Outlet, RouteObject, createBrowserRouter } from 'react-router-dom';
-import { App } from './app/app';
-import { LoginPage } from './app/modules/auth/LoginPage';
+import { GenericErrorPage } from './app/components/GenericErrorPage';
 import { ProtectedLayout } from './app/layouts/ProtectedLayout';
 import { AuthLayout } from './app/modules/auth/AuthLayout';
+import { LoginPage } from './app/modules/auth/LoginPage';
 import { queryClient } from './lib/queryClient';
-import { fetchCommonLookupAdmin } from '@sjfl/data';
-import { GenericErrorPage } from './app/components/GenericErrorPage';
+import { fetchCommonLookupAdmin } from './app/modules/common/CommonService';
 
 export const routes: RouteObject[] = [
   {

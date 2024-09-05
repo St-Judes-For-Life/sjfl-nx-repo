@@ -1,12 +1,11 @@
-import { filterEmptyProps } from '../../../lib/utils';
-import { ADMIN_API } from '../../../constants/urls';
-import { AdminRequestService } from '../../../lib/axios';
-import { PaginatedResponse } from '../../../models/Pagination';
+import { PaginatedResponse, filterEmptyProps } from '@sjfl/data';
+import { AdminRequestService } from '../../../../lib/axios';
 import {
   AdminCounsellingSession,
   FetchCounsellingSessionsAdminRequest,
   UpdateCounsellingSessionAdminRequest,
-} from './model/AdminCounselling';
+} from '../models/AdminCounselling';
+import { API } from '../../../constants/urls';
 
 export const fetchCounsellingSessionsAdmin = async ({
   type = 'all',
@@ -22,7 +21,7 @@ export const fetchCounsellingSessionsAdmin = async ({
     PaginatedResponse<AdminCounsellingSession>
   >({
     method: 'get',
-    url: `${ADMIN_API.counselling.search}/${type}`,
+    url: `${API.counselling.search}/${type}`,
     params: filterEmptyProps({
       page,
       size,
@@ -37,7 +36,7 @@ export const fetchCounsellingSessionsAdmin = async ({
 
 export const fetchCounsellingSessionAdmin = (id: string) => {
   return AdminRequestService.get<AdminCounsellingSession>(
-    `${ADMIN_API.counselling.base}/${id}/latest`
+    `${API.counselling.base}/${id}/latest`
   );
 };
 
@@ -49,14 +48,14 @@ export const updateCounsellingSessionAdmin = ({
   session: UpdateCounsellingSessionAdminRequest;
 }) => {
   return AdminRequestService.post<AdminCounsellingSession>(
-    `${ADMIN_API.counselling.base}/${id}/update`,
+    `${API.counselling.base}/${id}/update`,
     session
   );
 };
 
 export const fetchSessionHistoryAdmin = (sessionId: string) => {
   return AdminRequestService.get<PaginatedResponse<AdminCounsellingSession>>(
-    `${ADMIN_API.counselling.base}/${sessionId}/history`,
+    `${API.counselling.base}/${sessionId}/history`,
     {
       params: {
         size: 1000,

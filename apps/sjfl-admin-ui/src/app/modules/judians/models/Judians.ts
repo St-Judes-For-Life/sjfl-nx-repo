@@ -1,4 +1,4 @@
-import { MaybeNull } from '../../../../models';
+import { MaybeNull } from '@sjfl/data';
 
 export interface AdminJudian {
   uid: string;

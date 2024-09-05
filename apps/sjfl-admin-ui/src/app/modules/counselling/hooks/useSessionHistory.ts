@@ -1,8 +1,8 @@
+import { useQueries } from '@tanstack/react-query';
 import {
   fetchCounsellingSessionAdmin,
   fetchSessionHistoryAdmin,
-} from '@sjfl/data';
-import { useQueries } from '@tanstack/react-query';
+} from '../services/CounsellingService';
 
 export function useSessionHistory(sessionId: string) {
   return useQueries({

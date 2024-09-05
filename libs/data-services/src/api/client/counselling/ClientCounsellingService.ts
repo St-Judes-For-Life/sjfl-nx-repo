@@ -2,7 +2,7 @@ import { CLIENT_API } from '../../../constants/urls';
 import { ClientRequestService } from '../../../lib/axios';
 import { PaginatedResponse, PaginationReq } from '../../../models/Pagination';
 import {
-  ClientCounsellingSession,
+  CounsellingSession,
   CounsellingSearchTypeClient,
   CreateSessionRequest,
 } from './models/ClientCounselling';
@@ -18,7 +18,7 @@ export const fetchCounsellingSessionsClient = async ({
 }: FetchCounsellingSessionsClientRequest) => {
   const url = `${CLIENT_API.counselling.search}/${type}`;
   const resp = await ClientRequestService.request<
-    PaginatedResponse<ClientCounsellingSession>
+    PaginatedResponse<CounsellingSession>
   >({
     method: 'get',
     url,
@@ -33,13 +33,13 @@ export const fetchCounsellingSessionsClient = async ({
 };
 
 export const fetchSessionByIdClient = (sessionId: string) => {
-  return ClientRequestService.get<ClientCounsellingSession>(
+  return ClientRequestService.get<CounsellingSession>(
     `${CLIENT_API.counselling.base}/${sessionId}/latest`
   );
 };
 
 export const fetchSessionHistoryClient = (sessionId: string) => {
-  return ClientRequestService.get<PaginatedResponse<ClientCounsellingSession>>(
+  return ClientRequestService.get<PaginatedResponse<CounsellingSession>>(
     `${CLIENT_API.counselling.base}/${sessionId}/history`,
     {
       params: {
@@ -56,14 +56,14 @@ export const updateCounsellingSessionClient = ({
   sessionId: string;
   session: CreateSessionRequest;
 }) => {
-  return ClientRequestService.put<ClientCounsellingSession>(
+  return ClientRequestService.put<CounsellingSession>(
     `${CLIENT_API.counselling.base}/${sessionId}/update`,
     session
   );
 };
 
 export const cancelCounsellingSessionClient = (sessionId: string) => {
-  return ClientRequestService.put<ClientCounsellingSession>(
+  return ClientRequestService.put<CounsellingSession>(
     `${CLIENT_API.counselling.base}/${sessionId}/cancel`
   );
 };
