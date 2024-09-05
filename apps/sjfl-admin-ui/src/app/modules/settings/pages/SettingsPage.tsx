@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Page } from '../../../components/Page';
 import { Card, CardContent, Text } from '@sjfl/ui';
-import { R } from '@tanstack/react-query-devtools/build/legacy/devtools-PtxSnd7z';
 
 export const SettingsPage = () => {
   const SETTINGS_CONFIG = [
