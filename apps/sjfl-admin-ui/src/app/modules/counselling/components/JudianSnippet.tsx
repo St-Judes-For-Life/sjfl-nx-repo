@@ -1,4 +1,3 @@
-import { UserResponse } from '@sjfl/data';
 import {
   Avatar,
   AvatarFallback,
@@ -10,6 +9,7 @@ import {
 } from '@sjfl/ui';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserResponse } from '../models/AdminCounselling';
 
 type JudianSnippetProps = {
   judian: UserResponse;
