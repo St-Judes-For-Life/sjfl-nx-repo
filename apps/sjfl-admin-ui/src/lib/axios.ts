@@ -1,16 +1,6 @@
-import axios from 'axios';
-import { API } from '../app/constants/urls';
+import { RequestService } from '@sjfl/data';
 
-const tokenExcludeList = [API.auth.login];
-
-export const RequestService = axios.create({});
-
-RequestService.interceptors.request.use(async (config) => {
-  config.headers.set('ngrok-skip-browser-warning', '1234');
-
-  const token = localStorage.getItem('token');
-  if (token && config.url && !tokenExcludeList.includes(config.url)) {
-    config.headers.set('Authorization', `Bearer ${token}`);
-  }
-  return config;
-});
+export const AdminRequestService = new RequestService(
+  'ADMIN',
+  import.meta.env.VITE_ADMIN_API_BASE_URL
+).instance;

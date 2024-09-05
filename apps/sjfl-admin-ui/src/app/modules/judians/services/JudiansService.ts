@@ -1,8 +1,7 @@
-import { ADMIN_API } from '../../../constants/urls';
-import { AdminRequestService } from '../../../lib/axios';
-import { filterEmptyProps } from '../../../lib/utils';
-import { PaginatedResponse } from '../../../models/Pagination';
-import { AdminJudian } from './models/Judians';
+import { PaginatedResponse, filterEmptyProps } from '@sjfl/data';
+import { AdminRequestService } from '../../../../lib/axios';
+import { API } from '../../../constants/urls';
+import { AdminJudian } from '../models/Judians';
 
 export type FetchJudiansAdminRequest = {
   type: 'active' | 'inactive';
@@ -26,7 +25,7 @@ export const fetchJudiansAdmin = async ({
 }: FetchJudiansAdminRequest) => {
   return AdminRequestService.request<PaginatedResponse<AdminJudian>>({
     method: 'get',
-    url: `${ADMIN_API.judian.search}/${type}`,
+    url: `${API.judian.search}/${type}`,
     params: filterEmptyProps({
       page,
       size,
@@ -40,7 +39,7 @@ export const fetchJudiansAdmin = async ({
 
 export const fetchJudianByIdAdmin = (uid: string) => {
   return AdminRequestService.get<AdminJudian>(
-    `${ADMIN_API.judian.base}/${uid}/latest`
+    `${API.judian.base}/${uid}/latest`
   );
 };
 
@@ -52,7 +51,7 @@ export const updateJudianAdmin = ({
   judian: Partial<AdminJudian>;
 }) => {
   return AdminRequestService.post<AdminJudian>(
-    `${ADMIN_API.judian.base}/${uid}/update`,
+    `${API.judian.base}/${uid}/update`,
     judian
   );
 };

@@ -42,7 +42,7 @@ jobs:
           output_location: "/dist/apps/sjfl-admin-ui" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
-          VITE_API_BASE_URL: https://sjfl-dev-webapp.azurewebsites.net/admin
+          VITE_ADMIN_API_BASE_URL: https://sjfl-dev-webapp.azurewebsites.net/admin
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

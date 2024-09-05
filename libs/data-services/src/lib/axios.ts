@@ -13,13 +13,13 @@ const tokenExcludeList = [
 export class RequestService {
   instance: AxiosInstance;
 
-  constructor(consumer: 'ADMIN' | 'CLIENT') {
+  constructor(consumer: 'ADMIN' | 'CLIENT', baseUrl?: string) {
     if (consumer === 'ADMIN') {
       this.instance = axios.create({
-        baseURL: process.env.VITE_API_BASE_URL ?? '/admin',
+        baseURL: baseUrl ?? '/admin',
       });
     } else {
-      this.instance = axios.create({ baseURL: '/user' });
+      this.instance = axios.create({ baseURL: baseUrl ?? '/user' });
     }
 
     this.instance.interceptors.request.use(async (config) => {
@@ -42,5 +42,4 @@ export class RequestService {
   }
 }
 
-export const AdminRequestService = new RequestService('ADMIN').instance;
 export const ClientRequestService = new RequestService('CLIENT').instance;

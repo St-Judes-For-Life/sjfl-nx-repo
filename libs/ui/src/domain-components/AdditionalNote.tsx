@@ -1,9 +1,9 @@
-import { AdminCounsellingSession, ClientCounsellingSession } from '@sjfl/data';
+import { AdminCounsellingSession, CounsellingSession } from '@sjfl/data';
 
 export const AdditionalNote = ({
   session,
 }: {
-  session: ClientCounsellingSession | AdminCounsellingSession;
+  session: CounsellingSession | AdminCounsellingSession;
 }) => {
   // TODO: remove uppercase when fixed
   switch (session.counsellingStatus.toUpperCase()) {

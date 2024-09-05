@@ -1,10 +1,10 @@
-import { PaginationReq } from '../../../../models';
 import {
-  ClientCounsellingSession,
+  CounsellingSession,
   CounsellingStatus,
-} from '../../../client/counselling/models/ClientCounselling';
+  PaginationReq,
+} from '@sjfl/data';
 
-export type AdminCounsellingSession = ClientCounsellingSession & {
+export type AdminCounsellingSession = CounsellingSession & {
   userResponse: UserResponse;
 };
 
