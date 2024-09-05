@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { UpdateCounsellingSessionAdminRequest } from '@sjfl/data';
 import {
   Button,
   Dialog,
@@ -15,14 +14,13 @@ import {
   FormItem,
   FormLabel,
   Textarea,
-  useToast,
 } from '@sjfl/ui';
 import { useState } from 'react';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
-import { useQueryClient } from '@tanstack/react-query';
 import { UpdateSessionModal } from '../../models/UpdateSessionModal';
+import { UpdateCounsellingSessionAdminRequest } from '../../models/AdminCounselling';
 
 const RejectFormSchema = z.object({
   note: z.string().optional(),

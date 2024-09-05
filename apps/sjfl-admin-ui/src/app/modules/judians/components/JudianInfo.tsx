@@ -1,6 +1,5 @@
 import { MailIcon, PhoneCallIcon } from 'lucide-react';
 
-import { AdminJudian } from '@sjfl/data';
 import {
   Button,
   Card,
@@ -16,6 +15,7 @@ import { FC } from 'react';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateJudian } from '../hooks/useUpdateJudian';
+import { AdminJudian } from '../models/Judians';
 
 const JudianSchema = z.object({
   uid: z.string(),

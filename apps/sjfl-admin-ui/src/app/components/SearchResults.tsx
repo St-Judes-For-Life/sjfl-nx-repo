@@ -12,11 +12,7 @@ import {
 } from '@sjfl/ui';
 import { Link } from 'react-router-dom';
 
-import {
-  AdminCounsellingSession,
-  AdminJudian,
-  PaginatedResponse,
-} from '@sjfl/data';
+import { PaginatedResponse } from '@sjfl/data';
 import { AxiosResponse } from 'axios';
 import { fetchSearchResults, useItemSearch } from '../hooks/useItemSearch';
 import { Aid } from '../models/Aid';
@@ -25,6 +21,8 @@ import { NoResults } from './NoResults';
 import { TableSkeleton } from './skeletons/TableSkeleton';
 import { SearchResultTable } from './SearchResultTable';
 import { RetrySearch } from './RetrySearch';
+import { AdminCounsellingSession } from '../modules/counselling/models/AdminCounselling';
+import { AdminJudian } from '../modules/judians/models/Judians';
 
 type SearchResultsProps = {
   item: SearchBy;

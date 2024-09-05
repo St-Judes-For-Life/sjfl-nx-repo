@@ -4,11 +4,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@radix-ui/react-popover';
-import { UpdateCounsellingSessionAdminRequest } from '@sjfl/data';
 import {
   Button,
   Calendar,
-  DateFormatter,
   Dialog,
   DialogClose,
   DialogContent,
@@ -28,14 +26,15 @@ import {
   dateTimeToString,
   useToast,
 } from '@sjfl/ui';
+import { useQueryClient } from '@tanstack/react-query';
 import { format, subDays } from 'date-fns';
 import { CalendarIcon, Clock } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
-import { useQueryClient } from '@tanstack/react-query';
 import { UpdateSessionModal } from '../../models/UpdateSessionModal';
+import { UpdateCounsellingSessionAdminRequest } from '../../models/AdminCounselling';
 
 const RescheduleFormSchema = z.object({
   date: z.date({

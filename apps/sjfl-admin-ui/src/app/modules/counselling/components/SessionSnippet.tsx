@@ -8,9 +8,9 @@ import {
 } from '@sjfl/ui';
 import { Link } from 'react-router-dom';
 
-import { AdminCounsellingSession } from '@sjfl/data';
 import { CalendarDays } from 'lucide-react';
 import { getStatusColor } from './SessionStatus';
+import { AdminCounsellingSession } from '../models/AdminCounselling';
 
 type SessionSnippetProps = {
   session: Pick<

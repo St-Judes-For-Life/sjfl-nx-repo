@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchJudianByIdAdmin } from '@sjfl/data';
+import { fetchJudianByIdAdmin } from '../services/JudiansService';
 
 export function useFetchJudian(id: string) {
   return useQuery({

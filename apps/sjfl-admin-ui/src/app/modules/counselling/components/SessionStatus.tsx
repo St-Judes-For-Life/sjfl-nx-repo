@@ -1,19 +1,12 @@
-import { AdminCounsellingSession } from '@sjfl/data';
-import {
-  Button,
-  Card,
-  CardContent,
-  Text,
-  TextColors,
-  useToast,
-} from '@sjfl/ui';
+import { CounsellingStatus } from '@sjfl/data';
+import { Card, CardContent, Text, TextColors, useToast } from '@sjfl/ui';
+import { useQueryClient } from '@tanstack/react-query';
 import { FC } from 'react';
 import { ApproveSessionDialog } from './dialogs/ApproveSessionDialog';
 import { RejectSessionDialog } from './dialogs/RejectSessionDialog';
 import { RescheduleSessionDialog } from './dialogs/RescheduleSessionDialog';
-import { CounsellingStatus } from '@sjfl/data';
-import { useQueryClient } from '@tanstack/react-query';
 import { SessionHistoryDialog } from './dialogs/SessionHistoryDialog';
+import { AdminCounsellingSession } from '../models/AdminCounselling';
 
 type SessionStatusProps = {
   session: AdminCounsellingSession;

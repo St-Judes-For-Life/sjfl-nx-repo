@@ -1,8 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  CounsellingStatus,
-  UpdateCounsellingSessionAdminRequest,
-} from '@sjfl/data';
+import { CounsellingStatus } from '@sjfl/data';
 import {
   Button,
   Dialog,
@@ -24,6 +21,7 @@ import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useUpdateCounsellingSession } from '../../hooks/useUpdateCounsellingSession';
 import { UpdateSessionModal } from '../../models/UpdateSessionModal';
+import { UpdateCounsellingSessionAdminRequest } from '../../models/AdminCounselling';
 
 const ApproveFormSchema = z.object({
   note: z.string().optional(),
