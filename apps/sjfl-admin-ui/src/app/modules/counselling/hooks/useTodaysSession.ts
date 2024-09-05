@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchCounsellingSessionsAdmin } from '@sjfl/data';
+import { fetchCounsellingSessionsAdmin } from '../services/CounsellingService';
 
 export function useTodaysSessions() {
   return useQuery({

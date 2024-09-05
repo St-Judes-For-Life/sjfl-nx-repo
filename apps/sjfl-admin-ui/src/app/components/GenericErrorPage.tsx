@@ -1,9 +1,11 @@
 import { Button, Text } from '@sjfl/ui';
 import { ServerCrash } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useRouteError } from 'react-router-dom';
 
 export const GenericErrorPage = () => {
   const navigate = useNavigate();
+  const error = useRouteError();
+  console.error(error);
 
   const handleRefresh = () => {
     navigate(0);

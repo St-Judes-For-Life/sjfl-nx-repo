@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
+const baseUrl = import.meta.env.VITE_CLIENT_API_BASE_URL;
 export const API = {
   user: {
     register: `${baseUrl}/register`,

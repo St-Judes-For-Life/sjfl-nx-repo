@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchCommonLookupAdmin } from '@sjfl/data';
+import { fetchCommonLookupAdmin } from '../modules/common/CommonService';
 
 export function useLookupValues() {
   const { data: lookupResp } = useQuery({

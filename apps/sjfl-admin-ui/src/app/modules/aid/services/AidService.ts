@@ -1,11 +1,10 @@
-import { filterEmptyProps } from '../../../lib/utils';
-import { ADMIN_API } from '../../../constants/urls';
-import { AdminRequestService } from '../../../lib/axios';
-import { PaginatedResponse } from '../../../models/Pagination';
+import { filterEmptyProps, PaginatedResponse } from '@sjfl/data';
+import { API } from '../../../constants/urls';
+import { AdminRequestService } from '../../../../lib/axios';
 import {
   AdminCounsellingSession,
   FetchCounsellingSessionsAdminRequest,
-} from '../counselling/model/AdminCounselling';
+} from '../../counselling/models/AdminCounselling';
 
 export const fetchAidRequestAdmin = async ({
   type,
@@ -21,7 +20,7 @@ export const fetchAidRequestAdmin = async ({
     PaginatedResponse<AdminCounsellingSession>
   >({
     method: 'get',
-    url: `${ADMIN_API.counselling.search}/${type}`,
+    url: `${API.counselling.search}/${type}`,
     params: filterEmptyProps({
       page,
       size,
