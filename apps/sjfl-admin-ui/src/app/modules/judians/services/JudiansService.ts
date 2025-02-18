@@ -4,7 +4,7 @@ import { API } from '../../../constants/urls';
 import { AdminJudian } from '../models/Judians';
 
 export type FetchJudiansAdminRequest = {
-  type: 'active' | 'inactive';
+  status: 'active' | 'inactive';
   page: number;
   size: number;
   uid: string;
@@ -14,7 +14,7 @@ export type FetchJudiansAdminRequest = {
 };
 
 export const fetchJudiansAdmin = async ({
-  type = 'active',
+  status = 'active',
   page = 1,
   size = 10,
 
@@ -25,7 +25,7 @@ export const fetchJudiansAdmin = async ({
 }: FetchJudiansAdminRequest) => {
   return AdminRequestService.request<PaginatedResponse<AdminJudian>>({
     method: 'get',
-    url: `${API.judian.search}/${type}`,
+    url: `${API.judian.search}/${status.toLocaleLowerCase()}`,
     params: filterEmptyProps({
       page,
       size,
