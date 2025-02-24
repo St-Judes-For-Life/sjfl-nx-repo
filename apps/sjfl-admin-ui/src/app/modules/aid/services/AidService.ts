@@ -1,10 +1,7 @@
 import { filterEmptyProps, PaginatedResponse } from '@sjfl/data';
 import { API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../../lib/axios';
-import {
-  AdminCounsellingSession,
-  FetchCounsellingSessionsAdminRequest,
-} from '../../counselling/models/AdminCounselling';
+import { AdminAidRequest, FetchAdminAidRequest } from '../models/AdminAidRequest';
 
 export const fetchAidRequestAdmin = async ({
   type,
@@ -14,13 +11,12 @@ export const fetchAidRequestAdmin = async ({
   toDate,
   name,
   uid,
-  counsellingStatuses,
-}: FetchCounsellingSessionsAdminRequest) => {
+}: Partial<FetchAdminAidRequest>) => {
   return AdminRequestService.request<
-    PaginatedResponse<AdminCounsellingSession>
+    PaginatedResponse<AdminAidRequest>
   >({
     method: 'get',
-    url: `${API.counselling.search}/${type}`,
+    url: `${API.aid.search}/${type}`,
     params: filterEmptyProps({
       page,
       size,
@@ -28,7 +24,6 @@ export const fetchAidRequestAdmin = async ({
       toDate,
       name,
       uid,
-      counsellingStatuses,
     }),
   });
 };

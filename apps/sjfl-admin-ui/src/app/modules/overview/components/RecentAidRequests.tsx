@@ -1,28 +1,27 @@
 import { TableSkeleton } from '../../../components/skeletons/TableSkeleton';
-import { useFetchRecentCounsellings } from '../hooks/useFetchRecentCounsellings';
+import { useFetchRecentAidRequests } from '../hooks/useFetchRecentAidRequests';
+import { AdminAidRequestSummary, AidRequestTableCard } from './AidRequestTableCard';
 import { SummaryData, SummaryTableCard } from './SummaryTableCard';
 
 export const RecentAidRequests = () => {
-  const { data: counsellingResp, isLoading } = useFetchRecentCounsellings();
+  const { data: aidRequest, isLoading } = useFetchRecentAidRequests();
 
-  if (counsellingResp) {
-    const counsellingRequests: SummaryData[] = counsellingResp?.data.data.map(
-      (session) => ({
-        id: session.counsellingId,
-        date: session.counsellingDate,
-        status: session.counsellingStatus,
-        judian: {
-          id: session.userResponse.uid,
-          name: session.userResponse.name,
-        },
+  if (aidRequest) {
+    
+    const aidRequests: AdminAidRequestSummary[] = aidRequest?.data.data.map(
+      (aidReq) => ({
+        id: aidReq.reqId,
+        requesterName: aidReq.userName,
+        natureOfSupport: aidReq.natureOfSupport,
+        status: aidReq.aidStatus,
       })
     );
     return (
-      <SummaryTableCard
+      <AidRequestTableCard
         resourceUrl="/aid"
         title="Aid Requests"
-        summaryData={counsellingRequests}
-      ></SummaryTableCard>
+        summaryData={aidRequests}
+      ></AidRequestTableCard>
     );
   }
   if (isLoading) {
