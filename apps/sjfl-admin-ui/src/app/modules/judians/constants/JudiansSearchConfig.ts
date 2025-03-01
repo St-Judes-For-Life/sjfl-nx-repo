@@ -30,6 +30,7 @@ export const JudiansSearchConfig: SearchItem[] = [
     property: 'status',
     placeholder: 'Select Status',
     type: 'dropdown',
+    defaultValue: 'ACTIVE',
     options: [
       {
         id: 0,

@@ -38,6 +38,7 @@ type DatedaterangeItem = RegularSearchItem & {
 
 export type DropdownSearch<T> = RegularSearchItem & {
   type: 'dropdown';
+  defaultValue: string,
   options: {
     id: number;
     label: string;
