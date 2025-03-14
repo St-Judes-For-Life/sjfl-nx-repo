@@ -6,12 +6,15 @@ export const API = {
     login: '/login',
   },
   stats: '/stats',
+  aid: {
+    base: '/aidSearch',
+    all: '/aidSearch/all',
+    today: '/aidSearch/today',
+    search: '/aidSearch/search',
+  },
   counselling: {
     base: '/counselling',
     search: '/counselling/search',
-  },
-  aid: {
-    search: '/aidSearch',
   },
   judian: {
     base: '/judian',

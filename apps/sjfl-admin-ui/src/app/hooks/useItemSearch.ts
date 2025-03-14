@@ -14,6 +14,8 @@ import {
   fetchJudiansAdmin,
 } from '../modules/judians/services/JudiansService';
 import { fetchCounsellingSessionsAdmin } from '../modules/counselling/services/CounsellingService';
+import { FetchAidAdminRequest } from '../modules/aid/models/AdminAid';
+import { fetchAidRequestAdmin } from '../modules/aid/services/AidService';
 
 export function useItemSearch(item: SearchBy) {
   const [searchParams] = useSearchParams();
@@ -41,11 +43,12 @@ export async function fetchSearchResults(
       searchResponse = await fetchJudiansAdmin(
         query as FetchJudiansAdminRequest
       );
-      // case 'aid':
-      //   return fetchAidRequestAdmin({
-      //     type: 'upcoming',
-      //     ...query,
-      //   } as FetchCounsellingSessionsAdminRequest);
+      break;
+    case 'aid':
+      searchResponse = await fetchAidRequestAdmin({
+        type: hasQuery ? 'search' : 'all',
+        ...query,
+      } as FetchAidAdminRequest);
       break;
     case 'counselling':
       searchResponse = await fetchCounsellingSessionsAdmin({

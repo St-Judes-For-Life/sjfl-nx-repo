@@ -1,11 +1,11 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { ClientCounsellingSession } from '@sjfl/data';
+import { CounsellingSession } from '@sjfl/data';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type CounsellingSessionCardProps = {
-  session: ClientCounsellingSession;
+  session: CounsellingSession;
 };
 
 export const CounsellingSessionCard: FC<CounsellingSessionCardProps> = ({

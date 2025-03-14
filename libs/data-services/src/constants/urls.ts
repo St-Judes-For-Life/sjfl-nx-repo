@@ -1,22 +1,10 @@
 export const ADMIN_API = {
-  common: {
-    lookup: '/types',
-  },
   auth: {
     login: '/login',
   },
-  stats: '/stats',
-  counselling: {
-    base: '/counselling',
-    search: '/counselling/search',
-  },
-  judian: {
-    base: '/judian',
-    search: '/judian/search',
-  },
 };
 
-const BASE_CLIENT_URL = 'https://8f07-20-219-147-128.ngrok-free.app/user';
+const BASE_CLIENT_URL = 'https://sjfl-dev-webapp.azurewebsites.net/user';
 
 export const CLIENT_API = {
   user: {

@@ -1,7 +1,10 @@
 import { filterEmptyProps, PaginatedResponse } from '@sjfl/data';
 import { API } from '../../../constants/urls';
 import { AdminRequestService } from '../../../../lib/axios';
-import { AdminAidRequest, FetchAdminAidRequest } from '../models/AdminAidRequest';
+import {
+  AdminAidRequest,
+  FetchAdminAidRequest,
+} from '../models/AdminAidRequest';
 
 export const fetchAidRequestAdmin = async ({
   type,
@@ -12,9 +15,7 @@ export const fetchAidRequestAdmin = async ({
   name,
   uid,
 }: Partial<FetchAdminAidRequest>) => {
-  return AdminRequestService.request<
-    PaginatedResponse<AdminAidRequest>
-  >({
+  return AdminRequestService.request<PaginatedResponse<AdminAidRequest>>({
     method: 'get',
     url: `${API.aid.search}/${type}`,
     params: filterEmptyProps({
