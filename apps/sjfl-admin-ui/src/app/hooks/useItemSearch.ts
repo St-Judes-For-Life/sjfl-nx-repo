@@ -16,6 +16,7 @@ import {
 import { fetchCounsellingSessionsAdmin } from '../modules/counselling/services/CounsellingService';
 import { FetchAidAdminRequest } from '../modules/aid/models/AdminAid';
 import { fetchAidRequestAdmin } from '../modules/aid/services/AidService';
+import { AdminAidRequest } from '../modules/aid/models/AdminAidRequest';
 
 export function useItemSearch(item: SearchBy) {
   const [searchParams] = useSearchParams();
@@ -35,7 +36,7 @@ export async function fetchSearchResults(
   query: Record<string, unknown>
 ) {
   let searchResponse: AxiosResponse<
-    PaginatedResponse<AdminCounsellingSession | AdminJudian>
+    PaginatedResponse<AdminCounsellingSession | AdminJudian | AdminAidRequest>
   >;
   const hasQuery = Object.entries(query).length > 0;
   switch (item) {

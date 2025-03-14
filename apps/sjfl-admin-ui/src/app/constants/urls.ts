@@ -7,10 +7,7 @@ export const API = {
   },
   stats: '/stats',
   aid: {
-    base: '/aidSearch',
-    all: '/aidSearch/all',
-    today: '/aidSearch/today',
-    search: '/aidSearch/search',
+    search: '/aidSearch',
   },
   counselling: {
     base: '/counselling',
