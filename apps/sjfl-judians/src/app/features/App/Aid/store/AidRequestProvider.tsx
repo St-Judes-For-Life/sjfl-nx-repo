@@ -83,7 +83,7 @@ export const AidRequestProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const removeFile = (docId: string, fileId: string) => {
     setRequest((request) => {
-      let { docs = [] } = request!;
+      const { docs = [] } = request!;
       const docIndex = docs.findIndex((doc) => doc.docId === docId);
 
       if (docIndex < 0) {

@@ -12,4 +12,7 @@ export const API = {
     search: `${baseUrl}/counselling/search`,
     create: `${baseUrl}/counselling/schedule`,
   },
+  aid: {
+    getStreams: `${baseUrl}/getStreamData`,
+  },
 };

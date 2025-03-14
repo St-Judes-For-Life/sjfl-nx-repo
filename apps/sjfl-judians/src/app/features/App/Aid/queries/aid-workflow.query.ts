@@ -1,7 +1,8 @@
 import { AidWorkflowConfig } from '../models/aid-workflow-config.model';
+import { getStreams } from '../services/AidService';
 
 export async function getWorkflowConfig(): Promise<AidWorkflowConfig> {
-  return (await fetch('/assets/aid.json')).json();
+  return getStreams();
 }
 
 export const workflowConfigQuery = {

@@ -6,12 +6,12 @@ export const API = {
     login: '/login',
   },
   stats: '/stats',
+  aid: {
+    search: '/aidSearch',
+  },
   counselling: {
     base: '/counselling',
     search: '/counselling/search',
-  },
-  aid: {
-    search: '/aidSearch',
   },
   judian: {
     base: '/judian',

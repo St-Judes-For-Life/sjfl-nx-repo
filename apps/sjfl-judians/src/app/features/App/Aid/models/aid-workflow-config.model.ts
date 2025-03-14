@@ -1,15 +1,15 @@
 import { InfoType } from './aid-request.model';
 
 export type AidWorkflowConfig = {
-  streams: StreamConfig[];
+  stream: StreamConfig[];
 };
 
 export type StreamConfig = {
   id: number;
   name: string;
   categories: CategoryConfig[];
-  additionalInformation: AdditionalInformationConfig[];
-  docs: DocumentConfig[];
+  additionalInfos: AdditionalInformationConfig[];
+  documents: DocumentConfig[];
 };
 
 export type AdditionalInformationConfig = InfoType & {

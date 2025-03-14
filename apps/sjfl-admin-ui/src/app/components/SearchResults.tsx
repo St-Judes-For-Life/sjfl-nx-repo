@@ -15,14 +15,14 @@ import { Link } from 'react-router-dom';
 import { PaginatedResponse } from '@sjfl/data';
 import { AxiosResponse } from 'axios';
 import { fetchSearchResults, useItemSearch } from '../hooks/useItemSearch';
-import { Aid } from '../models/Aid';
 import { SearchBy } from '../models/Search';
-import { NoResults } from './NoResults';
-import { TableSkeleton } from './skeletons/TableSkeleton';
-import { SearchResultTable } from './SearchResultTable';
-import { RetrySearch } from './RetrySearch';
+import { AdminAidRequest } from '../modules/aid/models/AdminAidRequest';
 import { AdminCounsellingSession } from '../modules/counselling/models/AdminCounselling';
 import { AdminJudian } from '../modules/judians/models/Judians';
+import { NoResults } from './NoResults';
+import { RetrySearch } from './RetrySearch';
+import { SearchResultTable } from './SearchResultTable';
+import { TableSkeleton } from './skeletons/TableSkeleton';
 
 type SearchResultsProps = {
   item: SearchBy;
@@ -74,9 +74,11 @@ function renderSearchResults(
       data as AxiosResponse<PaginatedResponse<AdminCounsellingSession>>
     );
   }
-  // if (item === 'aid') {
-  //   return renderAidSearchResults(data as Aid[]);
-  // }
+  if (item === 'aid') {
+    return renderAidSearchResults(
+      data as AxiosResponse<PaginatedResponse<AdminAidRequest>>
+    );
+  }
   if (item === 'judians') {
     return renderJudianSearchResults(
       data as AxiosResponse<PaginatedResponse<AdminJudian>>
@@ -84,23 +86,36 @@ function renderSearchResults(
   }
 }
 
-function renderAidSearchResults(data: Aid[]) {
+function renderAidSearchResults(
+  response: AxiosResponse<PaginatedResponse<AdminAidRequest>>
+) {
   return (
     <SearchResultTable columns={['Requester', 'Status', 'Date']}>
-      {data.map((record) => (
-        <TableRow key={record.id}>
-          <TableCell className="flex gap-2 items-center">
-            <Link to={`/aid/${record.id}`} className="font-medium underline">
-              {record.judian.name}
-            </Link>
-            {record.stream && (
-              <Badge variant={'outline'}>{record.stream}</Badge>
-            )}
+      {response && response.data?.data?.length > 0 ? (
+        response.data?.data.map((record) => (
+          <TableRow key={record.reqId}>
+            <TableCell className="flex gap-2 items-center">
+              <Link
+                to={`/aid/${record.reqId}`}
+                className="font-medium underline"
+              >
+                {record.userName}
+              </Link>
+              {record.natureOfSupport && (
+                <Badge variant={'outline'}>{record.natureOfSupport}</Badge>
+              )}
+            </TableCell>
+            <TableCell>{record.aidStatus}</TableCell>
+            <TableCell>{DateFormatter.format(new Date())}</TableCell>
+          </TableRow>
+        ))
+      ) : (
+        <TableRow>
+          <TableCell colSpan={3}>
+            <NoResults />
           </TableCell>
-          <TableCell>{record.status}</TableCell>
-          <TableCell>{DateFormatter.format(record.date)}</TableCell>
         </TableRow>
-      ))}
+      )}
     </SearchResultTable>
   );
 }

@@ -1,12 +1,9 @@
+import { CreateSessionRequest, CreateSessionResponse } from '@sjfl/data';
 import { API } from '../../../../shared/constants/api/urls';
-import { RequestService } from '../../../../shared/utils/axios';
-import {
-  CreateSessionRequest,
-  CreateSessionResponse,
-} from '../models/CreateSession';
+import { ClientRequestService } from '../../../../shared/utils/axios';
 
 export const createSession = (request: CreateSessionRequest) => {
-  return RequestService.request<CreateSessionResponse>({
+  return ClientRequestService.request<CreateSessionResponse>({
     url: API.counselling.create,
     method: 'post',
     data: request,
