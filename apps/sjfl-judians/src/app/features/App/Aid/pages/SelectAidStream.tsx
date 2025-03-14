@@ -10,7 +10,7 @@ export const SelectAidStream = () => {
   }
   return (
     <div className="grid grid-cols-3 gap-3 auto-rows-[8rem]">
-      {data.streams.map((stream) => (
+      {data.stream.map((stream) => (
         <Button
           variant="contained"
           sx={{

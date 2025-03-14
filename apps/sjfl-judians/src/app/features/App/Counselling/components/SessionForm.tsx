@@ -6,7 +6,7 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { FormControl, FormLabel } from '@mui/material';
 import { DatePicker, TimePicker } from '@mui/x-date-pickers';
 import {
-  ClientCounsellingSession,
+  CounsellingSession,
   CreateSessionRequest,
   MaybeNull,
 } from '@sjfl/data';
@@ -40,7 +40,7 @@ type SessionFormProps = {
   | { editMode: 'CREATE'; sessionId?: string }
   | {
       editMode: 'UPDATE';
-      session?: ClientCounsellingSession;
+      session?: CounsellingSession;
     }
 );
 

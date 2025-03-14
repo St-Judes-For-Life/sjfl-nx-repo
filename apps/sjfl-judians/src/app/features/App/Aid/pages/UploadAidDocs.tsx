@@ -7,7 +7,7 @@ export const UploadAidDocs = () => {
   const aidRequest = useAidRequest();
   const selectedStream = useSelectedStream();
 
-  const docs = selectedStream.docs;
+  const docs = selectedStream.documents;
 
   return (
     <div className="flex flex-col gap-8">

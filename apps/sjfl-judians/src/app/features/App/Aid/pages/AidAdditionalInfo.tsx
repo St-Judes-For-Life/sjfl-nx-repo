@@ -47,7 +47,7 @@ export const AidAdditionalInfo = () => {
     const [key, err] = Object.entries(errors)?.[0];
     console.log(errors);
 
-    const label = stream.additionalInformation.find(
+    const label = stream.additionalInfos.find(
       (info) => info.id === +key
     )?.label;
 
@@ -63,9 +63,7 @@ export const AidAdditionalInfo = () => {
 
     Object.entries(formValue).map(([key, value]) => {
       const info: Maybe<AdditionalInformationConfig> =
-        stream.additionalInformation.find(
-          (streamInfo) => streamInfo.id === +key
-        );
+        stream.additionalInfos.find((streamInfo) => streamInfo.id === +key);
 
       if (info) {
         switch (info.type) {
@@ -98,7 +96,7 @@ export const AidAdditionalInfo = () => {
     </Button>
   );
 
-  if (stream.additionalInformation.length === 0) {
+  if (stream.additionalInfos.length === 0) {
     return (
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
@@ -114,7 +112,7 @@ export const AidAdditionalInfo = () => {
       onSubmit={handleSubmit(onSubmit, onError)}
       className="flex flex-col gap-4"
     >
-      {stream.additionalInformation.map((info, index) => {
+      {stream.additionalInfos.map((info, index) => {
         return (
           <FormControl fullWidth key={info.id}>
             <FormLabel htmlFor={`input_${info.id}`}>{info.label}</FormLabel>

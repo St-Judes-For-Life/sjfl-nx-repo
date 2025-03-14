@@ -1,13 +1,13 @@
 import { t } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
-import { ClientCounsellingSession } from '@sjfl/data';
+import { CounsellingSession } from '@sjfl/data';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NoResults } from '../../../../shared/components/error-states/NoResults';
 import { CounsellingSessionCard } from './CounsellingSessionCard';
 
 type SessionListProps = {
-  sessions: ClientCounsellingSession[] | undefined;
+  sessions: CounsellingSession[] | undefined;
 };
 
 export const SessionList: FC<SessionListProps> = ({ sessions }) => {
