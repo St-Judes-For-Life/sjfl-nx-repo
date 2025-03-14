@@ -10,6 +10,9 @@ export const API = {
     base: '/counselling',
     search: '/counselling/search',
   },
+  aid: {
+    search: '/aidSearch',
+  },
   judian: {
     base: '/judian',
     search: '/judian/search',

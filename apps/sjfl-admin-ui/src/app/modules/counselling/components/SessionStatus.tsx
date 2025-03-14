@@ -14,7 +14,7 @@ type SessionStatusProps = {
 
 export const SessionStatus: FC<SessionStatusProps> = ({ session }) => {
   const [date, time] = session.counsellingDate.split(' ');
-  const updateDisabled = ['cancelled', 'completed'].includes(
+  const updateDisabled = ['cancelled', 'completed', 'rejected'].includes(
     session.counsellingStatus.toLowerCase()
   );
 

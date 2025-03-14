@@ -120,7 +120,7 @@ const SearchField = <T extends FieldValues>({
       <Controller
         control={control}
         render={({ field: { onChange, value } }) => (
-          <Select value={value} onValueChange={onChange}>
+          <Select value={value} onValueChange={onChange} defaultValue={field.defaultValue}>
             <SelectTrigger>
               <SelectValue placeholder={field.placeholder} />
             </SelectTrigger>
