@@ -1,9 +1,9 @@
+import { asyncStore } from '@sjfl/data';
 import { API } from '../../../shared/constants/api/urls';
 import { User } from '../../../shared/models/auth.model';
-import { asyncStore } from '@sjfl/data';
 import { ClientRequestService } from '../../../shared/utils/axios';
-import { AccessTokenResponse } from '../models/AccessToken';
-import { VerifyOtpRequest } from '../models/Otp';
+import { AccessTokenResponse } from '../models/Login';
+import { SendOtpRequest, VerifyOtpRequest } from '../models/Otp';
 
 export const registerUser = (user: User) => {
   return ClientRequestService.request<void>({
@@ -13,10 +13,10 @@ export const registerUser = (user: User) => {
   });
 };
 
-export const sendOtp = (uid: string) => {
+export const sendOtp = (request: SendOtpRequest) => {
   return ClientRequestService.request<AccessTokenResponse>({
     url: API.otp.send,
-    data: { uid, otpType: 'LOGIN' },
+    data: request,
     method: 'post',
   });
 };
