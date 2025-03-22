@@ -1,9 +1,9 @@
 import { API } from '../../../shared/constants/api/urls';
-import { RequestService } from '../../../shared/utils/axios';
+import { ClientRequestService } from '../../../shared/utils/axios';
 import { UserProfile } from '../models/Profile';
 
 export const getUserProfile = async () => {
-  const resp = await RequestService.request<UserProfile>({
+  const resp = await ClientRequestService.request<UserProfile>({
     url: API.user.profile,
     method: 'get',
   });
@@ -16,7 +16,7 @@ export const getUserProfile = async () => {
 };
 
 export const updateUserProfile = async (profile: UserProfile) => {
-  const resp = await RequestService.request<UserProfile>({
+  const resp = await ClientRequestService.request<UserProfile>({
     url: API.user.profile,
     method: 'put',
     data: profile,

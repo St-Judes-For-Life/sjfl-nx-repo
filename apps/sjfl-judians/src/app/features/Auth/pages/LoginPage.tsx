@@ -2,19 +2,23 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { t, Trans } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import LoadingButton from '@mui/lab/LoadingButton';
+import { FormHelperText } from '@mui/material';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import { AxiosError } from 'axios';
 import { useState } from 'react';
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { z } from 'zod';
 import { Scaffold } from '../../../shared/components/containers/Scaffold';
 import { Logo } from '../../../shared/components/images/Logo';
+import { ErrorResponse } from '../../../shared/models/error.model';
 import { VerifyOtp } from '../components/VerifyOtp';
 import { useSendOtp } from '../hooks/sendOtp';
-import { VerifyOtpRequest } from '../models/Otp';
+import { LoginError } from '../models/Login';
+import { OTPError, VerifyOtpRequest } from '../models/Otp';
 
 const loginUserSchema = z.object({
   uid: z.string(),
@@ -25,7 +29,13 @@ type LoginUserForm = z.infer<typeof loginUserSchema>;
 export const LoginPage = () => {
   const navigate = useNavigate();
   const { i18n } = useLingui();
-  const { register, handleSubmit, getValues } = useForm<LoginUserForm>({
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+    setError,
+  } = useForm<LoginUserForm>({
     resolver: zodResolver(loginUserSchema),
   });
   const { mutateAsync: sendOtp, isPending: sendingOtp } = useSendOtp();
@@ -34,12 +44,44 @@ export const LoginPage = () => {
     useState<Omit<VerifyOtpRequest, 'otp'>>();
 
   const handleSendOtp: SubmitHandler<LoginUserForm> = async (form) => {
-    const resp = await sendOtp(getValues('uid'));
-    if (resp.status === 200) {
-      setVerifyOtpReq({
+    try {
+      const resp = await sendOtp({
+        uid: getValues('uid'),
         otpType: 'LOGIN',
-        uid: form.uid,
+        sendSms: true,
       });
+      if (resp.status === 200) {
+        setVerifyOtpReq({
+          otpType: 'LOGIN',
+          uid: form.uid,
+        });
+      }
+    } catch (e) {
+      const error = e as AxiosError<ErrorResponse>;
+      const errorCode = error.response?.data.errorCode;
+      if (errorCode === LoginError.USER_NOT_FOUND) {
+        setError('uid', {
+          type: 'manual',
+          message: i18n._(
+            t({
+              id: 'Auth.Login.UserNotFound',
+              message: 'Invalid UID. Please try again.',
+            })
+          ),
+        });
+      }
+      if (errorCode === OTPError.USER_MAX_VERIFICATION_ATTEMPT_EXEMPTED) {
+        setError('uid', {
+          type: 'manual',
+          message: i18n._(
+            t({
+              id: 'Auth.Login.MaxVerificationAttemptExempted',
+              message:
+                'You have reached the maximum verification attempts. Please try again later.',
+            })
+          ),
+        });
+      }
     }
   };
 
@@ -67,9 +109,15 @@ export const LoginPage = () => {
               fullWidth
               autoComplete="username"
               {...register('uid')}
+              error={!!errors.uid}
               type="decimal"
               placeholder={i18n._(t({ id: 'Auth.UID_Placeholder' }))}
             />
+            {errors.uid?.message && (
+              <FormHelperText error className="text-sm">
+                {errors.uid?.message}
+              </FormHelperText>
+            )}
           </FormControl>
           <Button color="accent" className="self-end" fullWidth={false}>
             <Trans id="Auth.Login.TroubleWithSignIn">

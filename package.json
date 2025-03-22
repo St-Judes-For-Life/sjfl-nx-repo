@@ -45,7 +45,7 @@
     "dayjs": "^1.11.7",
     "framer-motion": "^10.2.5",
     "idb-keyval": "^6.2.0",
-    "input-otp": "^1.2.3",
+    "input-otp": "^1.4.2",
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.339.0",
     "react": "18.2.0",
