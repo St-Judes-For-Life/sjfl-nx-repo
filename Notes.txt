@@ -1,0 +1,3 @@
+Figma file for Beneficiary - https://www.figma.com/proto/sNP4e9mmDhxkgLUuhSkRWX/Judians?node-id=195-3336&starting-point-node-id=1%3A2
+Figma file for Admin - https://www.figma.com/proto/v4LQAyszWMZZsdjD0g6J41/Admin-Portal?node-id=101-2&starting-point-node-id=101%3A2
+Aid configuration file - apps\sjfl-judians\assets\aid.json
